@@ -1414,7 +1414,7 @@ disable_resource_bars = false
 	spawn_in_ocean = true
 	#Ocean origins slowly lose air while out of water (Minecraft-fish style).
 	#Turn off to disable the on-land suffocation entirely.
-	dries_out = true
+	dries_out = false
 	#Ticks per single air point lost while out of water.
 	#Default 10 = 1 air per 0.5s, 300 air → ~2.5 minutes to deplete.
 	#Larger values mean a slower drain. Vanilla cod uses ~1 tick per air;
@@ -1434,7 +1434,7 @@ disable_resource_bars = false
 	#is silently cancelled. Set to false to let them eat anything (powered by
 	#the aquatic_fish_diet power's runtime check on this flag).
 	#Default true: matches the long-standing pescivore design.
-	fish_diet_required = true
+	fish_diet_required = false
 
 #Friendly-fire filter for origin area-of-effect actions (poison sting,
 #fire burst, ink shot, etc.). When a toggle is true, that category of
