@@ -2,13 +2,13 @@
 	// Other general config options.
 	"general": {
 		// Enable this to get Player Aerial Pearl by right clicking a Zombie or Husk with a Aerial Pearl.
-		"player_aerial_pearl": true,
+		"player_aerial_pearl": false,
 		// Enable this to get Dimensional Binding card by right clicking an Enderman or Endermite with a Binding card.
-		"dimensional_binding_card": true,
+		"dimensional_binding_card": false,
 		// Enable this to get Lens Of Ender by right clicking an Enderman or Endermite with a Photoelectric Pane.
-		"lens_of_ender": true,
+		"lens_of_ender": false,
 		// Energy produced per fuel tick in the Furnator.
-		"energy_per_fuel_tick": 30,
+		"energy_per_fuel_tick": 0,
 		"energizing_range": 4,
 		/* Multiplier to the required energy applied after an energizing recipe is read.
 		   Use this to adjust the cost of ALL energizing recipes.
@@ -37,13 +37,13 @@
 				"nitro": 160000
 			},
 			"generation_rates": {
-				"starter": 20,
-				"basic": 80,
-				"hardened": 200,
-				"blazing": 800,
-				"niotic": 2000,
-				"spirited": 8000,
-				"nitro": 40000
+				"starter": 0,
+				"basic": 0,
+				"hardened": 0,
+				"blazing": 0,
+				"niotic": 0,
+				"spirited": 0,
+				"nitro": 0
 			}
 		},
 		"magmators": {
@@ -66,13 +66,13 @@
 				"nitro": 160000
 			},
 			"generation_rates": {
-				"starter": 20,
-				"basic": 80,
-				"hardened": 200,
-				"blazing": 800,
-				"niotic": 2000,
-				"spirited": 8000,
-				"nitro": 40000
+				"starter": 0,
+				"basic": 0,
+				"hardened": 0,
+				"blazing": 0,
+				"niotic": 0,
+				"spirited": 0,
+				"nitro": 0
 			}
 		},
 		"reactors": {
@@ -95,13 +95,13 @@
 				"nitro": 2000000
 			},
 			"generation_rates": {
-				"starter": 250,
-				"basic": 1000,
-				"hardened": 2500,
-				"blazing": 10000,
-				"niotic": 25000,
-				"spirited": 100000,
-				"nitro": 500000
+				"starter": 0,
+				"basic": 0,
+				"hardened": 0,
+				"blazing": 0,
+				"niotic": 0,
+				"spirited": 0,
+				"nitro": 0
 			}
 		},
 		"solar_panels": {
@@ -153,13 +153,13 @@
 				"nitro": 160000
 			},
 			"generation_rates": {
-				"starter": 20,
-				"basic": 60,
-				"hardened": 100,
-				"blazing": 200,
-				"niotic": 400,
-				"spirited": 800,
-				"nitro": 2000
+				"starter": 0,
+				"basic": 0,
+				"hardened": 0,
+				"blazing": 0,
+				"niotic": 0,
+				"spirited": 0,
+				"nitro": 0
 			}
 		}
 	},
@@ -218,13 +218,13 @@
 		},
 		"ender_cells": {
 			"transfer_rates": {
-				"starter": 1000,
-				"basic": 4000,
-				"hardened": 10000,
-				"blazing": 40000,
-				"niotic": 100000,
-				"spirited": 400000,
-				"nitro": 2000000
+				"starter": 0,
+				"basic": 0,
+				"hardened": 0,
+				"blazing": 0,
+				"niotic": 0,
+				"spirited": 0,
+				"nitro": 0
 			},
 			"channels": {
 				"starter": 1,
@@ -238,13 +238,13 @@
 		},
 		"ender_gates": {
 			"transfer_rates": {
-				"starter": 500,
-				"basic": 2000,
-				"hardened": 5000,
-				"blazing": 20000,
-				"niotic": 50000,
-				"spirited": 200000,
-				"nitro": 1000000
+				"starter": 0,
+				"basic": 0,
+				"hardened": 0,
+				"blazing": 0,
+				"niotic": 0,
+				"spirited": 0,
+				"nitro": 0
 			},
 			"channels": {
 				"starter": 1,
