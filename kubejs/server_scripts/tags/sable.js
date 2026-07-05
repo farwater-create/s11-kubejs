@@ -3,16 +3,36 @@
 ServerEvents.tags('block', event => {
 
 	// Super Light
-    //event.add('sable:super_light', _)
-
+	const super_light = [
+		'immersiveengineering:connector_lv',
+		'immersiveengineering:connector_lv_relay',
+		'immersiveengineering:connector_mv',
+		'immersiveengineering:connector_mv_relay',
+		'immersiveengineering:connector_hv',
+		'immersiveengineering:connector_hv_relay'
+	]
 	// Light
-    event.add('sable:light', 'bits_n_bobs:girder_strut')
-	event.add('sable:light', 'create:metal_girder')
-	event.add('sable:light', 'create:industrial_iron_block')
+	const light = [
+		'bits_n_bobs:girder_strut',
+		'create:metal_girder',
+		'create:industrial_iron_block',
 
-    event.add('sable:light', 'minecraft:campfire')
-    event.add('sable:light', 'minecraft:soul_campfire')
+		'minecraft:campfire',
+		'minecraft:soul_campfire',
 
-    event.add('sable:light', '#railways:locometal')
+		'#railways:locometal'
+	]
+	// Super Heavy
+	const super_heavy = [
+		'cataclysm:enderite_block',
+		'cataclysm:witherite_block',
+		'cataclysm:ignitium_block',
+		'cataclysm:ancient_metal_block',
+		'cataclysm:cursium_block'
+	]
+
+	super_light.forEach( block => {event.add('sable:super_light', block) })
+	light.forEach( block => {event.add('sable:light', block) })
+	super_heavy.forEach( block => {event.add('sable:super_heavy', block) })
 
 })
