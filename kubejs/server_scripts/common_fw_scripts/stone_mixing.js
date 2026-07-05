@@ -13,7 +13,7 @@ console.log('Adding mixing recipies');
 
     e.recipes.create.mixing(
     	[Item.of("create:limestone", 2)],
-        [Item.of("create:limestone"), Item.of("minecraft:bone_meal"), Item.of("minecraft:diroite")],
+        [Item.of("create:limestone"), Item.of("minecraft:bone_meal"), Item.of("minecraft:diorite")],
     ).processingTime(25);
 
     e.recipes.create.mixing(
