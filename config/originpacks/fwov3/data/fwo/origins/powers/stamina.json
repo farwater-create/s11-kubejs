@@ -12,7 +12,7 @@
       { "type": "neoorigins:on_ground" }
     ]
   },
-  "hud_render": {
+  "hud_render": {0
     "label": "Stamina",
     "color": "#5588AA"
   }
