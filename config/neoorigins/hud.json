@@ -1,0 +1,41 @@
+{
+  "split_cooldown": false,
+  "positions": {
+    "fwo:stamina": {
+      "xPct": 0.37291667,
+      "yPct": 0.92395437,
+      "scale": 1.0,
+      "vertical": false
+    },
+    "neoorigins:air_mage_mana": {
+      "xPct": 0.40208334,
+      "yPct": 0.9096958,
+      "scale": 0.0,
+      "vertical": false
+    },
+    "fwo:cragsman_airtime_resource": {
+      "xPct": 0.40520832,
+      "yPct": 0.9068441,
+      "scale": 0.0,
+      "vertical": false
+    },
+    "neoorigins:cooldown_cluster": {
+      "xPct": 0.55052084,
+      "yPct": 0.92775667,
+      "scale": 1.0,
+      "vertical": false
+    },
+    "fwo:cragsman_stamina": {
+      "xPct": 0.5015625,
+      "yPct": 0.904943,
+      "scale": 0.0,
+      "vertical": false
+    },
+    "fwo:cragsman_airtime_time": {
+      "xPct": 0.40520832,
+      "yPct": 0.8715415,
+      "scale": 0.0,
+      "vertical": false
+    }
+  }
+}

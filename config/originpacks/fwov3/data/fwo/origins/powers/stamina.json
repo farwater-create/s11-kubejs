@@ -1,0 +1,19 @@
+{
+  "type": "neoorigins:resource",
+  "min": 0,
+  "max": 50,
+  "start_value": 30,
+  "regen_rate": 2,
+  "regen_interval": 5,
+  "regen_condition": {
+    "type": "neoorigins:or",
+    "conditions": [
+      { "type": "neoorigins:climbing" },
+      { "type": "neoorigins:on_ground" }
+    ]
+  },
+  "hud_render": {
+    "label": "Stamina",
+    "color": "#5588AA"
+  }
+}

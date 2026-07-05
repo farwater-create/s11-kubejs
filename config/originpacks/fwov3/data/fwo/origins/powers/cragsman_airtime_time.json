@@ -1,0 +1,12 @@
+{
+  "type": "neoorigins:resource",
+  "min": 0,
+  "max": 60,
+  "start_value": 30,
+  "regen_rate": 1,
+  "regen_interval": 1,
+  "hud_render": {
+    "label": "AirTime",
+    "color": "#5588AA"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "engineer",
+  "description": "a create engineer who has recently started the job, you have starting items to begin with.",
+  "impact": 1,
+  "order": 2,
+  "powers": [
+    "fwo:engineerwrench",
+    "fwo:tealover",
+    "fwo:keepgoggles",
+    "fwo:engineergoggles",
+    "fwo:bonuscog",
+    "fwo:bonuslargecog",
+    "fwo:doublebarrel",
+    "fwo:old"
+    ],
+  "icon": {
+    "item": "create:wrench"
+  }
+}

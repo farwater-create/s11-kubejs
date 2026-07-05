@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:starting_equipment",
+  "grant_id": "engineer_wrench",
+  "item": "create:wrench",
+  "name": "Engineer Wrench",
+  "description": "Begins your new life with your old pal from the past."
+}

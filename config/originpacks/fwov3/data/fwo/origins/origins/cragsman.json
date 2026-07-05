@@ -1,0 +1,18 @@
+{
+  "name": "Cragsman",
+  "description": "A highly adapted tribe of rock climbers who live on cliff faces.",
+  "impact": 2,
+  "order": 2,
+  "powers": [
+    "fwo:cragsman_airtime_toggle",
+    "fwo:cragsman_wallclimb",
+    "fwo:cragsman_jump",
+    "fwo:cragsman_stamina",
+    "fwo:cragsman_airtime_toggle_state",
+    "fwo:cragsman_airtime_time",
+    "fwo:cragsman_airtime"
+    ],
+  "icon": {
+    "item": "minecraft:goat_horn"
+  }
+}

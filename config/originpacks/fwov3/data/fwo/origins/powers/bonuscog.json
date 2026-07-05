@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:craft_amount_bonus",
+  "output_item": "create:cogwheel",
+  "bonus_count": 1,
+  "name": "extra cogs",
+  "description": "make an extra cog from same amount of resources."
+}

@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:craft_amount_bonus",
+  "output_item": "minecraft:barrel",
+  "bonus_count": 1,
+  "name": "Double Barrel",
+  "description": "make an extra barrel from the same amount of resources."
+}

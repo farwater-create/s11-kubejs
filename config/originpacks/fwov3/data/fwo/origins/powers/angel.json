@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:modify_damage",
+  "direction": "out",
+  "multiplier": 2,
+  "target_group": "undead",
+  "name": "Angel",
+  "description": "You are choosen to clean the world from darkness and free the poor souls stuck in it, undead takes double damage from you."
+}

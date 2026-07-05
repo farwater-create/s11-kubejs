@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:status_effect",
+  "effect": "minecraft:night_vision",
+  "amplifier": 0,
+  "name": "Blessed Eyes",
+  "description": "nothing can hide from your eyes."
+}

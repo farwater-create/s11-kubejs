@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:generic.movement_speed",
+  "amount": -0.2,
+  "operation": "add_multiplied_base",
+  "name": "old age",
+  "description": "as you grew bigger and older, your legs started to get weak, -20% movement speed."
+}

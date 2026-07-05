@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:action_on_hit",
+  "action": "target_effect",
+  "effect": "minecraft:glowing",
+  "duration": 60,
+  "target_group": "undead",
+  "name": "Holy Ray",
+  "description": "Hit undead are illuminated briefly."
+}

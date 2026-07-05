@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:keep_inventory",
+  "slots": ["all"],
+  "items": ["create:goggles", "create:wrench"],
+  "name": "soulbound tools",
+  "description": "your wrench and goggles are bound to your soul and won't leave you even after your death'."
+}

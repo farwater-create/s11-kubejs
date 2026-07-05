@@ -1,0 +1,16 @@
+{
+  "name": "leaper",
+  "description": "jump to the sky! cannot eat meat.",
+  "impact": 2,
+  "order": 2,
+  "powers": [
+    "fwo:vegeterian",
+    "fwo:small_leap",
+    "fwo:leap",
+    "fwo:stamina",
+    "fwo:falldmg"
+    ],
+  "icon": {
+    "item": "minecraft:goat_horn"
+  }
+}

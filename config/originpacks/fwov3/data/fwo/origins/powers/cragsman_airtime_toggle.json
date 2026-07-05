@@ -1,0 +1,83 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 160,
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:delay",
+        "ticks": 1,
+        "action": {
+          "type": "neoorigins:dash",
+          "strength": 1,
+          "allow_vertical": true
+        }
+      },
+      {
+        "type": "neoorigins:delay",
+        "ticks": 6,
+        "action": {
+          "type": "neoorigins:dash",
+          "strength": 1,
+          "allow_vertical": true
+        }
+      },
+      {
+        "type": "neoorigins:delay",
+        "ticks": 11,
+        "action": {
+          "type": "neoorigins:dash",
+          "strength": 1,
+          "allow_vertical": true
+        }
+      },
+      {
+        "type": "neoorigins:delay",
+        "ticks": 16,
+        "action": {
+          "type": "neoorigins:dash",
+          "strength": 1,
+          "allow_vertical": true
+        }
+      },
+      {
+        "type": "neoorigins:delay",
+        "ticks": 21,
+        "action": {
+          "type": "neoorigins:dash",
+          "strength": 1,
+          "allow_vertical": true
+        }
+      },
+      {
+        "type": "neoorigins:delay",
+        "ticks": 26,
+        "action": {
+          "type": "neoorigins:dash",
+          "strength": 1,
+          "allow_vertical": true
+        }
+      },
+      {
+        "type": "neoorigins:delay",
+        "ticks": 31,
+        "action": {
+          "type": "neoorigins:dash",
+          "strength": 1,
+          "allow_vertical": true
+        }
+      },
+      {
+        "type": "neoorigins:delay",
+        "ticks": 36,
+        "action": {
+          "type": "neoorigins:dash",
+          "strength": 1,
+          "allow_vertical": true
+        }
+      }
+    ]
+  },
+  "resource_cost": "fwo:cragsman_airtime_time",
+  "resource_cost_amount": 60
+}

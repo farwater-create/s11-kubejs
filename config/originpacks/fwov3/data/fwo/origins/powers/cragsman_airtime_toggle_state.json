@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:toggle",
+  "default": false,
+  "hidden": true,
+  "name": "Airtime Active",
+  "description": "Internal flag gated by other powers."
+}

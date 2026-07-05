@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": ["minecraft:creeper"],
+  "name": "Natures Friend",
+  "description": "you have no evil thoughts, even the creepers see you as a friend."
+}

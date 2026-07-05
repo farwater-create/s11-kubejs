@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:starting_equipment",
+  "grant_id": "engineer_goggles",
+  "item": "create:goggles",
+  "name": "Engineer Goggles",
+  "description": "you don't even remember why you started using goggles, but it looks cool!'."
+}

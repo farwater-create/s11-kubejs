@@ -1,0 +1,15 @@
+{
+  "type": "neoorigins:active_ability",
+  "power": 1.0,
+  "name": "leap",
+  "description": "Press the skill key to dash.",
+  "cooldown_ticks": 60,
+  "hunger_cost": 3,
+  "entity_action": {
+    "type": "neoorigins:dash",
+    "strength": 0.5,
+    "allow_vertical": true
+  },
+  "resource_cost": "fwo:stamina",
+  "resource_cost_amount": 30
+}

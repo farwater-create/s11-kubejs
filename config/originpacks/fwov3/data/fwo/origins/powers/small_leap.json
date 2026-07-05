@@ -1,0 +1,24 @@
+{
+  "type": "neoorigins:active_ability",
+  "power": 1.0,
+  "name": "small_leap",
+  "description": "Press the skill key to dash.",
+  "key": "primary",
+  "cooldown_ticks": 6,
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:dash",
+        "strength": 0.5,
+        "allow_vertical": false
+      },
+      {
+        "type": "neoorigins:add_velocity",
+        "y": 0.6
+      }
+    ]
+  },
+  "resource_cost": "fwo:stamina",
+  "resource_cost_amount": 16
+}

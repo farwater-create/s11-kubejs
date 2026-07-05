@@ -1,0 +1,15 @@
+{
+  "type": "neoorigins:condition_passive",
+  "interval": 40,
+  "condition": {
+    "type": "neoorigins:in_tag",
+    "tag": "minecraft:is_nether"
+  },
+  "entity_action": {
+    "type": "neoorigins:damage",
+    "amount": 0.5,
+    "source": "fire"
+  },
+  "name": "Hell",
+  "description": "God forbids you entering nether, so he punishes you for every step you take in it!."
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:twin_breeding",
+  "chance": 0.7,
+  "name": "Blessed Hands",
+  "description": "Animals you bred most times produce twins."
+}

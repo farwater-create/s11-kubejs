@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 10,
+  "entity_action": {
+    "type": "neoorigins:add_velocity",
+    "y": 0.8
+  },
+  "resource_cost": "fwo:cragsman_stamina",
+  "resource_cost_amount": 10
+}

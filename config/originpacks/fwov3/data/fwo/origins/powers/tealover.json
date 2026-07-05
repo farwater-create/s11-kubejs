@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:modify_food_nutrition",
+  "nutrition": 4,
+  "food_tag": "create:builders_tea",
+  "name": "Tea Lover",
+  "description": "You consumed so much tea that your body accept it as a food."
+}
