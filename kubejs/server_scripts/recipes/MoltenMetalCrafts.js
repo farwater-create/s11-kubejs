@@ -194,7 +194,7 @@ ServerEvents.recipes(event => {
     event.shapeless(Item.of('create:andesite_alloy', 2), // arg 1: output
         [
             '3x minecraft:clay_ball',
-            '3x createnuclear:lead_nugget', 	       // arg 2: the array of inputs
+            '3x #c:nuggets/lead', 	       // arg 2: the array of inputs
             '3x minecraft:andesite'
         ])
     event.custom({

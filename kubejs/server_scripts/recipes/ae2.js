@@ -1,24 +1,25 @@
 ServerEvents.recipes(event => {
     event.replaceInput({output:'ae2:inscriber'},'minecraft:copper_ingot','kubejs:redstone_circuit');
-    event.custom({
-        "type": "create:filling",
-        "ingredients": [
-            {
-                "item": "ae2:certus_quartz_dust"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 10,
-                "fluid": "createnuclear:uranium"
-            }
-        ],
-        "results": [
-            {
-                "chance":0.3,
-                "id": "ae2:fluix_crystal"
-            }
-        ]
-    })
+    // Disabled, Create Nuclear Deletion
+    //event.custom({
+    //    "type": "create:filling",
+    //    "ingredients": [
+    //        {
+    //            "item": "ae2:certus_quartz_dust"
+    //        },
+    //        {
+    //            "type": "neoforge:single",
+    //            "amount": 10,
+    //            "fluid": "createnuclear:uranium"
+    //        }
+    //    ],
+    //    "results": [
+    //        {
+    //            "chance":0.3,
+    //            "id": "ae2:fluix_crystal"
+    //        }
+    //    ]
+    //})
     event.custom(
         {
             "type": "create:sequenced_assembly",

@@ -1,0 +1,122 @@
+// @ULSTICK
+ServerEvents.recipes(event => {
+
+	event.remove({ id: 'create_new_age:cutting/copper_wire' })
+	event.shaped(
+		Item.of('create_new_age:copper_wire', 2),
+		[
+			' W ',
+			'WSW',
+			' W '
+		],
+		{
+			S: 'createaddition:spool',
+			W: '#c:wires/copper'
+		}
+	).id('kjs:wires/copper_wire')
+
+	event.remove({ id: 'create_new_age:cutting/overcharged_iron_wire' })
+	event.shaped(
+		Item.of('create_new_age:overcharged_iron_wire', 2),
+		[
+			' W ',
+			'WSW',
+			' W '
+		],
+		{
+			S: 'createaddition:spool',
+			W: '#c:wires/electrum'
+		}
+	).id('kjs:wires/electrum_wire')
+
+	event.remove({ id: 'create_new_age:sequenced_assembly/overcharged_golden_wire' })
+	event.shaped(
+		Item.of('create_new_age:overcharged_golden_wire', 2),
+		[
+			' A ',
+			'WSW',
+			' A '
+		],
+		{
+			S: 'createaddition:spool',
+			W: '#c:wires/steel',
+			A: '#c:wires/aluminum'
+		}
+	).id('kjs:wires/aluminum_wire')
+	event.shaped(
+		Item.of('create_new_age:overcharged_golden_wire', 2),
+		[
+			' W ',
+			'ASA',
+			' W '
+		],
+		{
+			S: 'createaddition:spool',
+			W: '#c:wires/steel',
+			A: '#c:wires/aluminum'
+		}
+	).id('kjs:wires/aluminum_wire_r')
+	
+	event.replaceInput(
+		{ input: 'immersiveengineering:wirecoil_copper' },
+		'immersiveengineering:wirecoil_copper',
+		'create_new_age:copper_wire'
+	)
+	event.replaceInput(
+		{ input: 'immersiveengineering:wirecoil_copper_ins' },
+		'immersiveengineering:wirecoil_copper_ins',
+		'create_new_age:copper_wire'
+	)
+	event.replaceInput(
+		{ input: 'createaddition:copper_spool' },
+		'createaddition:copper_spool',
+		'create_new_age:copper_wire'
+	)
+	
+	event.replaceInput(
+		{ input: 'immersiveengineering:wirecoil_electrum' },
+		'immersiveengineering:wirecoil_electrum',
+		'create_new_age:overcharged_golden_wire'
+	)
+	event.replaceInput(
+		{ input: 'immersiveengineering:wirecoil_electrum_ins' },
+		'immersiveengineering:wirecoil_electrum_ins',
+		'create_new_age:overcharged_golden_wire'
+	)
+	
+	event.replaceInput(
+		{ input: 'immersiveengineering:wirecoil_steel' },
+		'immersiveengineering:wirecoil_steel',
+		'create_new_age:overcharged_diamond_wire'
+	)
+	
+	//Connectors
+	event.remove({ output: 'create_new_age:electrical_connector' })
+	event.shaped(
+		Item.of('create_new_age:electrical_connector', 1),
+		[
+			'R',
+			'A'
+		],
+		{
+			R: ['#c:rods/copper', '#c:rods/electrum'],
+			A: 'create:andesite_alloy'
+		}
+	).id('kjs:wires/electrical_connector')
+
+	event.replaceInput(
+		{ input: 'immersiveengineering:connector_lv' },
+		'immersiveengineering:connector_lv',
+		'create_new_age:electrical_connector'
+	)
+	event.replaceInput(
+		{ input: 'immersiveengineering:connector_mv' },
+		'immersiveengineering:connector_mv',
+		'create_new_age:electrical_connector'
+	)
+	event.replaceInput(
+		{ input: 'immersiveengineering:connector_hv' },
+		'immersiveengineering:connector_hv',
+		'create_new_age:electrical_connector'
+	)
+})
