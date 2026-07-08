@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "galosphere:lichen_caves",
+  "features": [
+	"farwater:ore_zinc_lichen"
+  ],
+  "step": "underground_ores"
+}

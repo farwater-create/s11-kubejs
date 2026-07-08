@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#ddu:is_ddu",
+  "features": [
+	"farwater:ore_gold",
+	"farwater:ore_gold_buried",
+	"farwater:ore_lapis",
+	"farwater:ore_lapis_buried",
+	"farwater:ore_redstone",
+	"farwater:ore_zinc"
+  ],
+  "step": "underground_ores"
+}

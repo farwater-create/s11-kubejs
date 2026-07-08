@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_rare",
+  "features": [
+	"farwater:ore_lapis_rare"
+  ],
+  "step": "underground_ores"
+}

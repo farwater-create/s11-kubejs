@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+	"ddu:caves",
+	"ddu:deep_dark_copy",
+	"ddu:dripstone_caves_copy",
+	"ddu:lush_caves_copy",
+	"galosphere:crystal_canyons",
+	"galosphere:lichen_caves",
+	"galosphere:pink_salt_caves"
+  ]
+}

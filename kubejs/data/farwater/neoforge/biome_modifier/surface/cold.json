@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_cold",
+  "features": [
+	"farwater:ore_emerald",
+	"farwater:ore_platinum"
+  ],
+  "step": "underground_ores"
+}
