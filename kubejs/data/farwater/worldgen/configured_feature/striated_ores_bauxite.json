@@ -1,0 +1,150 @@
+{
+  "type": "create:layered_ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "layer_patterns": [
+      [
+        {
+          "max_size": 2,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "immersiveengineering:ore_aluminum"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "kubejs:chert_bauxite_ore"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "natures_spirit:chert_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "immersiveengineering:ore_aluminum"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "kubejs:chert_bauxite_ore"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "natures_spirit:chert_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:stone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 3
+        },
+        {
+          "max_size": 2,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "natures_spirit:kaolin"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "natures_spirit:kaolin"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "natures_spirit:chert_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        },
+        {
+          "max_size": 2,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "natures_spirit:gray_kaolin"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "natures_spirit:gray_kaolin"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "natures_spirit:chert_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        },
+        {
+          "max_size": 2,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "create:limestone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "create:limestone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "natures_spirit:chert_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 2
+        }
+      ]
+    ],
+    "size": 32
+  }
+}

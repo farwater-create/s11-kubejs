@@ -5,7 +5,8 @@
 	"farwater:ore_coal",
 	"farwater:ore_coal_upper",
 	"farwater:ore_copper",
-	"farwater:ore_lead"
+	"farwater:ore_lead",
+	"farwater:ore_nickel_surface"
   ],
   "step": "underground_ores"
 }

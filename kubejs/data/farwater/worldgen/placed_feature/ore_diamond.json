@@ -1,5 +1,5 @@
 {
-  "feature": "farwater:ore_gold_buried",
+  "feature": "minecraft:ore_diamond_small",
   "placement": [
     {
       "type": "minecraft:count",
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:trapezoid",
         "max_inclusive": {
-          "absolute": 32
+          "above_bottom": 120
         },
         "min_inclusive": {
-          "absolute": -64
+          "above_bottom": -120
         }
       }
     },

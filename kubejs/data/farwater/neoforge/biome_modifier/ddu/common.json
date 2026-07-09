@@ -7,7 +7,14 @@
 	"farwater:ore_lapis",
 	"farwater:ore_lapis_buried",
 	"farwater:ore_redstone",
-	"farwater:ore_zinc"
+    "farwater:ore_diamond",
+    "farwater:ore_diamond_buried",
+    "farwater:ore_diamond_large",
+    "farwater:ore_diamond_medium",
+	"farwater:ore_zinc",
+	"farwater:ore_nickel",
+	"farwater:ore_nickel_buried",
+	"farwater:striated_ores_magnetite"
   ],
   "step": "underground_ores"
 }

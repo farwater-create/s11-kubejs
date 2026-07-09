@@ -3,7 +3,8 @@
   "biomes": "#c:is_cold",
   "features": [
 	"farwater:ore_emerald",
-	"farwater:ore_platinum"
+	"farwater:ore_platinum",
+	"farwater:striated_ores_silver"
   ],
   "step": "underground_ores"
 }

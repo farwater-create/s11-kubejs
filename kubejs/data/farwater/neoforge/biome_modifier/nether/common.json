@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_nether",
+  "features": [
+	"farwater:ore_uranium",
+	"farwater:striated_ores_thorium"
+  ],
+  "step": "underground_ores"
+}
