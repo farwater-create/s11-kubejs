@@ -180,7 +180,7 @@ event.custom({
             }
         ]
     }
-    )
+    )/*
     event.custom({
         "type": "create:filling",
         "ingredients": [
@@ -211,15 +211,10 @@ event.custom({
         "processing_time": 250,
         "results": [
             {
-                "chance": 0.4,
                 "id": "create:crushed_raw_lead"
-            },
-            {
-                "chance": 0.2,
-                "id": "createnuclear:lead_nugget"
             }
         ]
-    })
+    })*/
     event.custom({
         "type": "create:milling",
         "ingredients": [
@@ -295,7 +290,7 @@ event.custom({
             }
         ]
     }
-    )
+    )/*
     event.custom({
         "type": "create:milling",
         "ingredients": [
@@ -314,22 +309,5 @@ event.custom({
             }
         ]
     }
-    )
-        //coal dust and more ore automation
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "tag": "minecraft:coals"
-            }
-        ],
-        "processing_time": 500,
-        "results": [
-            {
-                "chance": 0.2,
-                "id": "createnuclear:coal_dust"
-            }
-        ]
-    }
-    )
+    )*/
 })

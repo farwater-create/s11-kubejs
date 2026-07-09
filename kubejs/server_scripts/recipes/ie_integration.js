@@ -1,13 +1,26 @@
 ServerEvents.recipes(event => {
+    
     event.remove({ type: 'createdieselgenerators:hammering' })
     event.remove({ not: { type: 'immersiveengineering:metal_press' }, output: 'create:brass_sheet' })
     event.replaceInput({ output: 'immersiveengineering:component_steel' }, 'minecraft:copper_ingot', 'create:brass_ingot')
-    //event.remove({ output: 'immersiveengineering:conveyor_basic' })
+    event.remove({ output: 'immersiveengineering:conveyor_basic' })
     event.replaceInput({ output: '#create:casings' }, '#c:stripped_logs', 'immersiveengineering:treated_wood_horizontal')
     event.replaceInput({ output: '#create:casings' }, '#c:stripped_wood', 'immersiveengineering:treated_wood_horizontal')
-    event.replaceInput({},'createnuclear:steel_ingot','immersiveengineering:ingot_steel');
-    event.remove({ output: 'createnuclear:steel_ingot' })
     event.custom({
+        "type": "immersiveengineering:coke_oven",
+        "creosote": 500,
+        "input": {
+            "basePredicate": {
+                "item": "minecraft:charcoal"
+            },
+            "count": 16
+        },
+        "result": {
+            "tag": "c:coal_coke"
+        },
+        "time": 12000
+    })
+    /*event.custom({
         "type": "immersiveengineering:refinery",
         "catalyst": {
             "tag": "c:plates/brass"
@@ -36,7 +49,7 @@ ServerEvents.recipes(event => {
             "amount": 8,
             "id": "kubejs:polymer_resin"
         }
-    })
+    })*/
 
-    
+
 })

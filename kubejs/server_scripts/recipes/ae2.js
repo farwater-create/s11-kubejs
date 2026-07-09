@@ -1,5 +1,20 @@
 ServerEvents.recipes(event => {
-    event.replaceInput({output:'ae2:inscriber'},'minecraft:copper_ingot','kubejs:redstone_circuit');
+    event.remove({output:'ae2:inscriber'});
+        event.shaped(
+        Item.of('ae2:inscriber', 1),
+        [
+            'SRS',
+            'S S',
+            'CLE'
+        ],
+        {
+            C: 'ae2:calculation_processor',
+            R: 'kubejs:redstone_circuit',
+            S: 'immersiveengineering:ingot_steel',
+            L: 'ae2:logic_processor',
+            E: 'ae2:engineering_processor'
+        }
+    )
     // Disabled, Create Nuclear Deletion
     //event.custom({
     //    "type": "create:filling",
@@ -218,7 +233,7 @@ ServerEvents.recipes(event => {
                             "item": "createappliedkinetics:incomplete_logic_processor"
                         },
                         {
-                            "item": "createaddition:gold_spool"
+                            "item": "immersiveengineering:wirecoil_electrum"
                         }
                     ],
                     "results": [
