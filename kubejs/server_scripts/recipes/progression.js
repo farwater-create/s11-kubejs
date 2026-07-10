@@ -1,9 +1,9 @@
 ServerEvents.recipes(event => {
     //helper functions
     //melting
-    
+    event.remove({id:'createaddition:liquid_burning/lava'})
     //ore automation
-    event.replaceInput({output:'create:deployer'},'create:electron_tube','create:polished_rose_quartz');
+    event.replaceInput({ output: 'create:deployer' }, 'create:electron_tube', 'create:polished_rose_quartz');
     //electron tubes
     event.remove({ output: 'create:electron_tube' })
     event.custom(
@@ -224,7 +224,7 @@ ServerEvents.recipes(event => {
     )
     //oil processing
     //nuclear enrichment
-    
+
     //uses for redstone circuits
     event.replaceInput({ output: 'createaddition:tesla_coil' }, 'create:electron_tube', 'kubejs:redstone_circuit');
     event.replaceInput({ output: 'create:factory_gauge' }, 'create:stock_link', 'kubejs:redstone_circuit');
@@ -305,6 +305,7 @@ ServerEvents.recipes(event => {
             }
         ]
     })
+
     event.remove({ id: 'create_dragons_plus:ending/end_stone_from_cobblestone' })
     event.custom({
         "type": "createaddition:charging",
@@ -396,7 +397,7 @@ ServerEvents.recipes(event => {
         ]
     }
     )
-    event.replaceInput({output:'create:smart_fluid_pipe'},'create:electron_tube','create:polished_rose_quartz');
+    event.replaceInput({ output: 'create:smart_fluid_pipe' }, 'create:electron_tube', 'create:polished_rose_quartz');
     //ac compat
     /*
     event.remove({output:'alexscaves:uranium_rod'});

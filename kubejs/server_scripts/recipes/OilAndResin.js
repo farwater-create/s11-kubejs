@@ -27,7 +27,22 @@ ServerEvents.recipes(event => {
             }
         ]
     })
-    event.replaceInput({output:'createpropulsion:turpentine'},'createpropulsion:pine_resin','immersivepetroleum:paraffin_wax');
+    event.remove({output:'createpropulsion:turpentine'})
+    event.remove({type:'createaddition:liquid_burning',input:'#c:gasoline'})
+    event.custom({
+  "type": "createaddition:liquid_burning",
+  "burn_time": 24000,
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 1000,
+      "tag": "immersivepetroleum:gasoline"
+    }
+  ],
+  "results": [],
+  "superheated": true
+})
+    event.remove({type:'createaddition:liquid_burning',input:'minecraft:lava'})
     event.remove({ output: 'createdieselgenerators:pumpjack_crank' })
     event.shaped(Item.of('createdieselgenerators:pumpjack_crank', 1),
         [

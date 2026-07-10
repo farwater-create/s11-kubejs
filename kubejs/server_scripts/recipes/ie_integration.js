@@ -18,7 +18,40 @@ ServerEvents.recipes(event => {
         "result": {
             "tag": "c:coal_coke"
         },
-        "time": 12000
+        "time": 8000
+    })
+    event.custom({
+        "type": "create:filling",
+        "ingredients": [
+            {
+                "item": "minecraft:brick"
+            },
+            {
+                "type": "neoforge:single",
+                "amount": 50,
+                "fluid": "immersiveengineering:concrete"
+            }
+        ],
+        "results": [
+            {
+                "id": "minecraft:bricks"
+            }
+        ]
+    })
+    event.custom({
+        "type": "create:compacting",
+        "ingredients": [
+            {
+                "type": "neoforge:single",
+                "amount": 100,
+                "fluid": "immersiveengineering:concrete"
+            }
+        ],
+        "results": [
+            {
+                "id": "immersiveengineering:concrete"
+            }
+        ]
     })
     /*event.custom({
         "type": "immersiveengineering:refinery",
