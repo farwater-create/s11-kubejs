@@ -28,7 +28,8 @@ StartupEvents.registry('fluid', event => {
     .tint(0x1d4653)
     .displayName('Andesite Compound')
     
-    event.create('polymer_resin','thick')
+    //removed due to IE and IP added to pack
+    /*event.create('polymer_resin','thick')
     .tint(0x95adc1)
     .displayName('Poylmer Resin')
 
@@ -44,7 +45,7 @@ StartupEvents.registry('fluid', event => {
     .tint(0xa87a7b)
     .displayName("Natural Gas")
     .noBucket() 
-    .noBlock() 
+    .noBlock() */
 
 })
 

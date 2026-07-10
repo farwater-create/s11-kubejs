@@ -180,84 +180,12 @@ ServerEvents.recipes(event => {
 
         })
     }
-    moltenMetal("createnuclear:lead_ingot", "create:crushed_raw_lead", "createnuclear:lead_block", "kubejs:molten_lead", "immersiveengineering:dust_lead");
+    //moltenMetal("createnuclear:lead_ingot", "create:crushed_raw_lead", "createnuclear:lead_block", "kubejs:molten_lead", "immersiveengineering:dust_lead");
     moltenMetal("minecraft:iron_ingot", "create:crushed_raw_iron", "minecraft:iron_block", "kubejs:molten_iron", "immersiveengineering:dust_iron");
     moltenMetal("minecraft:copper_ingot", "create:crushed_raw_copper", "minecraft:copper_block", "kubejs:molten_copper", "immersiveengineering:dust_copper");
     moltenMetal("minecraft:gold_ingot", "create:crushed_raw_gold", "minecraft:gold_block", "kubejs:molten_gold", "immersiveengineering:dust_gold");
     moltenMetalnoGrit("create:zinc_ingot", "create:crushed_raw_zinc", "create:zinc_block", "kubejs:molten_zinc");
-    //andesite more expensive
-    event.remove({ output: 'create:andesite_alloy', not: { type: 'create:sequenced_assembly' } });
-    event.shapeless(Item.of('create:andesite_alloy', 9), // arg 1: output
-        [
-            '1x create:andesite_alloy_block'
-        ])
-    event.shapeless(Item.of('create:andesite_alloy', 2), // arg 1: output
-        [
-            '3x minecraft:clay_ball',
-            '3x #c:nuggets/lead', 	       // arg 2: the array of inputs
-            '3x minecraft:andesite'
-        ])
-    event.custom({
-        "type": "create:mixing",
-        "ingredients": [
-            {
-                "item": "minecraft:clay_ball"
-            },
-            {
-                "item": "createnuclear:lead_nugget"
-            },
-            {
-                "item": "minecraft:andesite"
-            }
-        ],
-        "results": [
-            {
-                "amount": 100,
-                "id": "kubejs:andesite_compound"
 
-            }
-        ]
-    })
-
-    event.custom({
-        "type": "create:mixing",
-        "ingredients": [
-            {
-                "item": "minecraft:clay_ball"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 50,
-                "fluid": "kubejs:molten_lead"
-            },
-            {
-                "item": "minecraft:andesite"
-            }
-        ],
-        "results": [
-            {
-                "amount": 200,
-                "id": "kubejs:andesite_compound"
-
-            }
-        ]
-    })
-    event.custom({
-        "type": "create:compacting",
-        "ingredients": [
-            {
-                "type": "neoforge:single",
-                "amount": 900,
-                "fluid": "kubejs:andesite_compound"
-            }
-        ],
-        "results": [
-            {
-                "id": "create:andesite_alloy_block"
-            }
-        ]
-
-    })
     //molten brass
     event.remove({ output: 'create:brass_ingot', not: [{ type: 'minecraft:crafting_shaped' }, { type: 'minecraft:crafting_shapeless' }] });
     event.custom({

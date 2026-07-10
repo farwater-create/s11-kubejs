@@ -1,9 +1,9 @@
 ServerEvents.recipes(event => {
     //helper functions
     //melting
-    
+    event.remove({id:'createaddition:liquid_burning/lava'})
     //ore automation
-    event.replaceInput({output:'create:deployer'},'create:electron_tube','create:polished_rose_quartz');
+    event.replaceInput({ output: 'create:deployer' }, 'create:electron_tube', 'create:polished_rose_quartz');
     //electron tubes
     event.remove({ output: 'create:electron_tube' })
     event.custom(
@@ -44,7 +44,7 @@ ServerEvents.recipes(event => {
                         {
                             "type": "neoforge:single",
                             "amount": 100,
-                            "fluid": "kubejs:polymer_resin"
+                            "fluid": "immersiveengineering:phenolic_resin"
                         }
                     ],
                     "results": [
@@ -125,7 +125,7 @@ ServerEvents.recipes(event => {
                             "item": "create:sturdy_sheet"
                         },
                         {
-                            "item": "createaddition:electrum_wire"
+                            "item": "immersiveengineering:wirecoil_electrum"
                         }
                     ],
                     "results": [
@@ -193,7 +193,7 @@ ServerEvents.recipes(event => {
                         {
                             "type": "neoforge:single",
                             "amount": 100,
-                            "fluid": "kubejs:polymer_resin"
+                            "fluid": "immersiveengineering:phenolic_resin"
                         }
                     ],
                     "results": [
@@ -216,7 +216,7 @@ ServerEvents.recipes(event => {
                     ]
                 }
             ],
-            "loops": 3,
+            "loops": 5,
             "transitional_item": {
                 "id": "create:sturdy_sheet"
             }
@@ -224,7 +224,7 @@ ServerEvents.recipes(event => {
     )
     //oil processing
     //nuclear enrichment
-    
+
     //uses for redstone circuits
     event.replaceInput({ output: 'createaddition:tesla_coil' }, 'create:electron_tube', 'kubejs:redstone_circuit');
     event.replaceInput({ output: 'create:factory_gauge' }, 'create:stock_link', 'kubejs:redstone_circuit');
@@ -256,7 +256,7 @@ ServerEvents.recipes(event => {
                 "components": {
                     "create:potion_fluid_bottle_type": "regular",
                     "minecraft:potion_contents": {
-                        "potion": "createnuclear:potion_of_radiation_1"
+                        "potion": "minecraft:weakness"
                     }
                 },
                 "fluids": "create:potion"
@@ -274,6 +274,9 @@ ServerEvents.recipes(event => {
             },
             {
                 "item": "create_enchantment_industry:super_experience_nugget"
+            },
+            {
+                "item": "create_new_age:radioactive_thorium"
             }
         ],
         "results": [
@@ -302,6 +305,7 @@ ServerEvents.recipes(event => {
             }
         ]
     })
+
     event.remove({ id: 'create_dragons_plus:ending/end_stone_from_cobblestone' })
     event.custom({
         "type": "createaddition:charging",
@@ -364,15 +368,15 @@ ServerEvents.recipes(event => {
         }
 
     )
-    //make gas burn
+    //make gasoline burn hot
     event.custom({
         "type": "createaddition:liquid_burning",
-        "burn_time": 600,
+        "burn_time": 6000,
         "ingredients": [
             {
                 "type": "neoforge:single",
                 "amount": 1000,
-                "fluid": "kubejs:natural_gas"
+                "fluid": "immersivepetroleum:gasoline"
             }
         ],
         "results": [],
@@ -393,7 +397,7 @@ ServerEvents.recipes(event => {
         ]
     }
     )
-    event.replaceInput({output:'create:smart_fluid_pipe'},'create:electron_tube','create:polished_rose_quartz');
+    event.replaceInput({ output: 'create:smart_fluid_pipe' }, 'create:electron_tube', 'create:polished_rose_quartz');
     //ac compat
     /*
     event.remove({output:'alexscaves:uranium_rod'});
