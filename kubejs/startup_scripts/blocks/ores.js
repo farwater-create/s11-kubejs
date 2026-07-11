@@ -45,4 +45,15 @@ StartupEvents.registry('block', event => {
     .tagBoth('c:ores')
     .tagBoth('c:ores/uranium')
 
+  event.create('nether_thorium_ore')
+    .displayName('Nether Thorium Ore')
+    .soundType('netherrack')
+    .hardness(3.0)
+    .resistance(3.0)
+    .requiresTool(true)
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_iron_tool')
+    .tagBoth('c:ores')
+    .tagBoth('c:ores/thorium')
+
 })
