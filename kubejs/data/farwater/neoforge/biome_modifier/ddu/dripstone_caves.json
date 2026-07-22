@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "ddu:dripstone_caves_copy",
+  "features": [
+	"farwater:ore_copper_dripstone"
+  ],
+  "step": "underground_ores"
+}

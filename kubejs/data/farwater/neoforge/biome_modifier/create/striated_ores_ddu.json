@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#ddu:is_ddu",
+  "features": "farwater:create/striated_ores_overworld",
+  "step": "underground_ores"
+}

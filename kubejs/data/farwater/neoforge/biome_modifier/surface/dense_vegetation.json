@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_dense_vegetation",
+  "features": [
+	"farwater:ore_lapis_denseveg"
+  ],
+  "step": "underground_ores"
+}
