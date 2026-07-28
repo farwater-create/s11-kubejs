@@ -1,4 +1,4 @@
-{
+preven{
   "type": "neoorigins:prevent_action",
   "action": "fall_damage",
   "name": "no fall damage",
