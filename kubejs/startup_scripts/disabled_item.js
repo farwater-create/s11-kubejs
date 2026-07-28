@@ -46,5 +46,31 @@ global.disabledItems = [
 	//'immersiveengineering:wirecoil_structure_rope',
 	//'immersiveengineering:wirecoil_structure_steel',
 
+	'create:brass_block',
+	'create:brass_ingot',
+	'create:brass_nugget',
+	'create:brass_sheet',
+	'create:brass_casing',
+	'create:brass_hand',
+	'create:brass_funnel',
+	'create:brass_tunnel',
+	'create:mechanical_crafter',
+	'create:steam_engine',
+	'create:smart_chute',
+	'create:smart_observer',
+	'create:precision_mechanism',
+	'create:electron_tube',
+	'create:crushing_wheel',
 
+	'create_sa:steam_engine',
+
+	'steampowered:bronze_steam_engine',
+	'steampowered:cast_iron_steam_engine',
+	'steampowered:steel_steam_engine',
+
+	'aeronautics:smart_propeller',
+	'aeronautics:propeller_bearing',
+	'aeronautics:gyroscopic_propeller_bearing',
+	'aeronautics:levitite',
+	'aeronautics:pearlescent_levitite',
 ]
