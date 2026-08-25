@@ -1,335 +1,155 @@
 ServerEvents.recipes(event => {
-event.custom({
-        "type": "create:compacting",
-        "ingredients": [
-            {
-                "type": "neoforge:single",
-                "amount": 50,
-                "fluid": "minecraft:lava"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 1000,
-                "fluid": "minecraft:water"
-            }
-        ],
-        "results": [
-            {
-                "count": 10,
-                "id": "minecraft:cobblestone"
-            }
-        ]
+
+    // Gravel milling
+    event.remove({
+        type: 'create:milling',
+        input: 'minecraft:gravel'
     })
-    event.remove({ type: 'create:milling', input: 'minecraft:gravel' })
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "item": "minecraft:gravel"
-            }
+
+    event.recipes.create.milling(
+        [
+            'minecraft:flint',
+            Item.of('minecraft:sand').withChance(0.5)
         ],
-        "processing_time": 500,
-        "results": [
-            {
-                "id": "minecraft:flint"
-            },
-            {
-                "chance": 0.5,
-                "id": "minecraft:sand"
-            }
+        'minecraft:gravel'
+    ).processingTime(500)
+
+    // Lava + flint -> deepslate
+    event.recipes.create.compacting(
+        'minecraft:deepslate',
+        [
+            Fluid.of('minecraft:lava', 100),
+            Item.of('minecraft:flint', 4)
         ]
-    }
     )
-    event.custom({
-        "type": "create:compacting",
-        "ingredients": [
-            {
-                "type": "neoforge:single",
-                "amount": 100,
-                "fluid": "minecraft:lava"
-            },
-            {
-                "amount": 4,
-                "item": "minecraft:flint"
-            }
-        ],
-        "results": [
-            {
-                "id": "minecraft:deepslate"
-            }
+
+    // Cinder flour + cobblestone + lava -> netherrack
+    event.recipes.create.compacting(
+        'minecraft:netherrack',
+        [
+            Fluid.of('minecraft:lava', 10),
+            'create:cinder_flour',
+            'minecraft:cobblestone'
         ]
-    })
-    event.custom({
-        "type": "create:compacting",
-        "ingredients": [
-            {
-                "type": "neoforge:single",
-                "amount": 10,
-                "fluid": "minecraft:lava"
-            },
-            {
-                "item": "create:cinder_flour"
-            },
-            {
-                "item": "minecraft:cobblestone"
-            }
-        ],
-        "results": [
-            {
-                "id": "minecraft:netherrack"
-            }
-        ]
-    })
-    event.custom({
-        "type": "create:mixing",
-        "heat_requirement": "heated",
-        "ingredients": [
-            {
-                "item": "minecraft:deepslate"
-            },
-            {
-                "item": "minecraft:terracotta"
-            },
-            {
-                "item": "create:polished_cut_dripstone"
-            }
-        ],
-        "results": [
-            {
-                "count": 16,
-                "id": "minecraft:pointed_dripstone"
-            }
-        ]
-    })
-    event.custom({
-        "type": "create:filling",
-        "ingredients": [
-            {
-                "item": "minecraft:dripstone_block"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 10,
-                "fluid": "kubejs:molten_copper"
-            }
-        ],
-        "results": [
-            {
-                "count": 3,
-                "id": "create:veridium"
-            }
-        ]
-    }
     )
-    event.custom({
-        "type": "create:filling",
-        "ingredients": [
-            {
-                "item": "minecraft:dripstone_block"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 10,
-                "fluid": "kubejs:molten_gold"
-            }
-        ],
-        "results": [
-            {
-                "count": 3,
-                "id": "create:ochrum"
-            }
+
+    // Deepslate + terracotta + polished cut dripstone -> pointed dripstone
+    event.recipes.create.mixing(
+        Item.of('minecraft:pointed_dripstone', 16),
+        [
+            'minecraft:deepslate',
+            'minecraft:terracotta',
+            'create:polished_cut_dripstone'
         ]
-    }
+    ).heated()
+
+
+    // Dripstone -> copper veridium
+    event.recipes.create.filling(
+        Item.of('create:veridium', 3),
+        [
+            'minecraft:dripstone_block',
+            Fluid.of('kubejs:molten_copper', 10)
+        ]
     )
-    event.custom({
-        "type": "create:filling",
-        "ingredients": [
-            {
-                "item": "minecraft:dripstone_block"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 10,
-                "fluid": "kubejs:molten_zinc"
-            }
-        ],
-        "results": [
-            {
-                "count": 3,
-                "id": "create:asurine"
-            }
+
+
+    // Dripstone -> gold ochrum
+    event.recipes.create.filling(
+        Item.of('create:ochrum', 3),
+        [
+            'minecraft:dripstone_block',
+            Fluid.of('kubejs:molten_gold', 10)
         ]
-    }
     )
-    event.custom({
-        "type": "create:filling",
-        "ingredients": [
-            {
-                "item": "minecraft:dripstone_block"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 10,
-                "fluid": "kubejs:molten_iron"
-            }
-        ],
-        "results": [
-            {
-                "count": 3,
-                "id": "create:crimsite"
-            }
+
+
+    // Dripstone -> zinc asurine
+    event.recipes.create.filling(
+        Item.of('create:asurine', 3),
+        [
+            'minecraft:dripstone_block',
+            Fluid.of('kubejs:molten_zinc', 10)
         ]
-    }
     )
-    event.custom({
-        "type": "create:filling",
-        "ingredients": [
-            {
-                "item": "minecraft:dripstone_block"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 10,
-                "fluid": "kubejs:molten_lead"
-            }
-        ],
-        "results": [
-            {
-                "count": 3,
-                "id": "create:scorchia"
-            }
+
+
+    // Dripstone -> iron crimsite
+    event.recipes.create.filling(
+        Item.of('create:crimsite', 3),
+        [
+            'minecraft:dripstone_block',
+            Fluid.of('kubejs:molten_iron', 10)
         ]
-    }
     )
-    event.custom({
-        "type": "create:crushing",
-        "ingredients": [
-            {
-                "item": "create:scorchia"
-            }
-        ],
-        "processing_time": 250,
-        "results": [
-            {
-                "chance": 0.4,
-                "id": "create:crushed_raw_lead"
-            },
-            {
-                "chance": 0.2,
-                "id": "createnuclear:lead_nugget"
-            }
+
+
+    // Dripstone -> lead scorchia
+    event.recipes.create.filling(
+        Item.of('create:scorchia', 3),
+        [
+            'minecraft:dripstone_block',
+            Fluid.of('kubejs:molten_lead', 10)
         ]
-    })
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "item": "create:crimsite"
-            }
-        ],
-        "processing_time": 500,
-        "results": [
-            {
-                "id": "minecraft:sand"
-            },
-            {
-                "chance": 0.3,
-                "id": "create:crushed_raw_iron"
-            }
-        ]
-    }
     )
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "item": "create:ochrum"
-            }
+
+    // Scorchia crushing
+    event.recipes.create.crushing(
+        [
+            Item.of('create:crushed_raw_lead').withChance(0.4),
+            Item.of('immersiveengineering:nugget_lead').withChance(0.2)
         ],
-        "processing_time": 500,
-        "results": [
-            {
-                "id": "minecraft:sand"
-            },
-            {
-                "chance": 0.2,
-                "id": "create:crushed_raw_gold"
-            }
-        ]
-    }
-    )
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "item": "create:veridium"
-            }
+        'create:scorchia'
+    ).processingTime(250)
+
+
+    // Crimsite milling
+    event.recipes.create.milling(
+        [
+            'minecraft:sand',
+            Item.of('create:crushed_raw_iron').withChance(0.3)
         ],
-        "processing_time": 500,
-        "results": [
-            {
-                "id": "minecraft:sand"
-            },
-            {
-                "chance": 0.5,
-                "id": "create:crushed_raw_copper"
-            }
-        ]
-    }
-    )
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "item": "create:asurine"
-            }
+        'create:crimsite'
+    ).processingTime(500)
+
+
+    // Ochrum milling
+    event.recipes.create.milling(
+        [
+            'minecraft:sand',
+            Item.of('create:crushed_raw_gold').withChance(0.2)
         ],
-        "processing_time": 500,
-        "results": [
-            {
-                "id": "minecraft:sand"
-            },
-            {
-                "chance": 0.2,
-                "id": "create:crushed_raw_zinc"
-            }
-        ]
-    }
-    )
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "item": "create:scorchia"
-            }
+        'create:ochrum'
+    ).processingTime(500)
+
+
+    // Veridium milling
+    event.recipes.create.milling(
+        [
+            'minecraft:sand',
+            Item.of('create:crushed_raw_copper').withChance(0.5)
         ],
-        "processing_time": 500,
-        "results": [
-            {
-                "id": "minecraft:sand"
-            },
-            {
-                "chance": 0.3,
-                "id": "create:crushed_raw_lead"
-            }
-        ]
-    }
-    )
-        //coal dust and more ore automation
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "tag": "minecraft:coals"
-            }
+        'create:veridium'
+    ).processingTime(500)
+
+
+    // Asurine milling
+    event.recipes.create.milling(
+        [
+            'minecraft:sand',
+            Item.of('create:crushed_raw_zinc').withChance(0.2)
         ],
-        "processing_time": 500,
-        "results": [
-            {
-                "chance": 0.2,
-                "id": "createnuclear:coal_dust"
-            }
-        ]
-    }
-    )
+        'create:asurine'
+    ).processingTime(500)
+
+
+    // Scorchia milling
+    event.recipes.create.milling(
+        [
+            'minecraft:sand',
+            Item.of('create:crushed_raw_lead').withChance(0.3)
+        ],
+        'create:scorchia'
+    ).processingTime(500)
+
 })
