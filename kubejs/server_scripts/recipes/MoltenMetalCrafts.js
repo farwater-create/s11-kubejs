@@ -51,12 +51,12 @@ ServerEvents.recipes(event => {
 
         event.recipes.create.mixing(
             Fluid.of(fluid, 150),
-            crushed_item
+            crushedItem
         ).heated()
 
         event.recipes.create.mixing(
             Fluid.of(fluid, 200),
-            crushed_item
+            crushedItem
         ).superheated()
 
         event.recipes.create.mixing(
@@ -147,7 +147,7 @@ ServerEvents.recipes(event => {
         Fluid.of('kubejs:andesite_compound', 100),
         [
             'minecraft:clay_ball',
-            'createnuclear:lead_nugget',
+            '#c:nuggets/lead',
             'minecraft:andesite'
         ]
     )

@@ -9,7 +9,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling(
         [
             'minecraft:flint',
-            Item.of('minecraft:sand').withChance(0.5)
+            CreateItem.of('minecraft:sand', 0.5)
         ],
         'minecraft:gravel'
     ).processingTime(500)
@@ -96,8 +96,8 @@ ServerEvents.recipes(event => {
     // Scorchia crushing
     event.recipes.create.crushing(
         [
-            Item.of('create:crushed_raw_lead').withChance(0.4),
-            Item.of('immersiveengineering:nugget_lead').withChance(0.2)
+            CreateItem.of('create:crushed_raw_lead', 0.4),
+            CreateItem.of('immersiveengineering:nugget_lead', 0.2)
         ],
         'create:scorchia'
     ).processingTime(250)
@@ -107,7 +107,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling(
         [
             'minecraft:sand',
-            Item.of('create:crushed_raw_iron').withChance(0.3)
+            CreateItem.of('create:crushed_raw_iron', 0.3)
         ],
         'create:crimsite'
     ).processingTime(500)
@@ -117,7 +117,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling(
         [
             'minecraft:sand',
-            Item.of('create:crushed_raw_gold').withChance(0.2)
+            CreateItem.of('create:crushed_raw_gold', 0.2)
         ],
         'create:ochrum'
     ).processingTime(500)
@@ -127,7 +127,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling(
         [
             'minecraft:sand',
-            Item.of('create:crushed_raw_copper').withChance(0.5)
+            CreateItem.of('create:crushed_raw_copper', 0.5)
         ],
         'create:veridium'
     ).processingTime(500)
@@ -137,7 +137,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling(
         [
             'minecraft:sand',
-            Item.of('create:crushed_raw_zinc').withChance(0.2)
+            CreateItem.of('create:crushed_raw_zinc', 0.2)
         ],
         'create:asurine'
     ).processingTime(500)
@@ -147,7 +147,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling(
         [
             'minecraft:sand',
-            Item.of('create:crushed_raw_lead').withChance(0.3)
+            CreateItem.of('create:crushed_raw_lead', 0.3)
         ],
         'create:scorchia'
     ).processingTime(500)
