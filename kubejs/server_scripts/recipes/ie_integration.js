@@ -5,7 +5,6 @@ ServerEvents.recipes(event => {
     //event.remove({ output: 'immersiveengineering:conveyor_basic' })
     event.replaceInput({ output: '#create:casings' }, '#c:stripped_logs', 'immersiveengineering:treated_wood_horizontal')
     event.replaceInput({ output: '#create:casings' }, '#c:stripped_wood', 'immersiveengineering:treated_wood_horizontal')
-    event.replaceInput({},'createnuclear:steel_ingot','immersiveengineering:ingot_steel');
     event.remove({ output: 'createnuclear:steel_ingot' })
     event.custom({
         "type": "immersiveengineering:refinery",
