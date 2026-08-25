@@ -1,0 +1,25 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "farwater:font/farwater_above_the_clouds1.png",
+      "chars": ["\uE000"],
+      "height": 144,
+      "ascent": 0
+    },
+    {
+      "type": "bitmap",
+      "file": "farwater:font/farwater_above_the_clouds2.png",
+      "chars": ["\uE001"],
+      "height": 144,
+      "ascent": 0
+    },
+    {
+      "type": "bitmap",
+      "file": "farwater:font/above_the_clouds.png",
+      "chars": ["\uE002"],
+      "height": 128,
+      "ascent": 0
+    }
+  ]
+}
