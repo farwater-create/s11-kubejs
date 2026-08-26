@@ -57,7 +57,6 @@ global.disabledItems = [
 	'create:mechanical_crafter',
 	'create:steam_engine',
 	'create:smart_chute',
-	'create:smart_observer',
 	'create:precision_mechanism',
 	'create:electron_tube',
 	'create:crushing_wheel',
