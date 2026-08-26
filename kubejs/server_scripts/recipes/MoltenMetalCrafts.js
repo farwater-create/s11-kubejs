@@ -27,22 +27,20 @@ ServerEvents.recipes(event => {
     function moltenMetal(item, crushedItem, block, fluid, grit) {
 
         // IE Crushing
-        event.custom(
-            {
-                type: 'immersiveengineering:crusher',
-                energy: 54000,
-                input: Ingredient.of(crushedItem).toJson(),
-                result: Item.of(item).toJson(),
-                secondaries: [
-                    {
-                        "chance": 0.33333334,
-                        "output": {
-                            "item": grit
-                        }
+        event.custom({
+            type: 'immersiveengineering:crusher',
+            energy: 54000,
+            input: Ingredient.of(crushedItem).toJson(),
+            result: Item.of(item).toJson(),
+            secondaries: [
+                {
+                    chance: 0.33333334,
+                    output: {
+                        item: grit
                     }
-                ]
-            }
-        )
+                }
+            ]
+        })
 
         event.recipes.create.mixing(
             Fluid.of(fluid, 100),
