@@ -1,7 +1,8 @@
 // @ULSTICK
 global.disabledItems = [
 
-	"advancedperipherals:chunk_controller",
+	'alexsmobs:squid_grapple',
+	'advancedperipherals:chunk_controller',
 
 	'createaddition:alternator',
 	'createaddition:electric_motor',
