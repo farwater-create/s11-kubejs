@@ -1,0 +1,149 @@
+import { $InputStream } from "@package/java/io";
+import { $ProgramTypeAccessor } from "@package/com/lowdragmc/lowdraglib2/core/mixins/accessor";
+import { $ProgramExtension } from "@package/dev/ryanhcode/sable/mixinterface/sublevel_render/fancy";
+import { $GlslPreprocessor } from "@package/com/mojang/blaze3d/preprocessor";
+import { $DynamicBufferProgramAccessor } from "@package/foundry/veil/mixin/dynamicbuffer/accessor";
+import { $Map } from "@package/java/util";
+import { $AutoCloseable, $CharSequence, $Enum } from "@package/java/lang";
+import { $FloatBuffer, $IntBuffer } from "@package/java/nio";
+import { $Matrix4f, $Vector4f, $Matrix3f, $Vector3f } from "@package/org/joml";
+
+declare module "@package/com/mojang/blaze3d/shaders" {
+    export class $EffectProgram extends $Program {
+        static compileShader(type: $Program$Type_, name: string, shaderData: $InputStream, sourceName: string): $EffectProgram;
+        attachToEffect(effect: $Effect): void;
+    }
+    export class $Uniform extends $AbstractUniform implements $AutoCloseable {
+        getName(): string;
+        getLocation(): number;
+        set(index: number, value: number): void;
+        getCount(): number;
+        close(): void;
+        getType(): number;
+        setLocation(x: number): void;
+        getIntBuffer(): $IntBuffer;
+        getFloatBuffer(): $FloatBuffer;
+        static glGetAttribLocation(program: number, name: $CharSequence): number;
+        static glBindAttribLocation(program: number, index: number, name: $CharSequence): void;
+        static glGetUniformLocation(program: number, name: $CharSequence): number;
+        upload(): void;
+        static uploadInteger(x: number, y: number): void;
+        static getTypeFromString(typeName: string): number;
+        static UT_INT4: number;
+        static UT_INT3: number;
+        static UT_MAT4: number;
+        static UT_FLOAT2: number;
+        static UT_MAT3: number;
+        static UT_FLOAT3: number;
+        static UT_MAT2: number;
+        static UT_INT2: number;
+        static UT_INT1: number;
+        static UT_FLOAT1: number;
+        static UT_FLOAT4: number;
+        constructor(name: string, type: number, count: number, parent: $Shader);
+        get name(): string;
+        get count(): number;
+        get type(): number;
+        get intBuffer(): $IntBuffer;
+        get floatBuffer(): $FloatBuffer;
+    }
+    export class $FogShape extends $Enum<$FogShape> {
+        static values(): $FogShape[];
+        static valueOf(arg0: string): $FogShape;
+        getIndex(): number;
+        static CYLINDER: $FogShape;
+        static SPHERE: $FogShape;
+        get index(): number;
+    }
+    /**
+     * Values that may be interpreted as {@link $FogShape}.
+     */
+    export type $FogShape_ = "sphere" | "cylinder";
+    export class $ProgramManager {
+        static glUseProgram(program: number): void;
+        static linkShader(shader: $Shader): void;
+        static createProgram(): number;
+        static releaseProgram(shader: $Shader): void;
+        constructor();
+    }
+    export class $AbstractUniform {
+        set(valueArray: number[]): void;
+        set(x: number, y: number, z: number, w: number): void;
+        set(x: number, y: number, z: number): void;
+        set(x: number, y: number): void;
+        set(matrix: $Matrix3f): void;
+        set(matrix: $Matrix4f): void;
+        set(vector: $Vector4f): void;
+        set(vector: $Vector3f): void;
+        set(x: number, y: number, z: number, w: number): void;
+        set(x: number, y: number, z: number): void;
+        set(x: number): void;
+        set(x: number, y: number): void;
+        set(x: number): void;
+        setSafe(x: number, y: number, z: number, w: number): void;
+        setSafe(x: number, y: number, z: number, w: number): void;
+        setMat3x4(m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number, m20: number, m21: number, m22: number, m23: number): void;
+        setMat4x3(m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number, m20: number, m21: number, m22: number, m23: number): void;
+        setMat2x2(x: number, y: number, z: number, w: number): void;
+        setMat2x4(m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number): void;
+        setMat3x2(m00: number, m01: number, m02: number, m10: number, m11: number, m12: number): void;
+        setMat3x3(m00: number, m01: number, m02: number, m10: number, m11: number, m12: number, m20: number, m21: number, m22: number): void;
+        setMat2x3(m00: number, m01: number, m02: number, m10: number, m11: number, m12: number): void;
+        setMat4x2(m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number): void;
+        setMat4x4(m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number, m20: number, m21: number, m22: number, m23: number, m30: number, m31: number, m32: number, m33: number): void;
+        constructor();
+    }
+    export class $Effect {
+    }
+    export interface $Effect extends $Shader {
+    }
+    export class $Program$Type extends $Enum<$Program$Type> implements $ProgramTypeAccessor {
+        getName(): string;
+        static values(): $Program$Type[];
+        static valueOf(arg0: string): $Program$Type;
+        getExtension(): string;
+        getPrograms(): $Map<string, $Program>;
+        static createProgramType$ldlib2_$md$707fe4$0(arg0: string, arg1: number, arg2: string, arg3: string, arg4: number): $Program$Type;
+        static VERTEX: $Program$Type;
+        static FRAGMENT: $Program$Type;
+        get extension(): string;
+        get programs(): $Map<string, $Program>;
+    }
+    /**
+     * Values that may be interpreted as {@link $Program$Type}.
+     */
+    export type $Program$Type_ = "vertex" | "fragment" | "geometry";
+    export class $Program implements $DynamicBufferProgramAccessor, $ProgramExtension {
+        getName(): string;
+        close(): void;
+        static compileShader(type: $Program$Type_, name: string, shaderData: $InputStream, sourceName: string, preprocessor: $GlslPreprocessor): $Program;
+        attachToShader(shader: $Shader): void;
+        sable$getSource(): string;
+        getId(): number;
+        setId(arg0: number): void;
+        constructor(type: $Program$Type_, id: number, name: string);
+        get name(): string;
+    }
+    export class $Shader {
+    }
+    export interface $Shader {
+        getId(): number;
+        getVertexProgram(): $Program;
+        getFragmentProgram(): $Program;
+        attachToProgram(): void;
+        markDirty(): void;
+        get id(): number;
+        get vertexProgram(): $Program;
+        get fragmentProgram(): $Program;
+    }
+    export class $BlendMode {
+        apply(): void;
+        isOpaque(): boolean;
+        static stringToBlendFunc(factorName: string): number;
+        static stringToBlendFactor(factorName: string): number;
+        constructor(srcColorFactor: number, dstColorFactor: number, srcAlphaFactor: number, dstAlphaFactor: number, blendFunc: number);
+        constructor(srcFactor: number, dstFactor: number, blendFunc: number);
+        constructor();
+        get opaque(): boolean;
+    }
+}

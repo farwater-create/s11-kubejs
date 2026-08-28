@@ -1,0 +1,344 @@
+import { $MultiBufferSource_ } from "@package/net/minecraft/client/renderer";
+import { $Codec } from "@package/com/mojang/serialization";
+import { $Pose, $PortalProcessor, $EntityType, $Entity, $EntityDimensions, $Entity$RemovalReason, $LivingEntity, $WalkAnimationState, $EntityType$Builder } from "@package/net/minecraft/world/entity";
+import { $FluidType } from "@package/net/neoforged/neoforge/fluids";
+import { $CustomPacketPayload$Type, $CustomPacketPayload } from "@package/net/minecraft/network/protocol/common/custom";
+import { $AttributeSupplier$Builder } from "@package/net/minecraft/world/entity/ai/attributes";
+import { $UUID, $List, $List_, $Stack, $Map } from "@package/java/util";
+import { $ClientboundCustomPayloadPacket, $ServerboundCustomPayloadPacket } from "@package/net/minecraft/network/protocol/common";
+import { $PackageOrderWithCrafts, $PackageOrderWithCrafts_ } from "@package/com/simibubi/create/content/logistics/stockTicker";
+import { $AttackEntityEvent } from "@package/net/neoforged/neoforge/event/entity/player";
+import { $WeakReference } from "@package/java/lang/ref";
+import { $RandomSource } from "@package/net/minecraft/util";
+import { $IFluidHandler } from "@package/net/neoforged/neoforge/fluids/capability";
+import { $Plan } from "@package/dev/engine_room/flywheel/api/task";
+import { $InteractionResultHolder, $InteractionHand, $InteractionHand_ } from "@package/net/minecraft/world";
+import { $Object2DoubleMap } from "@package/it/unimi/dsi/fastutil/objects";
+import { $BlockPos, $BlockPos_ } from "@package/net/minecraft/core";
+import { $Brain } from "@package/net/minecraft/world/entity/ai";
+import { $BlockState_ } from "@package/net/minecraft/world/level/block/state";
+import { $RegistryFriendlyByteBuf } from "@package/net/minecraft/network";
+import { $DeployerGoggleInformation } from "@package/net/liukrast/deployer/lib/helper/client";
+import { $Record, $Object } from "@package/java/lang";
+import { $PartialModel } from "@package/dev/engine_room/flywheel/lib/model/baked";
+import { $EntityInLevelCallback } from "@package/net/minecraft/world/level/entity";
+import { $Level } from "@package/net/minecraft/world/level";
+import { $TagKey } from "@package/net/minecraft/tags";
+import { $EntityRendererProvider$Context, $EntityRenderDispatcher, $EntityRenderer } from "@package/net/minecraft/client/renderer/entity";
+import { $VisualizationContext } from "@package/dev/engine_room/flywheel/api/visualization";
+import { $Item, $ItemStack_, $ItemStack, $Item$Properties } from "@package/net/minecraft/world/item";
+import { $Fluid } from "@package/net/minecraft/world/level/material";
+import { $Component_ } from "@package/net/minecraft/network/chat";
+import { $IEntityWithComplexSpawn } from "@package/net/neoforged/neoforge/entity";
+import { $LocalPlayer } from "@package/net/minecraft/client/player";
+import { $ItemStackHandler } from "@package/net/neoforged/neoforge/items";
+import { $Player } from "@package/net/minecraft/world/entity/player";
+import { $TransformedInstance } from "@package/dev/engine_room/flywheel/lib/instance";
+import { $EntityDataAccessor, $SynchedEntityData } from "@package/net/minecraft/network/syncher";
+import { $DamageContainer } from "@package/net/neoforged/neoforge/common/damagesource";
+import { $AtomicInteger } from "@package/java/util/concurrent/atomic";
+import { $ResourceLocation } from "@package/net/minecraft/resources";
+import { $PoseStack } from "@package/com/mojang/blaze3d/vertex";
+import { $DynamicVisual$Context } from "@package/dev/engine_room/flywheel/api/visual";
+import { $AbstractEntityVisual, $SimpleDynamicVisual } from "@package/dev/engine_room/flywheel/lib/visual";
+import { $Block } from "@package/net/minecraft/world/level/block";
+import { $Vec3, $Vec3_ } from "@package/net/minecraft/world/phys";
+import { $ClientboundPacketPayload, $BasePacketPayload$PacketTypeProvider } from "@package/net/createmod/catnip/net/base";
+import { $DamageSource } from "@package/net/minecraft/world/damagesource";
+import { $StreamCodec } from "@package/net/minecraft/network/codec";
+
+declare module "@package/com/simibubi/create/content/logistics/box" {
+    export class $PackageEntity extends $LivingEntity implements $IEntityWithComplexSpawn, $DeployerGoggleInformation {
+        getAddress(): string;
+        static build(arg0: $EntityType$Builder<never>): $EntityType$Builder<never>;
+        static fromDroppedItem(arg0: $Level, arg1: $Entity, arg2: $ItemStack_): $PackageEntity;
+        static centerPackage(arg0: $Entity, arg1: $Vec3_): boolean;
+        static fromItemStack(arg0: $Level, arg1: $Vec3_, arg2: $ItemStack_): $PackageEntity;
+        setBox(arg0: $ItemStack_): void;
+        addToGoggleTooltip(arg0: $List_<any>, arg1: boolean): boolean;
+        readSpawnData(arg0: $RegistryFriendlyByteBuf): void;
+        writeSpawnData(arg0: $RegistryFriendlyByteBuf): void;
+        getBox(): $ItemStack;
+        decreaseInsertionTimer(arg0: $Vec3_): boolean;
+        static createPackageAttributes(): $AttributeSupplier$Builder;
+        addToGoogleTooltip(arg0: $Level, arg1: $BlockPos_, arg2: $BlockState_, arg3: $List_<$Component_>, arg4: boolean): boolean;
+        containedFluidTooltip(arg0: $List_<$Component_>, arg1: boolean, arg2: $IFluidHandler): boolean;
+        getIcon(arg0: boolean): $ItemStack;
+        lastHurtByPlayerTime: number;
+        autoSpinAttackItemStack: $ItemStack;
+        lerpYRot: number;
+        static DEFAULT_BASE_GRAVITY: number;
+        xRot: number;
+        wasEyeInWater: boolean;
+        hasImpulse: boolean;
+        static USE_ITEM_INTERVAL: number;
+        static ENTITY_COUNTER: $AtomicInteger;
+        lerpYHeadRot: number;
+        useItem: $ItemStack;
+        yHeadRot: number;
+        noPhysics: boolean;
+        fallFlyTicks: number;
+        autoSpinAttackDmg: number;
+        yo: number;
+        static DATA_LIVING_ENTITY_FLAGS: $EntityDataAccessor<number>;
+        yBodyRotO: number;
+        static FLAG_ONFIRE: number;
+        removalReason: $Entity$RemovalReason;
+        zza: number;
+        rotOffs: number;
+        swingingArm: $InteractionHand;
+        vec3: $Vec3;
+        vec2: $Vec3;
+        static ID_TAG: string;
+        static DATA_HEALTH_ID: $EntityDataAccessor<number>;
+        static DELTA_AFFECTED_BY_BLOCKS_BELOW_1_0: number;
+        xRotO: number;
+        clientPosition: $Vec3;
+        boardingCooldown: number;
+        zo: number;
+        static DATA_POSE: $EntityDataAccessor<$Pose>;
+        walkDist: number;
+        lastHurt: number;
+        noCulling: boolean;
+        walkAnimation: $WalkAnimationState;
+        lastDamageSource: $DamageSource;
+        appliedScale: number;
+        yya: number;
+        forgeFluidTypeHeight: $Object2DoubleMap<$FluidType>;
+        oAttackAnim: number;
+        yHeadRotO: number;
+        static UUID_TAG: string;
+        hurtDuration: number;
+        static DEATH_DURATION: number;
+        portalProcess: $PortalProcessor;
+        dead: boolean;
+        verticalCollision: boolean;
+        swimAmount: number;
+        verticalCollisionBelow: boolean;
+        static DEFAULT_BABY_SCALE: number;
+        eyeHeight: number;
+        static ATTRIBUTES_FIELD: string;
+        static DEFAULT_BB_HEIGHT: number;
+        xxa: number;
+        lerpHeadSteps: number;
+        flyDist: number;
+        tossedBy: $WeakReference<$Player>;
+        brain: $Brain<never>;
+        static PASSENGERS_TAG: string;
+        stringUUID: string;
+        wasOnFire: boolean;
+        autoSpinAttackTicks: number;
+        attackAnim: number;
+        noActionTime: number;
+        zOld: number;
+        timeOffs: number;
+        static DATA_SHARED_FLAGS_ID: $EntityDataAccessor<number>;
+        static LIVING_ENTITY_FLAG_SPIN_ATTACK: number;
+        wasTouchingWater: boolean;
+        rotA: number;
+        horizontalCollision: boolean;
+        dimensions: $EntityDimensions;
+        firstTick: boolean;
+        damageContainers: $Stack<$DamageContainer>;
+        static ARMOR_SLOT_OFFSET: number;
+        run: number;
+        swingTime: number;
+        static BODY_ARMOR_OFFSET: number;
+        uuid: $UUID;
+        stuckSpeedMultiplier: $Vec3;
+        tickCount: number;
+        animStepO: number;
+        lastHurtByPlayer: $Player;
+        static BOARDING_COOLDOWN: number;
+        static SWING_DURATION: number;
+        yRotO: number;
+        static MIN_MOVEMENT_DISTANCE: number;
+        static CONTENTS_SLOT_INDEX: number;
+        static BASE_JUMP_POWER: number;
+        yRot: number;
+        moveDist: number;
+        mainSupportingBlockPos: ($BlockPos) | undefined;
+        static FLAG_FALL_FLYING: number;
+        oRun: number;
+        create_diesel_generators$turretPos: $BlockPos;
+        xOld: number;
+        wasInPowderSnow: boolean;
+        hurtTime: number;
+        swinging: boolean;
+        hurtMarked: boolean;
+        attackStrengthTicker: number;
+        useItemRemaining: number;
+        entityData: $SynchedEntityData;
+        insertionDelay: number;
+        static SLEEPING_DIMENSIONS: $EntityDimensions;
+        deathTime: number;
+        static EQUIPMENT_SLOT_OFFSET: number;
+        invulnerableTime: number;
+        jumping: boolean;
+        static BASE_TICKS_REQUIRED_TO_FREEZE: number;
+        fallDistance: number;
+        box: $ItemStack;
+        static DELTA_AFFECTED_BY_BLOCKS_BELOW_0_5: number;
+        static MAX_ENTITY_TAG_COUNT: number;
+        static ARMOR_SLOTS: number;
+        static DELTA_AFFECTED_BY_BLOCKS_BELOW_0_2: number;
+        static LIVING_ENTITY_FLAG_OFF_HAND: number;
+        random: $RandomSource;
+        lerpSteps: number;
+        static PLAYER_HURT_EXPERIENCE_TIME: number;
+        swimAmountO: number;
+        yOld: number;
+        static HAND_SLOTS: number;
+        static DEFAULT_BB_WIDTH: number;
+        /**
+         * @deprecated
+         */
+        fluidHeight: $Object2DoubleMap<$TagKey<$Fluid>>;
+        minorHorizontalCollision: boolean;
+        static LIVING_ENTITY_FLAG_IS_USING: number;
+        lastDamageStamp: number;
+        levelCallback: $EntityInLevelCallback;
+        static EXTRA_RENDER_CULLING_SIZE_WITH_BIG_HAT: number;
+        lerpX: number;
+        lerpZ: number;
+        lerpY: number;
+        lerpXRot: number;
+        removeArrowTime: number;
+        walkDistO: number;
+        static FREEZE_HURT_FREQUENCY: number;
+        isInPowderSnow: boolean;
+        static ATTACHMENTS_NBT_KEY: string;
+        animStep: number;
+        yBodyRot: number;
+        blocksBuilding: boolean;
+        deathScore: number;
+        static TOTAL_AIR_SUPPLY: number;
+        xo: number;
+        static FLAG_GLOWING: number;
+        invulnerableDuration: number;
+        removeStingerTime: number;
+        static BASE_SAFE_FALL_DISTANCE: number;
+        constructor(arg0: $EntityType<never>, arg1: $Level);
+        constructor(arg0: $Level, arg1: number, arg2: number, arg3: number);
+        get address(): string;
+    }
+    export class $PackageItem$PackageOrderData extends $Record {
+        isFinal(): boolean;
+        isFinalLink(): boolean;
+        orderContext(): $PackageOrderWithCrafts;
+        fragmentIndex(): number;
+        orderId(): number;
+        linkIndex(): number;
+        static CODEC: $Codec<$PackageItem$PackageOrderData>;
+        static STREAM_CODEC: $StreamCodec<$RegistryFriendlyByteBuf, $PackageItem$PackageOrderData>;
+        constructor(arg0: number, arg1: number, arg2: boolean, arg3: number, arg4: boolean, arg5: ($PackageOrderWithCrafts_) | undefined);
+        constructor(orderId: number, linkIndex: number, isFinalLink: boolean, fragmentIndex: number, isFinal: boolean, orderContext: $PackageOrderWithCrafts_);
+        get final(): boolean;
+        get finalLink(): boolean;
+    }
+    /**
+     * Values that may be interpreted as {@link $PackageItem$PackageOrderData}.
+     */
+    export type $PackageItem$PackageOrderData_ = { orderContext?: $PackageOrderWithCrafts_, linkIndex?: number, isFinalLink?: boolean, isFinal?: boolean, orderId?: number, fragmentIndex?: number,  } | [orderContext?: $PackageOrderWithCrafts_, linkIndex?: number, isFinalLink?: boolean, isFinal?: boolean, orderId?: number, fragmentIndex?: number, ];
+    export class $PackageVisual extends $AbstractEntityVisual<$PackageEntity> implements $SimpleDynamicVisual {
+        beginFrame(arg0: $DynamicVisual$Context): void;
+        planFrame(): $Plan<$DynamicVisual$Context>;
+        instance: $TransformedInstance;
+        constructor(arg0: $VisualizationContext, arg1: $PackageEntity, arg2: number);
+    }
+    export class $PackageItem extends $Item {
+        static isFinal(arg0: $ItemStack_): boolean;
+        open(arg0: $Level, arg1: $Player, arg2: $InteractionHand_): $InteractionResultHolder<$ItemStack>;
+        static isPackage(arg0: $ItemStack_): boolean;
+        static getAddress(arg0: $ItemStack_): string;
+        static getIndex(arg0: $ItemStack_): number;
+        static getWidth(arg0: $ItemStack_): number;
+        static getHeight(arg0: $ItemStack_): number;
+        static getContents(arg0: $ItemStack_): $ItemStackHandler;
+        static clearAddress(arg0: $ItemStack_): void;
+        static getLinkIndex(arg0: $ItemStack_): number;
+        static matchAddress(arg0: string, arg1: string): boolean;
+        static matchAddress(arg0: $ItemStack_, arg1: string): boolean;
+        static getPackageVelocity(arg0: number): number;
+        static isFinalLink(arg0: $ItemStack_): boolean;
+        static getOrderContext(arg0: $ItemStack_): $PackageOrderWithCrafts;
+        static addOrderContext(arg0: $ItemStack_, arg1: $PackageOrderWithCrafts_): void;
+        static hasOrderData(arg0: $ItemStack_): boolean;
+        static getHookDistance(arg0: $ItemStack_): number;
+        static setOrder(arg0: $ItemStack_, arg1: number, arg2: number, arg3: boolean, arg4: number, arg5: boolean, arg6: $PackageOrderWithCrafts_): void;
+        static getOrderId(arg0: $ItemStack_): number;
+        static addAddress(arg0: $ItemStack_, arg1: string): void;
+        static containing(arg0: $ItemStackHandler): $ItemStack;
+        static containing(arg0: $List_<$ItemStack_>): $ItemStack;
+        static SLOTS: number;
+        static BASE_ATTACK_DAMAGE_ID: $ResourceLocation;
+        static DEFAULT_MAX_STACK_SIZE: number;
+        static MAX_BAR_WIDTH: number;
+        static BASE_ATTACK_SPEED_ID: $ResourceLocation;
+        static ABSOLUTE_MAX_STACK_SIZE: number;
+        style: $PackageStyles$PackageStyle;
+        canRepair: boolean;
+        moonlight$clientAnimationProvider: $Object;
+        static BY_BLOCK: $Map<$Block, $Item>;
+        constructor(arg0: $Item$Properties, arg1: $PackageStyles$PackageStyle_);
+    }
+    export class $PackageRenderer extends $EntityRenderer<$PackageEntity> {
+        render(arg0: $PackageEntity, arg1: number, arg2: number, arg3: $PoseStack, arg4: $MultiBufferSource_, arg5: number): void;
+        getTextureLocation(arg0: $PackageEntity): $ResourceLocation;
+        static renderBox(arg0: $Entity, arg1: number, arg2: $PoseStack, arg3: $MultiBufferSource_, arg4: number, arg5: $PartialModel): void;
+        shadowRadius: number;
+        static LEASH_RENDER_STEPS: number;
+        entityRenderDispatcher: $EntityRenderDispatcher;
+        shadowStrength: number;
+        static NAMETAG_SCALE: number;
+        constructor(arg0: $EntityRendererProvider$Context);
+    }
+    export class $PackageClientInteractionHandler {
+        static onPlayerPunchPackage(arg0: $AttackEntityEvent): void;
+        constructor();
+    }
+    export class $PackageDestroyPacket extends $Record implements $ClientboundPacketPayload {
+        location(): $Vec3;
+        box(): $ItemStack;
+        handle(arg0: $LocalPlayer): void;
+        getTypeProvider(): $BasePacketPayload$PacketTypeProvider;
+        handleInternal(arg0: $Player): void;
+        type(): $CustomPacketPayload$Type<$CustomPacketPayload>;
+        toVanillaClientbound(): $ClientboundCustomPayloadPacket;
+        toVanillaServerbound(): $ServerboundCustomPayloadPacket;
+        static STREAM_CODEC: $StreamCodec<$RegistryFriendlyByteBuf, $PackageDestroyPacket>;
+        constructor(location: $Vec3_, box: $ItemStack_);
+        get typeProvider(): $BasePacketPayload$PacketTypeProvider;
+    }
+    /**
+     * Values that may be interpreted as {@link $PackageDestroyPacket}.
+     */
+    export type $PackageDestroyPacket_ = { box?: $ItemStack_, location?: $Vec3_,  } | [box?: $ItemStack_, location?: $Vec3_, ];
+    export class $PackageStyles$PackageStyle extends $Record {
+        type(): string;
+        width(): number;
+        height(): number;
+        getItemId(): $ResourceLocation;
+        rare(): boolean;
+        getRiggingModel(): $ResourceLocation;
+        riggingOffset(): number;
+        constructor(type: string, width: number, height: number, riggingOffset: number, rare: boolean);
+        get itemId(): $ResourceLocation;
+        get riggingModel(): $ResourceLocation;
+    }
+    /**
+     * Values that may be interpreted as {@link $PackageStyles$PackageStyle}.
+     */
+    export type $PackageStyles$PackageStyle_ = { rare?: boolean, height?: number, riggingOffset?: number, type?: string, width?: number,  } | [rare?: boolean, height?: number, riggingOffset?: number, type?: string, width?: number, ];
+    export class $PackageStyles {
+        static getRandomBox(): $ItemStack;
+        static getDefaultBox(): $ItemStack;
+        static RARE_BOXES: $List<$PackageItem>;
+        static STYLES: $List<$PackageStyles$PackageStyle>;
+        static STANDARD_BOXES: $List<$PackageItem>;
+        static ALL_BOXES: $List<$PackageItem>;
+        constructor();
+        static get randomBox(): $ItemStack;
+        static get defaultBox(): $ItemStack;
+    }
+}

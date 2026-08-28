@@ -1,0 +1,77 @@
+{
+    "priority": {
+        "prefix": [
+            "#priority"
+        ],
+        "body": [
+            "// priority: ${0:0}"
+        ],
+        "description": "Creates the file header for `priority`."
+    },
+    "packmode": {
+        "prefix": [
+            "#packmode"
+        ],
+        "body": [
+            "// packmode: $0"
+        ],
+        "description": "Creates the file header for `packmode`."
+    },
+    "ignored": {
+        "prefix": [
+            "#ignored"
+        ],
+        "body": [
+            "// ignored: ${1|true,false|}$0"
+        ],
+        "description": "Creates the file header for `ignored`."
+    },
+    "requires": {
+        "prefix": [
+            "#requires"
+        ],
+        "body": [
+            "// requires: ${1|c2me_fixes_worldgen_threading_issues,steampowered,betterdungeons,kubejs,alexsmobs,openpartiesandclaims,mr_skylands_overthesea,createdeco,cccbridge,azimuth,tinymultiblocklib,playeranimator,ponder,hotstuff,fabric_rendering_fluids_v1,aeronautics_bundled,cc_sable,selling_bin,create_jetpack,etched,c2me_fixes_general_threading_issues,fabric_convention_tags_v1,ctm,neoforge,modernfix,fabric_block_view_api_v2,fabric_convention_tags_v2,fabric_command_api_v2,dustydecorations,yungsapi,abovethecloudstweaks,veil,vinery,createdieselgenerators,c2me,create_compressed,create_new_age,fabric_screen_api_v1,prickle,chat_heads,c2me_base,betterfortresses,paraglider,cloth_config,crash_assistant,sawmill,supplementaries,ldlib2,vista,corpse,betterpingdisplay,handcrafted,fabric_game_rule_api_v1,jupiter,starcatcher_delight,resourcefulconfig,reeses_sodium_options,philipsruins,wdutils,create_rns,c2me_opts_dfc,curios,searchables,mr_dungeons_andtaverns,createlazytick,vsfluidlink,noisium,fabric_entity_events_v1,repackaged,herbalbrews,aeronautics_utility_objects,sable_player_ragdoll,classicperipherals,conditional_mixin,transition,libtooltips,fabric_rendering_data_attachment_v1,flightlib,create_rustic_structures,unilib,jadeaddons,hugestructureblocks,sparsestructures,create_factory_abstractions,bettermineshafts,sliceanddice,betterjungletemples,fabric_client_tags_api_v1,smartbrainlib,createbigcannons,c2me_threading_lighting,compat_manager,bits_n_bobs,fabric_model_loading_api_v1,createcobblestone,jei,ae2,lithostitched,lithium,aeronautics,fabric_screen_handler_api_v1,libraryferret,furniture,paxi,mechanicals,aeronama,fabric_rendering_v1,immersive_weathering,fabric_renderer_indigo,ccbr,ssrd,mld,dimworldborder,c2me_rewrites_chunk_system,cataclysm_dimension,solonion,sodium,fabric_particles_v1,voicechat_api,c2me_opts_worldgen_vanilla,mr_no_moreruinedportals,mr_little_structures,c2me_opts_scheduling,mod_menu,offroad,awesomedungeonocean,emi,minecraft,voicechat,terrablender,fabric_api_base,mousetweaks,immersiveengineering,createoreexcavation,nochatreports,fabric_block_api_v1,sable,fabric_resource_conditions_api_v1,kotlinforforge,com_moulberry_axiomclientapi,brewinandchewin,sablecompanion,flywheel,xaerominimap,fabric_item_group_api_v1,climbable_ropes,greenhouseconfig_night_config,polymorph,c2me_notickvd,almostunified,entityculling,yumi_mc_core,wits,fabric_registry_sync_v0,kubejs_create,lambdynlights_api,oceansdelight,appleskin,fabric_recipe_api_v1,lootr,fabric_object_builder_api_v1,cbc_at,tracks,sablecleanup,puzzleslib,fabric_sound_api_v1,fabric_message_api_v1,lattice,ccsecureboot,atmosphere,fancytabsections,fabric_renderer_api_v1,betterwitchhuts,advancedperipherals,codecui,geckolib,fabric_item_api_v1,illagerinvasion,galosphere,create_blueprinted,placeholder_api,incontrol,create_mobile_packages,betteroceanmonuments,c2me_opts_natives_math,soulbound,sophisticatedcore,simulated_addition,ritchiesprojectilelib,xaeroworldmap,controlling,citadel,emi_loot,createsa_tank_fix,fabric_data_attachment_api_v1,lambdynlights,bookshelf,sophisticatedbackpacks,simulated,c2me_opts_math,createpropulsion,beams,connector,interiors,struts,create_jetpack_curios,fzzy_config,fabric_api,c2me_fixes_worldgen_vanilla_bugs,pride,fabric_content_registries_v0,greenhouseconfig_toml,create_connected,natures_spirit,farmersdelight,starcatcher,createfurnitureseats,brazil_legends,create_mechanical_chicken,ambientsounds,fabric_api_lookup_api_v1,c2me_fixes_chunkio_threading_issues,c2me_client_uncapvd,ccredstonelinkbridge,chunky,greenhouseconfig,createcclogistics,lionfishapi,vista_plus,cataclysm,suppsquared,collective,gnkinetics,touys,resourcefullib,starterkit,lootjs,architectury,computercraft,lambdynlights_runtime,fabric_loot_api_v2,dimthread,fabric_loot_api_v3,fabric_networking_api_v1,c2me_rewrites_chunkio,probejs,c2me_opts_allocs,fabric_lifecycle_events_v1,fabric_key_binding_api_v1,esl,fabric_transfer_api_v1,rhino,fullbrightnesstoggle,amendments,copycats,createappliedkinetics,ash_api,xaerolib,abyssal_decor,fabric_resource_loader_v0,trender,simulated_gauges,advancedweather,nochatrestrictions,create,sim_copycats,create_dragons_plus,cbcperipheral,structory,createschematicpreview,cbc_equally_opposite,dungeoncrawl,aeroclaims,betterdeserttemples,hopour,guideme,distanthorizons,azurelib,watut,skinlayers3d,addon_gancho,extensibleenums,fabric_transitive_access_wideners_v1,ballastmod,moonlight,magnumtorch,chunkyborder,fabric_blockrenderlayer_v1,jade,another_furniture,displaydelight,creativecore,lendersdelight,c2me_server_utils,deployer,create_sa,fabric_gametest_api_v1,spruceui,parcool,fabric_biome_api_v1,c2me_opts_worldgen_general,c2me_opts_chunkio,screenshotclipboard,coroutil,betteradvancedtooltips,emi_enchanting,ferritecore,yet_another_config_lib_v3,dashpanels,badoptimizations,create_enchantment_industry,armor_visibility,fabric_data_generation_api_v1,forgified_fabric_api,fabric_events_interaction_v0,mr_trek,createaddition,axiom|}$0"
+        ],
+        "description": "Creates the file header for `requires`."
+    },
+    "uuid": {
+        "prefix": [
+            "uuid"
+        ],
+        "body": [
+            "\"$UUID\"$0"
+        ],
+        "description": "Generates a random version 4 UUID."
+    },
+    "recipes": {
+        "prefix": [
+            "recipes"
+        ],
+        "body": [
+            "ServerEvents.recipes(event => {",
+            "    const { $1 } = event.recipes",
+            "    $0",
+            "})"
+        ],
+        "description": "Creates a recipe event listener."
+    },
+    "itemstack": {
+        "prefix": [
+            "itemstack"
+        ],
+        "body": [
+            "\"${1:1}x \"$0"
+        ],
+        "description": "Creates a `nx item string."
+    },
+    "recipe_id": {
+        "prefix": [
+            "recipe_id"
+        ],
+        "body": [
+            "\"${1||}\"$0"
+        ],
+        "description": "Insert a recipe ID"
+    }
+}

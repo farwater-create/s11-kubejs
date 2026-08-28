@@ -1,0 +1,103 @@
+import { $MapCodec } from "@package/com/mojang/serialization";
+import { $Item } from "@package/net/minecraft/world/item";
+import { $ValueBoxTransform$Sided } from "@package/com/simibubi/create/foundation/blockEntity/behaviour";
+import { $InteractionResult } from "@package/net/minecraft/world";
+import { $StructureTransform } from "@package/com/simibubi/create/content/contraptions";
+import { $Direction_, $Direction, $IdMapper } from "@package/net/minecraft/core";
+import { $DirectionProperty, $EnumProperty, $AttachFace, $BooleanProperty } from "@package/net/minecraft/world/level/block/state/properties";
+import { $UseOnContext } from "@package/net/minecraft/world/item/context";
+import { $IWrenchable } from "@package/com/simibubi/create/content/equipment/wrench";
+import { $StateDefinition, $BlockState_, $BlockBehaviour$Properties, $BlockState } from "@package/net/minecraft/world/level/block/state";
+import { $ResourceKey } from "@package/net/minecraft/resources";
+import { $HorizontalDirectionalBlock, $SoundType, $Block } from "@package/net/minecraft/world/level/block";
+import { $TransformableBlock } from "@package/com/simibubi/create/api/contraption/transformable";
+import { $LootTable } from "@package/net/minecraft/world/level/storage/loot";
+export * as diodes from "@package/com/simibubi/create/content/redstone/diodes";
+export * as displayLink from "@package/com/simibubi/create/content/redstone/displayLink";
+export * as thresholdSwitch from "@package/com/simibubi/create/content/redstone/thresholdSwitch";
+export * as link from "@package/com/simibubi/create/content/redstone/link";
+export * as deskBell from "@package/com/simibubi/create/content/redstone/deskBell";
+export * as analogLever from "@package/com/simibubi/create/content/redstone/analogLever";
+export * as smartObserver from "@package/com/simibubi/create/content/redstone/smartObserver";
+export * as nixieTube from "@package/com/simibubi/create/content/redstone/nixieTube";
+export * as contact from "@package/com/simibubi/create/content/redstone/contact";
+export * as rail from "@package/com/simibubi/create/content/redstone/rail";
+
+declare module "@package/com/simibubi/create/content/redstone" {
+    export class $FilteredDetectorFilterSlot extends $ValueBoxTransform$Sided {
+        constructor(arg0: boolean);
+    }
+    export class $DirectedDirectionalBlock extends $HorizontalDirectionalBlock implements $IWrenchable, $TransformableBlock {
+        transform(arg0: $BlockState_, arg1: $StructureTransform): $BlockState;
+        getRotatedBlockState(arg0: $BlockState_, arg1: $Direction_): $BlockState;
+        static getTargetDirection(arg0: $BlockState_): $Direction;
+        updateAfterWrenched(arg0: $BlockState_, arg1: $UseOnContext): $BlockState;
+        onWrenched(arg0: $BlockState_, arg1: $UseOnContext): $InteractionResult;
+        onSneakWrenched(arg0: $BlockState_, arg1: $UseOnContext): $InteractionResult;
+        static TARGET: $EnumProperty<$AttachFace>;
+        explosionResistance: number;
+        static UPDATE_SHAPE_ORDER: $Direction[];
+        static UPDATE_NONE: number;
+        static UPDATE_INVISIBLE: number;
+        stateDefinition: $StateDefinition<$Block, $BlockState>;
+        static UPDATE_MOVE_BY_PISTON: number;
+        static UPDATE_LIMIT: number;
+        static UPDATE_ALL: number;
+        drops: $ResourceKey<$LootTable>;
+        static UPDATE_KNOWN_SHAPE: number;
+        static UPDATE_SUPPRESS_DROPS: number;
+        dynamicShape: boolean;
+        soundType: $SoundType;
+        jumpFactor: number;
+        static UPDATE_IMMEDIATE: number;
+        item: $Item;
+        static CODEC: $MapCodec<$DirectedDirectionalBlock>;
+        static UPDATE_NEIGHBORS: number;
+        static INDESTRUCTIBLE: number;
+        speedFactor: number;
+        friction: number;
+        static BLOCK_STATE_REGISTRY: $IdMapper<$BlockState>;
+        static UPDATE_ALL_IMMEDIATE: number;
+        static INSTANT: number;
+        static UPDATE_CLIENTS: number;
+        static FACING: $DirectionProperty;
+        hasCollision: boolean;
+        constructor(arg0: $BlockBehaviour$Properties);
+    }
+    export class $RoseQuartzLampBlock extends $Block implements $IWrenchable {
+        getRotatedBlockState(arg0: $BlockState_, arg1: $Direction_): $BlockState;
+        onWrenched(arg0: $BlockState_, arg1: $UseOnContext): $InteractionResult;
+        updateAfterWrenched(arg0: $BlockState_, arg1: $UseOnContext): $BlockState;
+        onSneakWrenched(arg0: $BlockState_, arg1: $UseOnContext): $InteractionResult;
+        static ACTIVATE: $BooleanProperty;
+        explosionResistance: number;
+        static UPDATE_SHAPE_ORDER: $Direction[];
+        static UPDATE_NONE: number;
+        static UPDATE_INVISIBLE: number;
+        stateDefinition: $StateDefinition<$Block, $BlockState>;
+        static UPDATE_MOVE_BY_PISTON: number;
+        static UPDATE_LIMIT: number;
+        static UPDATE_ALL: number;
+        drops: $ResourceKey<$LootTable>;
+        static UPDATE_KNOWN_SHAPE: number;
+        static UPDATE_SUPPRESS_DROPS: number;
+        dynamicShape: boolean;
+        soundType: $SoundType;
+        jumpFactor: number;
+        static UPDATE_IMMEDIATE: number;
+        item: $Item;
+        static CODEC: $MapCodec<$Block>;
+        static UPDATE_NEIGHBORS: number;
+        static INDESTRUCTIBLE: number;
+        speedFactor: number;
+        friction: number;
+        static POWERED: $BooleanProperty;
+        static POWERING: $BooleanProperty;
+        static BLOCK_STATE_REGISTRY: $IdMapper<$BlockState>;
+        static UPDATE_ALL_IMMEDIATE: number;
+        static INSTANT: number;
+        static UPDATE_CLIENTS: number;
+        hasCollision: boolean;
+        constructor(arg0: $BlockBehaviour$Properties);
+    }
+}

@@ -1,0 +1,187 @@
+import { $Holder } from "@package/net/minecraft/core";
+import { $Codec } from "@package/com/mojang/serialization";
+import { $IntStream } from "@package/java/util/stream";
+import { $Pair } from "@package/com/mojang/datafixers/util";
+import { $DoubleList } from "@package/it/unimi/dsi/fastutil/doubles";
+import { $List_ } from "@package/java/util";
+import { $Record, $StringBuilder } from "@package/java/lang";
+import { $IPerlinNoiseSampler, $IInterpolatedNoiseSampler, $IOctavePerlinNoiseSampler, $IDoublePerlinNoiseSampler, $ISimplexNoiseSampler } from "@package/com/ishland/c2me/base/mixin/access";
+import { $DensityFunction$FunctionContext, $DensityFunction$ContextProvider, $DensityFunction, $DensityFunction$SimpleFunction, $DensityFunction$Visitor_ } from "@package/net/minecraft/world/level/levelgen";
+import { $RandomSource, $KeyDispatchDataCodec } from "@package/net/minecraft/util";
+
+declare module "@package/net/minecraft/world/level/levelgen/synth" {
+    /**
+     * This samples the sum of two individual samplers of perlin noise octaves.
+     * The input coordinates are scaled by `#INPUT_FACTOR`, and the result is scaled by `#valueFactor`.
+     */
+    export class $NormalNoise implements $IDoublePerlinNoiseSampler {
+        parameters(): $NormalNoise$NoiseParameters;
+        getValue(x: number, arg1: number, y: number): number;
+        static create(random: $RandomSource, parameters: $NormalNoise$NoiseParameters_): $NormalNoise;
+        static create(random: $RandomSource, firstOctave: number, ...amplitudes: number[]): $NormalNoise;
+        maxValue(): number;
+        /**
+         * @deprecated
+         */
+        static createLegacyNetherBiome(random: $RandomSource, parameters: $NormalNoise$NoiseParameters_): $NormalNoise;
+        parityConfigString(builder: $StringBuilder): void;
+        getAmplitude(): number;
+        getFirstSampler(): $PerlinNoise;
+        getSecondSampler(): $PerlinNoise;
+        get amplitude(): number;
+        get firstSampler(): $PerlinNoise;
+        get secondSampler(): $PerlinNoise;
+    }
+    /**
+     * This class wraps three individual perlin noise octaves samplers.
+     * It computes the octaves of the main noise, and then uses that as a linear interpolation value between the minimum and maximum limit noises.
+     */
+    export class $BlendedNoise implements $DensityFunction$SimpleFunction, $IInterpolatedNoiseSampler {
+        compute(context: $DensityFunction$FunctionContext): number;
+        maxValue(): number;
+        minValue(): number;
+        codec(): $KeyDispatchDataCodec<$DensityFunction>;
+        withNewRandom(random: $RandomSource): $BlendedNoise;
+        static createUnseeded(xzScale: number, arg1: number, yScale: number, arg3: number, xzFactor: number): $BlendedNoise;
+        parityConfigString(builder: $StringBuilder): void;
+        fillArray(array: number[], contextProvider: $DensityFunction$ContextProvider): void;
+        mapAll(visitor: $DensityFunction$Visitor_): $DensityFunction;
+        abs(): $DensityFunction;
+        clamp(minValue: number, arg1: number): $DensityFunction;
+        square(): $DensityFunction;
+        cube(): $DensityFunction;
+        squeeze(): $DensityFunction;
+        halfNegative(): $DensityFunction;
+        quarterNegative(): $DensityFunction;
+        getLowerInterpolatedNoise(): $PerlinNoise;
+        getUpperInterpolatedNoise(): $PerlinNoise;
+        getSmearScaleMultiplier(): number;
+        getInterpolationNoise(): $PerlinNoise;
+        getMaxValue(): number;
+        getScaledXzScale(): number;
+        getScaledYScale(): number;
+        getXzFactor(): number;
+        getYScale(): number;
+        getXzScale(): number;
+        getYFactor(): number;
+        static CODEC: $KeyDispatchDataCodec<$BlendedNoise>;
+        constructor(random: $RandomSource, xzScale: number, arg2: number, yScale: number, arg4: number, xzFactor: number);
+        get lowerInterpolatedNoise(): $PerlinNoise;
+        get upperInterpolatedNoise(): $PerlinNoise;
+        get smearScaleMultiplier(): number;
+        get interpolationNoise(): $PerlinNoise;
+        get scaledXzScale(): number;
+        get scaledYScale(): number;
+        get xzFactor(): number;
+        get YScale(): number;
+        get xzScale(): number;
+        get YFactor(): number;
+    }
+    /**
+     * This class generates multiple octaves of perlin noise. Each individual octave is an instance of `ImprovedNoise`.
+     * Mojang uses the term 'Perlin' to describe octaves or fBm (Fractal Brownian Motion) noise.
+     */
+    export class $PerlinNoise implements $IOctavePerlinNoiseSampler {
+        static wrap(multiplier: number): number;
+        /**
+         * @deprecated
+         */
+        getValue(x: number, arg1: number, y: number, arg3: number, z: number, arg5: boolean): number;
+        getValue(x: number, y: number, y: number): number;
+        static create(random: $RandomSource, octaves: $IntStream): $PerlinNoise;
+        static create(random: $RandomSource, octaves: $List_<number>): $PerlinNoise;
+        static create(random: $RandomSource, firstOctave: number, firstAmplitude: number, ...arg3: number[]): $PerlinNoise;
+        static create(random: $RandomSource, firstOctave: number, amplitudes: $DoubleList): $PerlinNoise;
+        maxValue(): number;
+        amplitudes(): $DoubleList;
+        /**
+         * @deprecated
+         */
+        static createLegacyForLegacyNetherBiome(random: $RandomSource, firstOctave: number, amplitudes: $DoubleList): $PerlinNoise;
+        /**
+         * @deprecated
+         */
+        static createLegacyForBlendedNoise(random: $RandomSource, octaves: $IntStream): $PerlinNoise;
+        firstOctave(): number;
+        maxBrokenValue(multiplier: number): number;
+        /**
+         * @return A single octave of Perlin noise.
+         */
+        getOctaveNoise(octave: number): $ImprovedNoise;
+        parityConfigString(builder: $StringBuilder): void;
+        getAmplitudes(): $DoubleList;
+        getOctaveSamplers(): $ImprovedNoise[];
+        getLacunarity(): number;
+        getPersistence(): number;
+        constructor(random: $RandomSource, octavesAndAmplitudes: $Pair<number, $DoubleList>, useNewFactory: boolean);
+        get octaveSamplers(): $ImprovedNoise[];
+        get lacunarity(): number;
+        get persistence(): number;
+    }
+    /**
+     * Generates a single octave of Perlin noise.
+     */
+    export class $ImprovedNoise implements $IPerlinNoiseSampler {
+        /**
+         * @deprecated
+         */
+        noise(x: number, y: number, y: number, yScale: number, z: number): number;
+        noise(x: number, arg1: number, y: number): number;
+        parityConfigString(builder: $StringBuilder): void;
+        noiseWithDerivative(x: number, arg1: number, y: number, arg3: number[]): number;
+        getPermutation(): number[];
+        zo: number;
+        yo: number;
+        xo: number;
+        constructor(random: $RandomSource);
+        get permutation(): number[];
+    }
+    /**
+     * This class generates multiple octaves of simplex noise. Each individual octave is an instance of `SimplexNoise`.
+     * Mojang uses the term 'Perlin' to describe octaves or fBm (Fractal Brownian Motion) noise and this class does not actually generate Perlin noise.
+     */
+    export class $PerlinSimplexNoise {
+        getValue(x: number, arg1: number, y: boolean): number;
+        constructor(random: $RandomSource, octaves: $List_<number>);
+    }
+    export class $NormalNoise$NoiseParameters extends $Record {
+        amplitudes(): $DoubleList;
+        firstOctave(): number;
+        static CODEC: $Codec<$Holder<$NormalNoise$NoiseParameters>>;
+        static DIRECT_CODEC: $Codec<$NormalNoise$NoiseParameters>;
+        constructor(arg0: number, arg1: $DoubleList);
+        constructor(firstOctave: number, amplitude: number, ...arg2: number[]);
+        constructor(firstOctave: number, amplitudes: $List_<number>);
+    }
+    /**
+     * Values that may be interpreted as {@link $NormalNoise$NoiseParameters}.
+     */
+    export type $NormalNoise$NoiseParameters_ = { amplitudes?: $DoubleList, firstOctave?: number,  } | [amplitudes?: $DoubleList, firstOctave?: number, ];
+    export class $NoiseUtils {
+        static parityNoiseOctaveConfigString(builder: $StringBuilder, xo: number, arg2: number, yo: number, arg4: number[]): void;
+        static parityNoiseOctaveConfigString(builder: $StringBuilder, xo: number, arg2: number, yo: number, arg4: number[]): void;
+        /**
+         * Takes an input value and biases it using a sine function towards two larger magnitude values.
+         */
+        static biasTowardsExtreme(value: number, arg1: number): number;
+        constructor();
+    }
+    /**
+     * A generator for a single octave of Simplex noise.
+     */
+    export class $SimplexNoise implements $ISimplexNoiseSampler {
+        getValue(x: number, arg1: number, y: number): number;
+        getValue(x: number, arg1: number): number;
+        /**
+         * @return The dot product of the provided three-dimensional gradient vector and the vector (x, y, z)
+         */
+        static dot(gradient: number[], x: number, arg2: number, y: number): number;
+        getPermutation(): number[];
+        zo: number;
+        yo: number;
+        xo: number;
+        static GRADIENT: number[][];
+        constructor(random: $RandomSource);
+        get permutation(): number[];
+    }
+}

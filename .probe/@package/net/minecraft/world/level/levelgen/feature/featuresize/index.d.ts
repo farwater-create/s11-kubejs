@@ -1,0 +1,32 @@
+import { $MapCodec, $Codec } from "@package/com/mojang/serialization";
+import { $RecordCodecBuilder } from "@package/com/mojang/serialization/codecs";
+import { $OptionalInt } from "@package/java/util";
+
+declare module "@package/net/minecraft/world/level/levelgen/feature/featuresize" {
+    export class $FeatureSizeType<P extends $FeatureSize> {
+        codec(): $MapCodec<P>;
+        static THREE_LAYERS_FEATURE_SIZE: $FeatureSizeType<$ThreeLayersFeatureSize>;
+        static TWO_LAYERS_FEATURE_SIZE: $FeatureSizeType<$TwoLayersFeatureSize>;
+        constructor(codec: $MapCodec<P>);
+    }
+    export class $FeatureSize {
+        type(): $FeatureSizeType<never>;
+        static minClippedHeightCodec<S extends $FeatureSize>(): $RecordCodecBuilder<S, $OptionalInt>;
+        minClippedHeight(): $OptionalInt;
+        getSizeAtHeight(height: number, midpoint: number): number;
+        static CODEC: $Codec<$FeatureSize>;
+        static MAX_WIDTH: number;
+        constructor(minClippedHeight: $OptionalInt);
+    }
+    export class $ThreeLayersFeatureSize extends $FeatureSize {
+        static CODEC: $MapCodec<$ThreeLayersFeatureSize>;
+        static MAX_WIDTH: number;
+        constructor(limit: number, upperLimit: number, lowerSize: number, middleSize: number, upperSize: number, minClippedHeight: $OptionalInt);
+    }
+    export class $TwoLayersFeatureSize extends $FeatureSize {
+        static CODEC: $MapCodec<$TwoLayersFeatureSize>;
+        static MAX_WIDTH: number;
+        constructor(limit: number, lowerSize: number, upperSize: number);
+        constructor(limit: number, lowerSize: number, upperSize: number, minClippedHeight: $OptionalInt);
+    }
+}

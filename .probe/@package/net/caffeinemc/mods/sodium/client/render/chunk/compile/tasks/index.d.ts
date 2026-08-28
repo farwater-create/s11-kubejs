@@ -1,0 +1,36 @@
+import { $CancellationToken } from "@package/net/caffeinemc/mods/sodium/client/util/task";
+import { $RenderSection } from "@package/net/caffeinemc/mods/sodium/client/render/chunk";
+import { $BuilderTaskOutput, $ChunkBuildOutput, $ChunkBuildContext, $ChunkSortOutput } from "@package/net/caffeinemc/mods/sodium/client/render/chunk/compile";
+import { $JobDurationEstimator, $MeshTaskSizeEstimator, $UploadDurationEstimator } from "@package/net/caffeinemc/mods/sodium/client/render/chunk/compile/estimation";
+import { $SortBehavior_ } from "@package/net/caffeinemc/mods/sodium/client/render/chunk/translucent_sorting";
+import { $ChunkRenderContext } from "@package/net/caffeinemc/mods/sodium/client/world/cloned";
+import { $DynamicSorter, $CombinedCameraPos } from "@package/net/caffeinemc/mods/sodium/client/render/chunk/translucent_sorting/data";
+import { $Vector3dc, $Vector3fc } from "@package/org/joml";
+
+declare module "@package/net/caffeinemc/mods/sodium/client/render/chunk/compile/tasks" {
+    export class $ChunkBuilderSortingTask extends $ChunkBuilderTask<$ChunkSortOutput> {
+        execute(arg0: $ChunkBuildContext, arg1: $CancellationToken): $ChunkSortOutput;
+        static createTask(arg0: $RenderSection, arg1: number, arg2: $Vector3dc): $ChunkBuilderSortingTask;
+        constructor(arg0: $RenderSection, arg1: number, arg2: $Vector3dc, arg3: $DynamicSorter);
+    }
+    export class $ChunkBuilderMeshingTask extends $ChunkBuilderTask<$ChunkBuildOutput> {
+        execute(arg0: $ChunkBuildContext, arg1: $CancellationToken): $ChunkBuildOutput;
+        constructor(arg0: $RenderSection, arg1: number, arg2: $Vector3dc, arg3: $ChunkRenderContext, arg4: $SortBehavior_, arg5: boolean);
+    }
+    export class $ChunkBuilderTask<OUTPUT extends $BuilderTaskOutput> implements $CombinedCameraPos {
+        execute(arg0: $ChunkBuildContext, arg1: $CancellationToken): OUTPUT;
+        getEstimatedSize(): number;
+        getRelativeCameraPos(): $Vector3fc;
+        estimateTaskSizeWith(arg0: $MeshTaskSizeEstimator): number;
+        getEstimatedUploadDuration(): number;
+        calculateEstimations(arg0: $JobDurationEstimator, arg1: $MeshTaskSizeEstimator, arg2: $UploadDurationEstimator): void;
+        getEstimatedDuration(): number;
+        getAbsoluteCameraPos(): $Vector3dc;
+        constructor(arg0: $RenderSection, arg1: number, arg2: $Vector3dc);
+        get estimatedSize(): number;
+        get relativeCameraPos(): $Vector3fc;
+        get estimatedUploadDuration(): number;
+        get estimatedDuration(): number;
+        get absoluteCameraPos(): $Vector3dc;
+    }
+}
