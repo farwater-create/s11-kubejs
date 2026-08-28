@@ -1,7 +1,0 @@
-{
-  "type": "neoorigins:food_restriction",
-  "mode": "blacklist",
-  "item_tag": "#minecraft:meat",
-  "name": "Vegetarian",
-  "description": "Cannot eat meat(vanilla only)."
-}
