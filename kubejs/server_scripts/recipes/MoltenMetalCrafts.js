@@ -185,13 +185,8 @@ ServerEvents.recipes(event => {
     moltenMetal("minecraft:copper_ingot", "create:crushed_raw_copper", "minecraft:copper_block", "kubejs:molten_copper", "immersiveengineering:dust_copper");
     moltenMetal("minecraft:gold_ingot", "create:crushed_raw_gold", "minecraft:gold_block", "kubejs:molten_gold", "immersiveengineering:dust_gold");
     moltenMetalnoGrit("create:zinc_ingot", "create:crushed_raw_zinc", "create:zinc_block", "kubejs:molten_zinc");
-    //andesite more expensive
-    event.remove({ output: 'create:andesite_alloy', not: { type: 'create:sequenced_assembly' } });
-    event.shapeless(Item.of('create:andesite_alloy', 9), // arg 1: output
-        [
-            '1x create:andesite_alloy_block'
-        ])
-    event.shapeless(Item.of('create:andesite_alloy', 2), // arg 1: output
+    //andesite alloy
+    event.shapeless(Item.of('create:andesite_alloy', 4), // arg 1: output
         [
             '3x minecraft:clay_ball',
             '3x #c:nuggets/lead', 	       // arg 2: the array of inputs
