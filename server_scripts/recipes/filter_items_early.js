@@ -6,7 +6,7 @@ ServerEvents.recipes(event => {
     event.shapeless(
         Item.of('create:brass_funnel', 2),
         [
-            'x2 create:andesite_funnel',
+            '2x create:andesite_funnel',
             'create:zinc_ingot',
             'minecraft:copper_ingot',
             'create:polished_rose_quartz'
@@ -16,7 +16,7 @@ ServerEvents.recipes(event => {
     event.shapeless(
         Item.of('create:brass_tunnel', 2),
         [
-            'x2 create:andesite_tunnel',
+            '2x create:andesite_tunnel',
             'create:zinc_ingot',
             'minecraft:copper_ingot',
             'create:polished_rose_quartz'
@@ -26,7 +26,7 @@ ServerEvents.recipes(event => {
     event.shapeless(
         Item.of('create:smart_chute', 2),
         [
-            'x2 create:chute',
+            '2x create:chute',
             'create:zinc_ingot',
             'minecraft:copper_ingot',
             'create:polished_rose_quartz'
