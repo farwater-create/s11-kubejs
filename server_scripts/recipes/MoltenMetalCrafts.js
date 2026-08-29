@@ -1,23 +1,26 @@
 ServerEvents.recipes(event => {
 
+    let recipes = event.recipes;
+    let create = recipes.create;
+
     const moltenMetalnoGrit = (item, crushed_item, block, fluid) => {
 
-        event.recipes.create.mixing(
+        create.mixing(
             Fluid.of(fluid, 100),
             item
         ).heated()
 
-        event.recipes.create.mixing(
+        create.mixing(
             Fluid.of(fluid, 150),
             crushed_item
         ).heated()
 
-        event.recipes.create.mixing(
+        create.mixing(
             Fluid.of(fluid, 200),
             crushed_item
         ).superheated()
 
-        event.recipes.create.compacting(
+        create.compacting(
             block,
             Fluid.of(fluid, 900)
         )
@@ -42,32 +45,32 @@ ServerEvents.recipes(event => {
             ]
         })
 
-        event.recipes.create.mixing(
+        create.mixing(
             Fluid.of(fluid, 100),
             item
         ).heated()
 
-        event.recipes.create.mixing(
+        create.mixing(
             Fluid.of(fluid, 150),
             crushedItem
         ).heated()
 
-        event.recipes.create.mixing(
+        create.mixing(
             Fluid.of(fluid, 200),
             crushedItem
         ).superheated()
 
-        event.recipes.create.mixing(
+        create.mixing(
             Fluid.of(fluid, 150),
             grit
         ).heated()
 
-        event.recipes.create.mixing(
+        create.mixing(
             Fluid.of(fluid, 200),
             grit
         ).superheated()
 
-        event.recipes.create.compacting(
+        create.compacting(
             block,
             Fluid.of(fluid, 900)
         )
@@ -116,41 +119,6 @@ ServerEvents.recipes(event => {
     )
 
 
-    // Andesite alloy
-
-    event.shapeless(
-        Item.of('create:andesite_alloy', 4),
-        [
-            '3x minecraft:clay_ball',
-            '3x #c:nuggets/lead',
-            '3x minecraft:andesite'
-        ]
-    )
-
-    event.recipes.create.mixing(
-        Fluid.of('kubejs:andesite_compound', 100),
-        [
-            'minecraft:clay_ball',
-            '#c:nuggets/lead',
-            'minecraft:andesite'
-        ]
-    )
-
-    event.recipes.create.mixing(
-        Fluid.of('kubejs:andesite_compound', 200),
-        [
-            'minecraft:clay_ball',
-            Fluid.of('kubejs:molten_lead', 50),
-            'minecraft:andesite'
-        ]
-    )
-
-    event.recipes.create.compacting(
-        'create:andesite_alloy_block',
-        Fluid.of('kubejs:andesite_compound', 900)
-    )
-
-
     // Molten brass
 
     event.remove({
@@ -161,7 +129,7 @@ ServerEvents.recipes(event => {
         ]
     })
 
-    event.recipes.create.mixing(
+    create.mixing(
         Fluid.of('kubejs:molten_brass', 900),
         [
             Fluid.of('kubejs:molten_copper', 450),
@@ -169,7 +137,7 @@ ServerEvents.recipes(event => {
         ]
     ).superheated()
 
-    event.recipes.create.compacting(
+    create.compacting(
         'create:brass_block',
         Fluid.of('kubejs:molten_brass', 900)
     )
