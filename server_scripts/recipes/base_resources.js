@@ -39,7 +39,7 @@ ServerEvents.recipes(event => {
 
     // Steel
 
-    event.remove({ type: 'immersiveengineering:ingot_steel' })
+    event.remove({ output: 'immersiveengineering:ingot_steel' });
 
 
 });
