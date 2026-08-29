@@ -118,22 +118,8 @@ ServerEvents.recipes(event => {
 
     // Andesite alloy
 
-    event.remove({
-        output: 'create:andesite_alloy',
-        not: {
-            type: 'create:sequenced_assembly'
-        }
-    })
-
     event.shapeless(
-        Item.of('create:andesite_alloy', 9),
-        [
-            'create:andesite_alloy_block'
-        ]
-    )
-
-    event.shapeless(
-        Item.of('create:andesite_alloy', 2),
+        Item.of('create:andesite_alloy', 4),
         [
             '3x minecraft:clay_ball',
             '3x #c:nuggets/lead',
