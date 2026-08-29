@@ -1,0 +1,15 @@
+
+ServerEvents.recipes(event => {
+    event.remove({ output: 'minecraft:enchanting_table' })
+});
+//make more enchanted books
+ServerEvents.tags('enchantment', event => {
+    event.add('vanilla_enchantments','minecraft:sharpness')
+})
+// Listen for LootJS modification events
+LootJS.modifiers((event) => {
+    event.addTableModifier(LootType.CHEST).addLoot('minecraft:enchanted_book').enchantRandomly();
+    event.addTableModifier(LootType.CHEST).addLoot('minecraft:enchanted_book').enchantRandomly("@minecraft");
+    event.addTableModifier(LootType.VAULT).addLoot('minecraft:enchanted_book').enchantRandomly();
+    event.addTableModifier(LootType.VAULT).addLoot('minecraft:enchanted_book').enchantRandomly("@minecraft");
+});

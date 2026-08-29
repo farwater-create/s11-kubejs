@@ -246,6 +246,7 @@ ServerEvents.recipes(event => {
     })
     event.replaceInput({ output: 'create_enchantment_industry:experience_cake_base' }, 'minecraft:egg', 'create_enchantment_industry:super_experience_nugget');
     //dragons breath
+    /*
     event.custom({
         "type": "create:mixing",
         "heat_requirement": "superheated",
@@ -284,6 +285,7 @@ ServerEvents.recipes(event => {
             }
         ]
     })
+    */
     event.custom({
         "type": "create:filling",
         "ingredients": [

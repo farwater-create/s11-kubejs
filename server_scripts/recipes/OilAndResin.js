@@ -89,7 +89,7 @@ ServerEvents.recipes(event => {
             },
             {
                 "count": 3,
-                "id": "createnuclear:coal_dust"
+                "id": "minecraft:coal"
             }
         ]
 
@@ -105,7 +105,7 @@ ServerEvents.recipes(event => {
             },
             {
                 "count": 3,
-                "item": "createnuclear:coal_dust"
+                "item": "minecraft:coal"
             }
         ],
         "results": [

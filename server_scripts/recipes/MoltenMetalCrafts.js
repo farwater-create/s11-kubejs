@@ -1,295 +1,190 @@
 ServerEvents.recipes(event => {
-        const moltenMetalnoGrit = (item, crushed_item, block, fluid) => {
-        event.custom({
-            "type": "create:mixing",
-            "heat_requirement": "heated",
-            "ingredients": [
-                {
-                    "item": item
-                }
-            ],
-            "results": [
-                {
-                    "amount": 100,
-                    "id": fluid
-                }
-            ]
-        })
-        event.custom({
-            "type": "create:mixing",
-            "heat_requirement": "heated",
-            "ingredients": [
-                {
-                    "item": crushed_item
-                }
-            ],
-            "results": [
-                {
-                    "amount": 150,
-                    "id": fluid
 
-                }
-            ]
-        })
-        event.custom({
-            "type": "create:mixing",
-            "heat_requirement": "superheated",
-            "ingredients": [
-                {
-                    "item": crushed_item
-                }
-            ],
-            "results": [
-                {
-                    "amount": 200,
-                    "id": fluid
+    const moltenMetalnoGrit = (item, crushed_item, block, fluid) => {
 
-                }
-            ]
-        })
-        event.custom({
-            "type": "create:compacting",
-            "ingredients": [
-                {
-                    "type": "neoforge:single",
-                    "amount": 900,
-                    "fluid": fluid
-                }
-            ],
-            "results": [
-                {
-                    "id": block
-                }
-            ]
-        })
-    }
-    const moltenMetal = (item, crushed_item, block, fluid, grit) => {
-        event.custom(
-            {
-                "type": "immersiveengineering:crusher",
-                "energy": 54000,
-                "input": {
-                    "item": crushed_item
-                },
-                "result": {
-                    "item": grit
-                },
-                "secondaries": [
-                    {
-                        "chance": 0.33333334,
-                        "output": {
-                            "item": grit
-                        }
-                    }
-                ]
-            }
+        event.recipes.create.mixing(
+            Fluid.of(fluid, 100),
+            item
+        ).heated()
+
+        event.recipes.create.mixing(
+            Fluid.of(fluid, 150),
+            crushed_item
+        ).heated()
+
+        event.recipes.create.mixing(
+            Fluid.of(fluid, 200),
+            crushed_item
+        ).superheated()
+
+        event.recipes.create.compacting(
+            block,
+            Fluid.of(fluid, 900)
         )
-        event.custom({
-            "type": "create:mixing",
-            "heat_requirement": "heated",
-            "ingredients": [
-                {
-                    "item": item
-                }
-            ],
-            "results": [
-                {
-                    "amount": 100,
-                    "id": fluid
-                }
-            ]
-        })
-        event.custom({
-            "type": "create:mixing",
-            "heat_requirement": "heated",
-            "ingredients": [
-                {
-                    "item": crushed_item
-                }
-            ],
-            "results": [
-                {
-                    "amount": 150,
-                    "id": fluid
-
-                }
-            ]
-        })
-        event.custom({
-            "type": "create:mixing",
-            "heat_requirement": "superheated",
-            "ingredients": [
-                {
-                    "item": crushed_item
-                }
-            ],
-            "results": [
-                {
-                    "amount": 200,
-                    "id": fluid
-
-                }
-            ]
-        })
-        event.custom({
-            "type": "create:mixing",
-            "heat_requirement": "heated",
-            "ingredients": [
-                {
-                    "item": grit
-                }
-            ],
-            "results": [
-                {
-                    "amount": 150,
-                    "id": fluid
-
-                }
-            ]
-        })
-        event.custom({
-            "type": "create:mixing",
-            "heat_requirement": "superheated",
-            "ingredients": [
-                {
-                    "item": grit
-                }
-            ],
-            "results": [
-                {
-                    "amount": 200,
-                    "id": fluid
-
-                }
-            ]
-        })
-        event.custom({
-            "type": "create:compacting",
-            "ingredients": [
-                {
-                    "type": "neoforge:single",
-                    "amount": 900,
-                    "fluid": fluid
-                }
-            ],
-            "results": [
-                {
-                    "id": block
-                }
-            ]
-
-        })
     }
-    moltenMetal("createnuclear:lead_ingot", "create:crushed_raw_lead", "createnuclear:lead_block", "kubejs:molten_lead", "immersiveengineering:dust_lead");
-    moltenMetal("minecraft:iron_ingot", "create:crushed_raw_iron", "minecraft:iron_block", "kubejs:molten_iron", "immersiveengineering:dust_iron");
-    moltenMetal("minecraft:copper_ingot", "create:crushed_raw_copper", "minecraft:copper_block", "kubejs:molten_copper", "immersiveengineering:dust_copper");
-    moltenMetal("minecraft:gold_ingot", "create:crushed_raw_gold", "minecraft:gold_block", "kubejs:molten_gold", "immersiveengineering:dust_gold");
-    moltenMetalnoGrit("create:zinc_ingot", "create:crushed_raw_zinc", "create:zinc_block", "kubejs:molten_zinc");
-    //andesite alloy
-    event.shapeless(Item.of('create:andesite_alloy', 4), // arg 1: output
+
+
+    function moltenMetal(item, crushedItem, block, fluid, grit) {
+
+        // IE Crushing
+        event.custom({
+            type: 'immersiveengineering:crusher',
+            energy: 54000,
+            input: Ingredient.of(crushedItem).toJson(),
+            result: Item.of(item).toJson(),
+            secondaries: [
+                {
+                    chance: 0.33333334,
+                    output: {
+                        item: grit
+                    }
+                }
+            ]
+        })
+
+        event.recipes.create.mixing(
+            Fluid.of(fluid, 100),
+            item
+        ).heated()
+
+        event.recipes.create.mixing(
+            Fluid.of(fluid, 150),
+            crushedItem
+        ).heated()
+
+        event.recipes.create.mixing(
+            Fluid.of(fluid, 200),
+            crushedItem
+        ).superheated()
+
+        event.recipes.create.mixing(
+            Fluid.of(fluid, 150),
+            grit
+        ).heated()
+
+        event.recipes.create.mixing(
+            Fluid.of(fluid, 200),
+            grit
+        ).superheated()
+
+        event.recipes.create.compacting(
+            block,
+            Fluid.of(fluid, 900)
+        )
+    }
+
+
+    // Molten metals
+
+    moltenMetal(
+        'immersiveengineering:ingot_lead',
+        'create:crushed_raw_lead',
+        'immersiveengineering:storage_lead',
+        'kubejs:molten_lead',
+        'immersiveengineering:dust_lead'
+    )
+
+    moltenMetal(
+        'minecraft:iron_ingot',
+        'create:crushed_raw_iron',
+        'minecraft:iron_block',
+        'kubejs:molten_iron',
+        'immersiveengineering:dust_iron'
+    )
+
+    moltenMetal(
+        'minecraft:copper_ingot',
+        'create:crushed_raw_copper',
+        'minecraft:copper_block',
+        'kubejs:molten_copper',
+        'immersiveengineering:dust_copper'
+    )
+
+    moltenMetal(
+        'minecraft:gold_ingot',
+        'create:crushed_raw_gold',
+        'minecraft:gold_block',
+        'kubejs:molten_gold',
+        'immersiveengineering:dust_gold'
+    )
+
+    moltenMetalnoGrit(
+        'create:zinc_ingot',
+        'create:crushed_raw_zinc',
+        'create:zinc_block',
+        'kubejs:molten_zinc'
+    )
+
+
+    // Andesite alloy
+
+    event.remove({
+        output: 'create:andesite_alloy',
+        not: {
+            type: 'create:sequenced_assembly'
+        }
+    })
+
+    event.shapeless(
+        Item.of('create:andesite_alloy', 9),
+        [
+            'create:andesite_alloy_block'
+        ]
+    )
+
+    event.shapeless(
+        Item.of('create:andesite_alloy', 2),
         [
             '3x minecraft:clay_ball',
-            '3x #c:nuggets/lead', 	       // arg 2: the array of inputs
+            '3x #c:nuggets/lead',
             '3x minecraft:andesite'
-        ])
-    event.custom({
-        "type": "create:mixing",
-        "ingredients": [
-            {
-                "item": "minecraft:clay_ball"
-            },
-            {
-                "item": "createnuclear:lead_nugget"
-            },
-            {
-                "item": "minecraft:andesite"
-            }
-        ],
-        "results": [
-            {
-                "amount": 100,
-                "id": "kubejs:andesite_compound"
+        ]
+    )
 
-            }
+    event.recipes.create.mixing(
+        Fluid.of('kubejs:andesite_compound', 100),
+        [
+            'minecraft:clay_ball',
+            '#c:nuggets/lead',
+            'minecraft:andesite'
+        ]
+    )
+
+    event.recipes.create.mixing(
+        Fluid.of('kubejs:andesite_compound', 200),
+        [
+            'minecraft:clay_ball',
+            Fluid.of('kubejs:molten_lead', 50),
+            'minecraft:andesite'
+        ]
+    )
+
+    event.recipes.create.compacting(
+        'create:andesite_alloy_block',
+        Fluid.of('kubejs:andesite_compound', 900)
+    )
+
+
+    // Molten brass
+
+    event.remove({
+        output: 'create:brass_ingot',
+        not: [
+            { type: 'minecraft:crafting_shaped' },
+            { type: 'minecraft:crafting_shapeless' }
         ]
     })
 
-    event.custom({
-        "type": "create:mixing",
-        "ingredients": [
-            {
-                "item": "minecraft:clay_ball"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 50,
-                "fluid": "kubejs:molten_lead"
-            },
-            {
-                "item": "minecraft:andesite"
-            }
-        ],
-        "results": [
-            {
-                "amount": 200,
-                "id": "kubejs:andesite_compound"
+    event.recipes.create.mixing(
+        Fluid.of('kubejs:molten_brass', 900),
+        [
+            Fluid.of('kubejs:molten_copper', 450),
+            Fluid.of('kubejs:molten_zinc', 450)
+        ]
+    ).superheated()
 
-            }
-        ]
-    })
-    event.custom({
-        "type": "create:compacting",
-        "ingredients": [
-            {
-                "type": "neoforge:single",
-                "amount": 900,
-                "fluid": "kubejs:andesite_compound"
-            }
-        ],
-        "results": [
-            {
-                "id": "create:andesite_alloy_block"
-            }
-        ]
-
-    })
-    //molten brass
-    event.remove({ output: 'create:brass_ingot', not: [{ type: 'minecraft:crafting_shaped' }, { type: 'minecraft:crafting_shapeless' }] });
-    event.custom({
-        "type": "create:mixing",
-        "heat_requirement": "superheated",
-        "ingredients": [
-            {
-                "type": "neoforge:single",
-                "amount": 450,
-                "fluid": "kubejs:molten_copper"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 450,
-                "fluid": "kubejs:molten_zinc"
-            }
-        ],
-        "results": [
-            {
-                "amount": 900,
-                "id": "kubejs:molten_brass"
-            }
-        ]
-    })
-    event.custom({
-        "type": "create:compacting",
-        "ingredients": [
-            {
-                "type": "neoforge:single",
-                "amount": 900,
-                "fluid": "kubejs:molten_brass"
-            }
-        ],
-        "results": [
-            {
-                "id": "create:brass_block"
-            }
-        ]
-    })
+    event.recipes.create.compacting(
+        'create:brass_block',
+        Fluid.of('kubejs:molten_brass', 900)
+    )
 })
