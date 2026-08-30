@@ -42,9 +42,11 @@ ServerEvents.recipes(event => {
 	'aeronautics:levitite',
 	'aeronautics:pearlescent_levitite',
 ];
-  
-    event.remove({ output: item });
-    event.remove({ input: item });
+  items.forEach(item => {
+        event.remove({ output: item });
+	      event.remove({ input: item });
+    })
+
 
   
 
