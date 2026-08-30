@@ -41,13 +41,20 @@ ServerEvents.recipes(event => {
 	'aeronautics:gyroscopic_propeller_bearing',
 	'aeronautics:levitite',
 	'aeronautics:pearlescent_levitite',
-];
-  items.forEach(item => {
+	
+	'create_new_age:carbon_brushes',
+	'create_new_age:generator_coil',
+	'create_new_age:reactor_casing',
+	'create_new_age:reactor_glass',
+	'create_new_age:reactor_rod',
+	'create_new_age:nuclear_fuel',
+	'create_new_age:reactor_fuel_acceptor'
+
+	];
+
+	items.forEach(item => {
         event.remove({ output: item });
-	      event.remove({ input: item });
+	    event.remove({ input: item });
     })
-
-
-  
 
 });
