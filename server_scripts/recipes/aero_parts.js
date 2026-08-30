@@ -18,5 +18,33 @@ ServerEvents.recipes(event => {
 		}
 	);
 
+	event.remove({ id: 'simulated:rope_connector' })
+	event.shaped(
+		Item.of('simulated:rope_connector'),
+		[
+			'P',
+			'B'
+		],
+		{
+			P: '#c:plates/iron',
+			B: '#simulated:handles'
+		}
+	)
+
+	event.remove({ id: 'simulated:rope_winch' })
+	event.shaped(
+		Item.of('simulated:rope_winch'),
+		[
+			'P',
+			'S',
+			'B'
+		],
+		{
+			P: '#c:plates/iron',
+			S: 'create:shaft',
+			B: '#simulated:handles'
+		}
+	)
+
 }
 )
