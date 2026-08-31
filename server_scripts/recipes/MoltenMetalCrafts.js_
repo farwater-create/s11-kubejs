@@ -1,33 +1,16 @@
+
+
+// this can be added back later
+
+
+
 ServerEvents.recipes(event => {
 
     let recipes = event.recipes;
     let create = recipes.create;
 
-    const moltenMetalnoGrit = (item, crushed_item, block, fluid) => {
 
-        create.mixing(
-            Fluid.of(fluid, 100),
-            item
-        ).heated()
-
-        create.mixing(
-            Fluid.of(fluid, 150),
-            crushed_item
-        ).heated()
-
-        create.mixing(
-            Fluid.of(fluid, 200),
-            crushed_item
-        ).superheated()
-
-        create.compacting(
-            block,
-            Fluid.of(fluid, 900)
-        )
-    }
-
-
-    function moltenMetal(item, crushedItem, block, fluid, grit) {
+    function moltenMetal_slag(item, crushedItem, block, fluid, slag) {
 
         // IE Crushing
         event.custom({
@@ -39,7 +22,7 @@ ServerEvents.recipes(event => {
                 {
                     chance: 0.33333334,
                     output: {
-                        item: grit
+                        item: slag
                     }
                 }
             ]
@@ -62,12 +45,12 @@ ServerEvents.recipes(event => {
 
         create.mixing(
             Fluid.of(fluid, 150),
-            grit
+            slag
         ).heated()
 
         create.mixing(
             Fluid.of(fluid, 200),
-            grit
+            slag
         ).superheated()
 
         create.compacting(
@@ -79,7 +62,7 @@ ServerEvents.recipes(event => {
 
     // Molten metals
 
-    moltenMetal(
+    moltenMetal_slag(
         'immersiveengineering:ingot_lead',
         'create:crushed_raw_lead',
         'immersiveengineering:storage_lead',
@@ -87,7 +70,7 @@ ServerEvents.recipes(event => {
         'immersiveengineering:dust_lead'
     )
 
-    moltenMetal(
+    moltenMetal_slag(
         'minecraft:iron_ingot',
         'create:crushed_raw_iron',
         'minecraft:iron_block',
@@ -95,7 +78,7 @@ ServerEvents.recipes(event => {
         'immersiveengineering:dust_iron'
     )
 
-    moltenMetal(
+    moltenMetal_slag(
         'minecraft:copper_ingot',
         'create:crushed_raw_copper',
         'minecraft:copper_block',
@@ -103,7 +86,7 @@ ServerEvents.recipes(event => {
         'immersiveengineering:dust_copper'
     )
 
-    moltenMetal(
+    moltenMetal_slag(
         'minecraft:gold_ingot',
         'create:crushed_raw_gold',
         'minecraft:gold_block',
@@ -111,34 +94,10 @@ ServerEvents.recipes(event => {
         'immersiveengineering:dust_gold'
     )
 
-    moltenMetalnoGrit(
+    moltenMetal(
         'create:zinc_ingot',
         'create:crushed_raw_zinc',
         'create:zinc_block',
         'kubejs:molten_zinc'
-    )
-
-
-    // Molten brass
-
-    event.remove({
-        output: 'create:brass_ingot',
-        not: [
-            { type: 'minecraft:crafting_shaped' },
-            { type: 'minecraft:crafting_shapeless' }
-        ]
-    })
-
-    create.mixing(
-        Fluid.of('kubejs:molten_brass', 900),
-        [
-            Fluid.of('kubejs:molten_copper', 450),
-            Fluid.of('kubejs:molten_zinc', 450)
-        ]
-    ).superheated()
-
-    create.compacting(
-        'create:brass_block',
-        Fluid.of('kubejs:molten_brass', 900)
     )
 })
