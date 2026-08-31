@@ -16,6 +16,7 @@ ServerEvents.recipes(event => {
 	'immersiveengineering:wirecoil_steel',
 	'immersiveengineering:wirecoil_structure_rope',
 	'immersiveengineering:wirecoil_structure_steel',
+	'immersiveengineering:storage_steel',
 
 	'create:brass_block',
 	'create:brass_ingot',
