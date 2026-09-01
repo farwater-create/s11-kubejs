@@ -49,7 +49,7 @@ ServerEvents.recipes(event => {
         }
     );
     event.shaped(
-        Item.of('create:brass_funnel', 3),
+        Item.of('create:brass_tunnel', 3),
         [
             'SSQ',
             'KK ',
