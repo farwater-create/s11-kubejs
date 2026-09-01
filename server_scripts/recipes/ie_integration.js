@@ -1,6 +1,5 @@
 ServerEvents.recipes(event => {
-    event.remove({ type: 'createdieselgenerators:hammering' })
-    event.remove({ not: { type: 'immersiveengineering:metal_press' }, output: 'create:brass_sheet' })
+
     event.replaceInput({ output: 'immersiveengineering:component_steel' }, 'minecraft:copper_ingot', 'create:brass_ingot')
     //event.remove({ output: 'immersiveengineering:conveyor_basic' })
     event.replaceInput({ output: '#create:casings' }, '#c:stripped_logs', 'immersiveengineering:treated_wood_horizontal')
