@@ -9,7 +9,7 @@ ServerEvents.recipes(event => {
             {
                 H: 'create:brass_hand',
                 X: 'create:shaft',
-                C: 'create:brass_sheet',
+                C: 'create:andesite_casing',
                 Q: 'create:polished_rose_quartz'
             }
         );
