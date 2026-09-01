@@ -63,6 +63,8 @@ ServerEvents.recipes(event => {
         'kubejs:molten_brass', brass, brassBlock
         );
 
+    event.remove({type: 'create:automated_packing', input: brass});
+
     //endregion brass
 
 });
