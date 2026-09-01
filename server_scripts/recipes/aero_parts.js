@@ -73,5 +73,49 @@ ServerEvents.recipes(event => {
             }
         );
 
+        event.shaped(
+            Item.of('simulated:analog_transmission'),
+            [
+                ' B ',
+                ' CQ',
+                ' B '
+            ],
+            {
+                B: 'create:brass_sheet',
+                C: 'create:cogwheel',
+                Q: 'create:polished_rose_quartz'
+            }
+        );
+
+        event.shaped(
+            Item.of('hotstuff:analog_torsion_spring'),
+            [
+                ' B ',
+                ' PQ',
+                ' S '
+            ],
+            {
+                P: 'simulated:spring',
+                B: 'create:brass_sheet',
+                S: 'create:shaft',
+                Q: 'create:polished_rose_quartz'
+            }
+        );
+
+        event.shaped(
+            Item.of('simulated:linked_typewriter'),
+            [
+                'WPW',
+                'WWW',
+                'TBT'
+            ],
+            {
+                W: '#minecraft:buttons',
+                B: 'create:brass_sheet',
+                P: 'minecraft:paper',
+                T: 'create:transmitter'
+            }
+        );
+
     }
 )
