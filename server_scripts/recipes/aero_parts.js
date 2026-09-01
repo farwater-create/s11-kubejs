@@ -27,7 +27,7 @@ ServerEvents.recipes(event => {
             ],
             {
                 P: '#c:plates/iron',
-                B: '#simulated:handles'
+                B: 'simulated:iron_handle'
             }
         );
 
@@ -42,7 +42,7 @@ ServerEvents.recipes(event => {
             {
                 P: '#c:plates/iron',
                 S: 'create:shaft',
-                B: '#simulated:handles'
+                B: 'simulated:iron_handle'
             }
         );
 
