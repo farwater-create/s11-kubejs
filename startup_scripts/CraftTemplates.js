@@ -4,11 +4,11 @@ global.removeMetalRecipe = (event, metal) => {
     //for keeping ingot to/from block recipe
     event.remove({
         output: metal,
-        not: { any: [
+        not: [
             {type: 'minecraft:crafting_shaped'},
             {type: 'minecraft:crafting_shapeless'}
         ]
-    }});
+    });
 };
 
 global.moltenMetal = (event, inputs, inputs_crushed, fluid, ingot, block) => {
