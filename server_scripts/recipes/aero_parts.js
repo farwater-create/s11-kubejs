@@ -46,5 +46,19 @@ ServerEvents.recipes(event => {
             }
         )
 
-}
+        event.remove({id: 'simulated:throttle_lever'})
+        event.shaped(
+            Item.of('simulated:throttle_lever'),
+            [
+                'A',
+                'B',
+                ''
+            ],
+            {
+                A: 'create:analog_lever',
+                B: 'create:brass_sheet'
+            }
+        )
+
+    }
 )
