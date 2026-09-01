@@ -59,7 +59,7 @@ ServerEvents.recipes(event => {
 
     global.moltenMetal(event,
               ['minecraft:copper_ingot', 'create:zinc_ingot'],
-        ['create:crushed_copper', 'create:crushed_zinc'],
+        ['create:crushed_raw_copper', 'create:crushed_raw_zinc'],
         'kubejs:molten_brass', brass, brassBlock
         );
 
