@@ -29,7 +29,7 @@ ServerEvents.recipes(event => {
                 P: '#c:plates/iron',
                 B: '#simulated:handles'
             }
-        )
+        );
 
         event.remove({id: 'simulated:rope_winch'})
         event.shaped(
@@ -44,7 +44,7 @@ ServerEvents.recipes(event => {
                 S: 'create:shaft',
                 B: '#simulated:handles'
             }
-        )
+        );
 
         event.remove({id: 'simulated:throttle_lever'})
         event.shaped(
@@ -58,7 +58,21 @@ ServerEvents.recipes(event => {
                 A: 'create:analog_lever',
                 B: 'create:brass_sheet'
             }
-        )
+        );
+
+        event.shaped(
+            Item.of('aeronautics:propeller_bearing'),
+            [
+                'S',
+                'B',
+                'C'
+            ],
+            {
+                S: '#minecraft:wooden_slabs',
+                B: 'create:brass_sheet',
+                C: 'create:cogwheel'
+            }
+        );
 
     }
 )
