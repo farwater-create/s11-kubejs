@@ -81,7 +81,7 @@ ServerEvents.recipes(event => {
         Item.of('create:smart_chute', 3),
         [
             ' SQ',
-            ' I',
+            ' I ',
             ' D '
         ],
         {
