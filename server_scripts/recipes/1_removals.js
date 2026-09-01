@@ -1,3 +1,4 @@
+//priority: 10
 ServerEvents.recipes(event => {
 
     let items = [
