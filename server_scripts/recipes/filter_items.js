@@ -22,9 +22,9 @@ ServerEvents.recipes(event => {
     event.shaped(
         Item.of('create:brass_funnel', 3),
         [
-            'SQ',
-            'K',
-            ''
+            ' SQ',
+            ' K ',
+            '   '
         ],
         {
             S: 'create:brass_sheet',
@@ -52,8 +52,8 @@ ServerEvents.recipes(event => {
         Item.of('create:brass_funnel', 3),
         [
             'SSQ',
-            'KK',
-            ''
+            'KK ',
+            '   '
         ],
         {
             S: 'create:brass_sheet',

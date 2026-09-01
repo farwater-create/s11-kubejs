@@ -51,8 +51,7 @@ ServerEvents.recipes(event => {
             Item.of('simulated:throttle_lever'),
             [
                 'A',
-                'B',
-                ''
+                'B'
             ],
             {
                 A: 'create:analog_lever',
