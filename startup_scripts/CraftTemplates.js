@@ -13,27 +13,29 @@ global.removeMetalRecipe = (event, metal) => {
 
 global.moltenMetal = (event, inputs, inputs_crushed, fluid, ingot, block) => {
 
-    create.mixing(
+    let c = event.recipes.create;
+
+    c.mixing(
         Fluid.of(fluid, 100),
         item
     ).heated()
 
-    create.mixing(
+    c.mixing(
         Fluid.of(fluid, 150),
         crushed_item
     ).heated()
 
-    create.mixing(
+    c.mixing(
         Fluid.of(fluid, 200),
         crushed_item
     ).superheated()
 
-    create.compacting(
+    c.compacting(
         block,
         Fluid.of(fluid, 900)
     )
 
-    create.compacting(
+    c.compacting(
         ingot,
         Fluid.of(fluid, 100)
     )
