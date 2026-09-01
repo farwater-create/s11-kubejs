@@ -17,26 +17,26 @@ global.moltenMetal = (event, inputs, inputs_crushed, fluid, ingot, block) => {
 
     c.mixing(
         Fluid.of(fluid, 100),
-        item
-    ).heated()
+        inputs
+    ).heated();
 
     c.mixing(
         Fluid.of(fluid, 150),
-        crushed_item
-    ).heated()
+        inputs_crushed
+    ).heated();
 
     c.mixing(
         Fluid.of(fluid, 200),
-        crushed_item
-    ).superheated()
+        inputs_crushed
+    ).superheated();
 
     c.compacting(
         block,
         Fluid.of(fluid, 900)
-    )
+    );
 
     c.compacting(
         ingot,
         Fluid.of(fluid, 100)
-    )
+    );
 };
