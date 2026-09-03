@@ -1,9 +1,9 @@
 {
-  "feature": "farwater:ore_gold",
+  "feature": "farwater:ore_iron_ddu",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 40
+      "count": 20
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 320
+          "absolute": 110
         },
         "min_inclusive": {
-          "absolute": 64
+          "absolute": -50
         }
       }
     },
