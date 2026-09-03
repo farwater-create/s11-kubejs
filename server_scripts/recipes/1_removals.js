@@ -22,7 +22,6 @@ ServerEvents.recipes(event => {
 
         'create:brass_casing',
         'create:mechanical_crafter',
-        'create:steam_engine',
         'create:smart_observer',
         'create:precision_mechanism',
         'create:electron_tube',
@@ -30,9 +29,11 @@ ServerEvents.recipes(event => {
 
         'create_sa:steam_engine',
 
-        'steampowered:bronze_steam_engine',
         'steampowered:cast_iron_steam_engine',
-        'steampowered:steel_steam_engine',
+        'steampowered:cast_iron_flywheel',
+        'steampowered:furnace_engine',
+        'steampowered:brass_flywheel',
+        'steampowered:bronze_flywheel',
 
         'aeronautics:smart_propeller',
         'aeronautics:propeller_bearing',
