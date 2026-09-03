@@ -4,6 +4,7 @@
   "features": [
 	"farwater:ore_gold",
 	"farwater:ore_gold_buried",
+	"farwater:ore_iron_ddu",
 	"farwater:ore_lapis",
 	"farwater:ore_lapis_buried",
 	"farwater:ore_redstone",
