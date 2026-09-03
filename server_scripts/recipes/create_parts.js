@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
 
         event.shaped(
-            Item.of('create:smart_observer'),
+            Item.of('create:content_observer'),
             [
                 ' Q ',
                 ' B ',
