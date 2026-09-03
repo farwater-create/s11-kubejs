@@ -117,5 +117,19 @@ ServerEvents.recipes(event => {
             }
         );
 
+    event.shaped(
+        Item.of('aeronautics_utility_objects:brass_universal_joint'),
+        [
+            ' S ',
+            ' C ',
+            ' A '
+        ],
+        {
+            S: 'create:shaft',
+            C: 'create:copper_sheet',
+            A: 'create:andesite_alloy'
+        }
+    );
+
     }
 )
