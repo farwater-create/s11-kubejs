@@ -26,5 +26,20 @@ ServerEvents.recipes(event => {
                 S: 'create:shaft'
             }
         );
+
+    event.shaped(
+        Item.of('steampowered:bronze_steam_engine'),
+        [
+            'SPB',
+            'SPE',
+            'SPB'
+        ],
+        {
+            B: 'create:brass_ingot',
+            S: 'create:brass_sheet',
+            P: 'create:fluid_pipe',
+            E: 'createdieselgenerators:engine_piston',
+        }
+    );
     }
 )
