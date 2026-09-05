@@ -45,7 +45,7 @@ ServerEvents.recipes(event => {
 
     event.remove({output: 'create:brass_casing'});
 
-    event.recipes.create.filling('create:brass_casing', [Fluid.of('kubejs:molten_brass'), '#immersiveengineering:treated_wood']);
+    //event.recipes.create.filling('create:brass_casing', [Fluid.of('kubejs:molten_brass'), '#immersiveengineering:treated_wood']);
 
     }
 )
