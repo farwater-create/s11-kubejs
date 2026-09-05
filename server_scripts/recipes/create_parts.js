@@ -48,5 +48,20 @@ ServerEvents.recipes(event => {
         event.recipes.create.filling('create:brass_casing',
             [Fluid.of('kubejs:molten_brass', 90), 'immersiveengineering:treated_wood_vertical']);
 
+    event.shaped(
+        Item.of('createcobblestone:mechanical_generator'),
+        [
+            'BQB',
+            'WDL',
+            'BCB'
+        ],
+        {
+            B: 'create:brass_ingot',
+            Q: 'create:polished_rose_quartz',
+            D: 'create:mechanical_drill',
+            W: 'minecraft:water_bucket',
+            L: 'minecraft:lava_bucket'
+        }
+    );
     }
 )
