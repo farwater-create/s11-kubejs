@@ -43,56 +43,6 @@ ServerEvents.recipes(event => {
         ]
     ).heated()
 
-
-    // Dripstone -> copper veridium
-    event.recipes.create.filling(
-        Item.of('create:veridium', 3),
-        [
-            'minecraft:dripstone_block',
-            Fluid.of('kubejs:molten_copper', 10)
-        ]
-    )
-
-
-    // Dripstone -> gold ochrum
-    event.recipes.create.filling(
-        Item.of('create:ochrum', 3),
-        [
-            'minecraft:dripstone_block',
-            Fluid.of('kubejs:molten_gold', 10)
-        ]
-    )
-
-
-    // Dripstone -> zinc asurine
-    event.recipes.create.filling(
-        Item.of('create:asurine', 3),
-        [
-            'minecraft:dripstone_block',
-            Fluid.of('kubejs:molten_zinc', 10)
-        ]
-    )
-
-
-    // Dripstone -> iron crimsite
-    event.recipes.create.filling(
-        Item.of('create:crimsite', 3),
-        [
-            'minecraft:dripstone_block',
-            Fluid.of('kubejs:molten_iron', 10)
-        ]
-    )
-
-
-    // Dripstone -> lead scorchia
-    event.recipes.create.filling(
-        Item.of('create:scorchia', 3),
-        [
-            'minecraft:dripstone_block',
-            Fluid.of('kubejs:molten_lead', 10)
-        ]
-    )
-
     // Scorchia crushing
     event.recipes.create.crushing(
         [
