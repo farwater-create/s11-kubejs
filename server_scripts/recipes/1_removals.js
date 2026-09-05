@@ -48,8 +48,8 @@ ServerEvents.recipes(event => {
         'create_new_age:nuclear_fuel',
         'create_new_age:reactor_fuel_acceptor',
 
-        'createpropulsion:thruster'
-
+        'createpropulsion:thruster',
+        'createpropulsion:solid_fuel_thruster'
     ];
 
     items.forEach(item => {
