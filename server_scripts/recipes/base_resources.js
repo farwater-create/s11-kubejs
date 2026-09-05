@@ -83,6 +83,7 @@ ServerEvents.recipes(event => {
         event.remove({output: item});
     })
 
+    event.remove({input: 'minecraft:iron_ingot', output: 'abyssal_decor:moonsilver_ingot'});
     event.remove({input: 'minecraft:gold_ingot', output: 'abyssal_decor:seabrass_ingot'});
     event.remove({input: 'abyssal_decor:seabrass_ingot', output: 'abyssal_decor:deepbronze_ingot'});
     event.replaceInput(
