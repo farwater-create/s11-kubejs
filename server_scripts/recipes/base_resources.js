@@ -85,8 +85,7 @@ ServerEvents.recipes(event => {
 
     event.remove({input: 'minecraft:gold_ingot', output: 'abyssal_decor:seabrass_ingot'});
     event.remove({input: 'abyssal_decor:seabrass_ingot', output: 'abyssal_decor:deepbronze_ingot'});
-    event.remove({input: 'abyssal_decor:seabrass_ingot', output: 'abyssal_decor:bellmetal_ingot'});
-    event.replaceInput(//This is broken af but whatev.
+    event.replaceInput(
         {output: 'abyssal_decor:bellmetal_ingot' },
         'abyssal_decor:seabrass_ingot',
         Ingredient.of('createbigcannons:cast_iron_ingot')
@@ -98,7 +97,7 @@ ServerEvents.recipes(event => {
     event.remove({input: 'immersiveengineering:ingot_silver', output: 'immersiveengineering:ingot_electrum'});
 
     event.replaceInput(//This is broken af but whatev.
-        { input: 'minecraft:gold_ingot', output: 'immersiveengineering:ingot_electrum' },
+        { output: 'immersiveengineering:ingot_electrum' },
         'minecraft:gold_ingot',
         Ingredient.of('immersiveengineering:dust_electrum')
     );
