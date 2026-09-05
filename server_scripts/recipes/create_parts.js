@@ -49,5 +49,7 @@ ServerEvents.recipes(event => {
         '#immersiveengineering:treated_wood'
     );
 
+    event.remove({output: 'create:brass_casing', input: '#minecraft:logs'});
+
     }
 )
