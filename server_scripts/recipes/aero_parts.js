@@ -18,6 +18,19 @@ ServerEvents.recipes(event => {
             }
         );
 
+        event.shaped(
+            Item.of('simulated:rope_coupling', 2),
+            [
+                ' R ',
+                'NRN',
+                ' R '
+            ],
+            {
+                N: '#c:nuggets/iron',
+                R: '#c:ropes'
+            }
+        );
+
         event.remove({id: 'simulated:rope_connector'})
         event.shaped(
             Item.of('simulated:rope_connector'),
