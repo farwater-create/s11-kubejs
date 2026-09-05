@@ -84,16 +84,23 @@ ServerEvents.recipes(event => {
     })
 
     event.remove({input: 'minecraft:gold_ingot', output: 'abyssal_decor:seabrass_ingot'});
+    event.remove({input: 'abyssal_decor:seabrass_ingot', output: 'abyssal_decor:deepbronze_ingot'});
+    event.remove({input: 'abyssal_decor:seabrass_ingot', output: 'abyssal_decor:bellmetal_ingot'});
+    event.replaceInput(//This is broken af but whatev.
+        {output: 'abyssal_decor:bellmetal_ingot' },
+        'abyssal_decor:seabrass_ingot',
+        Ingredient.of('createbigcannons:cast_iron_ingot')
+    );
 
     event.recipes.create.crushing('immersiveengineering:dust_gold', 'minecraft:gold_ingot');
     event.recipes.create.crushing('immersiveengineering:dust_silver', 'immersiveengineering:ingot_silver');
     event.remove({input: 'immersiveengineering:dust_electrum', output: 'immersiveengineering:ingot_electrum'});
     event.remove({input: 'immersiveengineering:ingot_silver', output: 'immersiveengineering:ingot_electrum'});
 
-    event.replaceInput(
+    event.replaceInput(//This is broken af but whatev.
         { input: 'minecraft:gold_ingot', output: 'immersiveengineering:ingot_electrum' },
         'minecraft:gold_ingot',
-        'immersiveengineering:dust_electrum'
+        Ingredient.of('immersiveengineering:dust_electrum')
     );
 
     event.remove({input: 'minecraft:gold_ingot', output: 'immersiveengineering:ingot_electrum'});
