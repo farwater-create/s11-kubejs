@@ -1,7 +1,7 @@
 ServerEvents.recipes((e) => {
 
 console.log('Adding mixing recipies');
-    /*e.recipes.create.mixing(
+    e.recipes.create.mixing(
     	[Item.of("create:asurine", 2)],
         [Item.of("create:asurine"), Item.of("minecraft:mossy_cobblestone")],
     ).processingTime(25).heated();
@@ -16,7 +16,7 @@ console.log('Adding mixing recipies');
     e.recipes.create.mixing(
     	[Item.of("create:crimsite", 2)],
         [Item.of("create:crimsite"), Item.of("minecraft:blackstone")],
-    ).processingTime(25).heated();*/
+    ).processingTime(25).heated();
 
     e.recipes.create.mixing(
     	[Item.of("create:limestone", 2)],
