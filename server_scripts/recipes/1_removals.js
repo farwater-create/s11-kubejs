@@ -17,8 +17,6 @@ ServerEvents.recipes(event => {
         'immersiveengineering:wirecoil_steel',
         'immersiveengineering:wirecoil_structure_rope',
         'immersiveengineering:wirecoil_structure_steel',
-        'immersiveengineering:storage_steel',
-        'immersiveengineering:ingot_steel',
 
         'create:mechanical_crafter',
         'create:precision_mechanism',
