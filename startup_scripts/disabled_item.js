@@ -31,6 +31,8 @@ global.disabledItems = [
 	'create_new_age:overcharged_golden_wire',
 	'create_new_age:overcharged_diamond_wire',
 
-	'createdieselgenerators:pumpjack_bearing'
+	'createdieselgenerators:pumpjack_bearing',
+
+	'aeronautics_utility_objects:damping_stress_bearing'
 	
 ]

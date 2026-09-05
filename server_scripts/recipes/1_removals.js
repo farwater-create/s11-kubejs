@@ -3,6 +3,8 @@ ServerEvents.recipes(event => {
 
     let items = [
 
+        'aeronautics_utility_objects:damping_stress_bearing',
+
         'immersiveengineering:connector_hv',
         'immersiveengineering:connector_hv_relay',
         'immersiveengineering:connector_lv',
