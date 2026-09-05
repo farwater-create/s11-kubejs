@@ -43,13 +43,9 @@ ServerEvents.recipes(event => {
             }
         );
 
-    event.replaceInput(
-        { output: 'create:brass_casing' },
-        '#c:stripped_logs',
-        '#immersiveengineering:treated_wood'
-    );
+    event.remove({output: 'create:brass_casing'});
 
-    event.remove({output: 'create:brass_casing', input: '#minecraft:logs'});
+    event.recipes.create.filling('create:brass_casing', [Fluid.of('kubejs:molten_brass', 114), '#immersiveengineering:treated_wood']);
 
     }
 )
