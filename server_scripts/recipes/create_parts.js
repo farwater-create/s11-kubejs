@@ -1,5 +1,41 @@
 ServerEvents.recipes(event => {
 
+        event.remove({output: 'create:adjustable_chain_gearshift'});
+        event.shapeless(
+            Item.of('create:adjustable_chain_gearshift'),
+            [
+                'create:encased_chain_drive',
+                'create:polished_rose_quartz'
+            ]
+        );
+
+        event.remove({output: 'create:clockwork_bearing'});
+        event.shaped(
+            Item.of('create:clockwork_bearing'),
+            [
+                'S',
+                'B',
+                'Q'
+            ],
+            {
+                S: '#minecraft:wooden_slabs',
+                B: 'create:brass_casing',
+                Q: 'create:polished_rose_quartz'
+            }
+        );
+
+        event.remove({output: 'create:display_board'});
+        event.shaped(
+            Item.of('create:display_board', 2),
+            [
+                'AQA'
+            ],
+            {
+                A: 'create:andesite_alloy',
+                Q: 'create:polished_rose_quartz'
+            }
+        );
+
         event.remove({output: 'create:content_observer'});
         event.shaped(
             Item.of('create:content_observer'),
