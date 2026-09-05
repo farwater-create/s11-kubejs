@@ -63,6 +63,11 @@ ServerEvents.recipes(event => {
         'kubejs:molten_brass', brass, brassBlock
         );
 
+    create.mixing(
+        Fluid.of('kubejs:molten_brass', 90),
+        ['create:brass_ingot']
+    ).heated();
+
     event.remove({type: 'create:automated_packing', input: brass});
 
     //endregion brass
