@@ -65,7 +65,7 @@ ServerEvents.recipes(event => {
 
     create.mixing(
         Fluid.of('kubejs:molten_brass', 90),
-        ['create:brass_ingot']
+        'create:brass_ingot'
     ).heated();
 
     event.remove({type: 'create:automated_packing', input: brass});
