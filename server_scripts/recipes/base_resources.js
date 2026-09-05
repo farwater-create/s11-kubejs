@@ -57,7 +57,7 @@ ServerEvents.recipes(event => {
     global.removeMetalRecipe(event, brassBlock);
     global.removeMetalRecipe(event, brassNugget);
 
-    global.moltenMetal(event,
+    global.moltenMetal(create,
               ['minecraft:copper_ingot', 'create:zinc_ingot'],
         ['create:crushed_raw_copper', 'create:crushed_raw_zinc'],
         'kubejs:molten_brass', brass, brassBlock

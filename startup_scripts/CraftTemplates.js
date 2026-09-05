@@ -11,9 +11,7 @@ global.removeMetalRecipe = (event, metal) => {
     });
 };
 
-global.moltenMetal = (event, inputs, inputs_crushed, fluid, ingot, block) => {
-
-    let c = event.recipes.create;
+global.moltenMetal = (c, inputs, inputs_crushed, fluid, ingot, block) => {
 
     c.mixing(
         Fluid.of(fluid, 90),
