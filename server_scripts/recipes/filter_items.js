@@ -118,6 +118,19 @@ ServerEvents.recipes(event => {
             P: 'minecraft:paper'
         }
     );
+    event.shaped(
+        Item.of('create:smart_fluid_pipe', 1),
+        [
+            'B',
+            'F',
+            'Q'
+        ],
+        {
+            B: '#c:plates/brass',
+            F: 'create:fluid_pipe',
+            Q: 'create:polished_rose_quartz'
+        }
+    );
 
 
 });
