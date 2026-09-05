@@ -20,9 +20,7 @@ ServerEvents.recipes(event => {
         'immersiveengineering:storage_steel',
         'immersiveengineering:ingot_steel',
 
-        'create:brass_casing',
         'create:mechanical_crafter',
-        'create:smart_observer',
         'create:precision_mechanism',
         'create:electron_tube',
         'create:crushing_wheel',

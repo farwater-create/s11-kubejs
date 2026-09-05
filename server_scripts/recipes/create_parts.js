@@ -1,5 +1,6 @@
 ServerEvents.recipes(event => {
 
+        event.remove({output: 'create:content_observer'});
         event.shaped(
             Item.of('create:content_observer'),
             [
@@ -27,19 +28,26 @@ ServerEvents.recipes(event => {
             }
         );
 
-    event.shaped(
-        Item.of('steampowered:bronze_steam_engine'),
-        [
-            'SPB',
-            'SPE',
-            'SPB'
-        ],
-        {
-            B: 'create:brass_ingot',
-            S: 'create:brass_sheet',
-            P: 'create:fluid_pipe',
-            E: 'createdieselgenerators:engine_piston',
-        }
+        event.shaped(
+            Item.of('steampowered:bronze_steam_engine'),
+            [
+                'SPB',
+                'SPE',
+                'SPB'
+            ],
+            {
+                B: 'create:brass_ingot',
+                S: 'create:brass_sheet',
+                P: 'create:fluid_pipe',
+                E: 'createdieselgenerators:engine_piston',
+            }
+        );
+
+    event.replaceInput(
+        { output: 'create:brass_casing' },
+        '#c:stripped_logs',
+        '#immersiveengineering:treated_wood'
     );
+
     }
 )
