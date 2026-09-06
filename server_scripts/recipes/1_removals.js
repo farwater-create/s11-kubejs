@@ -4,6 +4,7 @@ ServerEvents.recipes(event => {
     let items = [
 
         'aeronautics_utility_objects:damping_stress_bearing',
+        'steampowered:alternator',
 
         'immersiveengineering:connector_hv',
         'immersiveengineering:connector_hv_relay',
