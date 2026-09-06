@@ -100,5 +100,21 @@ ServerEvents.recipes(event => {
                 C: 'create:brass_casing'
             }
         );
+
+    event.shaped(
+        Item.of('create:mechanical_crafter'),
+        [
+            ' I ',
+            'WCE',
+            ' T '
+        ],
+        {
+            I: 'abyssal_decor:seabrass_ingot',
+            C: 'create:brass_casing',
+            E: 'create:electron_tube',
+            W: 'create:cogwheel',
+            T: 'minecraft:crafting_table'
+        }
+    );
     }
 )

@@ -25,6 +25,7 @@ ServerEvents.recipes(event => {
 
         'steampowered:brass_flywheel',
         'steampowered:bronze_flywheel',
+        'create:mechanical_crafter'
 
     ];
 
@@ -46,7 +47,6 @@ ServerEvents.recipes(event => {
         'immersiveengineering:wirecoil_structure_rope',
         'immersiveengineering:wirecoil_structure_steel',
 
-        'create:mechanical_crafter',
         'create:precision_mechanism',
         'create:electron_tube',
 
