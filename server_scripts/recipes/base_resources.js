@@ -111,10 +111,10 @@ ServerEvents.recipes(event => {
     event.remove({input: 'minecraft:gold_ingot', output: 'immersiveengineering:ingot_electrum'});
 
     create.mixing(
-        ['2x abyssal_decor:seabrass_ingot', 'abyssal_decor:seabrass_catalyst',
+        ['abyssal_decor:seabrass_ingot', 'abyssal_decor:seabrass_catalyst',
             CreateItem.of('minecraft:prismarine_crystals', 0.95)],
 
-        [Fluid.of('kubejs:molten_brass', 180), 'abyssal_decor:seabrass_catalyst',
+        [Fluid.of('kubejs:molten_brass', 90), 'abyssal_decor:seabrass_catalyst',
             'minecraft:prismarine_crystals']
     );
 });
