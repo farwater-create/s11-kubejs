@@ -1,10 +1,35 @@
 //priority: 10
 ServerEvents.recipes(event => {
 
-    let items = [
+    let items = [ //Never to be added
 
         'aeronautics_utility_objects:damping_stress_bearing',
         'steampowered:alternator',
+
+        'create_sa:steam_engine',
+
+        'steampowered:cast_iron_steam_engine',
+        'steampowered:cast_iron_flywheel',
+        'steampowered:furnace_engine',
+
+        'createpropulsion:thruster',
+        'createpropulsion:solid_fuel_thruster'
+    ];
+
+    items.forEach(item => {
+        event.remove({output: item});
+        event.remove({input: item});
+    })
+
+    let items_craftonly_permanent = [ //recipe added elsewhere
+
+        'steampowered:brass_flywheel',
+        'steampowered:bronze_flywheel',
+
+    ];
+
+    let items_craftonly = [ //recipe to be unlocked or added elsewhere
+
 
         'immersiveengineering:connector_hv',
         'immersiveengineering:connector_hv_relay',
@@ -24,15 +49,6 @@ ServerEvents.recipes(event => {
         'create:mechanical_crafter',
         'create:precision_mechanism',
         'create:electron_tube',
-        'create:crushing_wheel',
-
-        'create_sa:steam_engine',
-
-        'steampowered:cast_iron_steam_engine',
-        'steampowered:cast_iron_flywheel',
-        'steampowered:furnace_engine',
-        'steampowered:brass_flywheel',
-        'steampowered:bronze_flywheel',
 
         'aeronautics:smart_propeller',
         'aeronautics:propeller_bearing',
@@ -40,22 +56,22 @@ ServerEvents.recipes(event => {
         'aeronautics:levitite',
         'aeronautics:pearlescent_levitite',
 
-
         'create_new_age:carbon_brushes',
         'create_new_age:generator_coil',
         'create_new_age:reactor_casing',
         'create_new_age:reactor_glass',
         'create_new_age:reactor_rod',
         'create_new_age:nuclear_fuel',
-        'create_new_age:reactor_fuel_acceptor',
+        'create_new_age:reactor_fuel_acceptor'
 
-        'createpropulsion:thruster',
-        'createpropulsion:solid_fuel_thruster'
     ];
 
-    items.forEach(item => {
+    items_craftonly.forEach(item => {
         event.remove({output: item});
-        event.remove({input: item});
+    })
+
+    items_craftonly_permanent.forEach(item => {
+        event.remove({output: item});
     })
 
 });
