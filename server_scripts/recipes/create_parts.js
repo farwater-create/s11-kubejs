@@ -9,6 +9,21 @@ ServerEvents.recipes(event => {
             ]
         );
 
+        event.remove({output: 'create:contraption_control'});
+        event.shaped(
+            Item.of('create:contraption_control'),
+            [
+                'B',
+                'A',
+                'Q'
+            ],
+            {
+                B: '#minecraft:buttons',
+                A: 'create:andesite_casing',
+                Q: 'create:polished_rose_quartz'
+            }
+        );
+
         event.remove({output: 'create:clockwork_bearing'});
         event.shaped(
             Item.of('create:clockwork_bearing'),
