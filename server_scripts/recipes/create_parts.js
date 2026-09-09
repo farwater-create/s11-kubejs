@@ -51,6 +51,21 @@ ServerEvents.recipes(event => {
             }
         );
 
+        event.remove({output: 'create:stockpile_switch'});
+        event.shaped(
+            Item.of('create:stockpile_switch'),
+            [
+                ' Q ',
+                ' B ',
+                ' O '
+            ],
+            {
+                O: 'minecraft:observer',
+                B: 'create:brass_sheet',
+                Q: 'minecraft:comparator'
+            }
+        );
+
         event.shaped(
             Item.of('steampowered:bronze_flywheel'),
             [
