@@ -113,20 +113,36 @@ ServerEvents.recipes(event => {
     )
 
     event.custom({
-        type: 'immersiveengineering:alloy',
-        ingredients: [
-            { item: 'immersiveengineering:dust_gold' },
-            { item: 'immersiveengineering:dust_silver' }
-        ],
-        result: { item: 'immersiveengineering:ingot_electrum', count: 2 }
-    })
+        "type": "immersiveengineering:alloy",
+            "input0": {
+            "item": "immersiveengineering:dust_gold"
+        },
+        "input1": {
+            "item": "immersiveengineering:dust_silver"
+        },
+        "result": {
+            "basePredicate": {
+                "tag": "c:ingots/electrum"
+            },
+            "count": 2
+        }
+    });
+
     event.custom({
-        type: 'immersiveengineering:alloy',
-        ingredients: [
-            { item: 'immersiveengineering:dust_electrum' }
-        ],
-        result: { item: 'immersiveengineering:ingot_electrum', count: 1 }
-    })
+        "type": "immersiveengineering:alloy",
+        "input0": {
+            "item": "immersiveengineering:dust_electrum"
+        },
+        "input1": {
+            "item": "immersiveengineering:dust_electrum"
+        },
+        "result": {
+            "basePredicate": {
+                "tag": "c:ingots/electrum"
+            },
+            "count": 2
+        }
+    });
 
     create.mixing(
         ['abyssal_decor:seabrass_ingot', 'abyssal_decor:seabrass_catalyst',
