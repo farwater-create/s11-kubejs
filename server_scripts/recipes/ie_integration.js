@@ -36,5 +36,18 @@ ServerEvents.recipes(event => {
         }
     })
 
-    
+    event.custom({
+        type: "immersiveengineering:coke_oven",
+        creosote: 500,
+        input: {
+            basePredicate: {
+              item: 'minecraft:charcoal'
+            },
+            count: 64
+        },
+        result: {
+            tag: 'c:coal_coke'
+        },
+        time: 12000
+    })
 })

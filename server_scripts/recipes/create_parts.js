@@ -9,6 +9,21 @@ ServerEvents.recipes(event => {
             ]
         );
 
+        event.remove({output: 'create:contraption_control'});
+        event.shaped(
+            Item.of('create:contraption_control'),
+            [
+                'B',
+                'A',
+                'Q'
+            ],
+            {
+                B: '#minecraft:buttons',
+                A: 'create:andesite_casing',
+                Q: 'create:polished_rose_quartz'
+            }
+        );
+
         event.remove({output: 'create:clockwork_bearing'});
         event.shaped(
             Item.of('create:clockwork_bearing'),
@@ -48,6 +63,21 @@ ServerEvents.recipes(event => {
                 O: 'minecraft:observer',
                 B: 'create:brass_sheet',
                 Q: 'create:polished_rose_quartz'
+            }
+        );
+
+        event.remove({output: 'create:stockpile_switch'});
+        event.shaped(
+            Item.of('create:stockpile_switch'),
+            [
+                ' Q ',
+                ' B ',
+                ' O '
+            ],
+            {
+                O: 'minecraft:observer',
+                B: 'create:brass_sheet',
+                Q: 'minecraft:comparator'
             }
         );
 
