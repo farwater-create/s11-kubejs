@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
 
     let recipes = event.recipes;
     let create = recipes.create;
-    
+
     //region Andesite alloy
 
     event.shapeless(
@@ -58,10 +58,10 @@ ServerEvents.recipes(event => {
     global.removeMetalRecipe(event, brassNugget);
 
     global.moltenMetal(create,
-              ['minecraft:copper_ingot', 'create:zinc_ingot'],
+        ['minecraft:copper_ingot', 'create:zinc_ingot'],
         ['create:crushed_raw_copper', 'create:crushed_raw_zinc'],
         'kubejs:molten_brass', brass, brassBlock
-        );
+    );
 
     create.mixing(
         Fluid.of('kubejs:molten_brass', 90),
@@ -92,18 +92,28 @@ ServerEvents.recipes(event => {
     event.remove({input: 'minecraft:gold_ingot', output: 'abyssal_decor:seabrass_ingot'});
     event.remove({input: 'abyssal_decor:seabrass_ingot', output: 'abyssal_decor:deepbronze_ingot'});
     event.replaceInput(
-        {output: 'abyssal_decor:bellmetal_ingot' },
+        {output: 'abyssal_decor:bellmetal_ingot'},
         'abyssal_decor:seabrass_ingot',
         Ingredient.of('createbigcannons:cast_iron_ingot')
     );
 
     event.recipes.create.crushing('immersiveengineering:dust_gold', 'minecraft:gold_ingot');
     event.recipes.create.crushing('immersiveengineering:dust_silver', 'immersiveengineering:ingot_silver');
-    event.remove({input: 'immersiveengineering:dust_electrum', output: 'immersiveengineering:ingot_electrum'});
-    event.remove({input: 'immersiveengineering:ingot_silver', output: 'immersiveengineering:ingot_electrum'});
+    event.remove({output: 'immersiveengineering:ingot_electrum'});
+
+    event.shapeless(
+        Item.of('immersiveengineering:ingot_electrum', 1),
+        [
+            '9x immersiveengineering:nugget_electrum'
+        ]
+    );
+    event.shapeless(
+        Item.of('immersiveengineering:ingot_electrum', 9),
+        ['immersiveengineering:storage_electrum']
+    )
 
     event.replaceInput(//This is broken af but whatev.
-        { output: 'immersiveengineering:ingot_electrum' },
+        {output: 'immersiveengineering:ingot_electrum'},
         'minecraft:gold_ingot',
         Ingredient.of('immersiveengineering:dust_electrum')
     );
