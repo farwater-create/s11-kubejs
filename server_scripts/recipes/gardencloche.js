@@ -1,64 +1,67 @@
 function saplingGardenCloche(event, input, output, soil) {
     event.custom({
-        type: 'immersiveengineering:cloche',
-        input: {
-            item: input
+        "type": 'immersiveengineering:cloche',
+        "input": {
+            "item": input
         },
-        results: [
+        "results": [
             {
-                count: 4,
-                id: output
+                "count": 4,
+                "id": output
             },
             {
-                chance: 0.25,
-                output: {
-                    id: input
+                "chance": 0.25,
+                "output": {
+                    "id": input
                 }
             }
         ],
-        render: {
-          type: 'immersiveengineering:generic',
-          block: input
+        "render": {
+          "type": 'immersiveengineering:generic',
+          "block": input
         },
-        soil: {
-          item: soil
+        "soil": {
+          "item": soil
         },
-        time: 1200
-    })
+        "time": 1200
+    });
 }
 function saplingGardenClocheEx(event, input, output, soil, extra) {
     event.custom({
-        type: 'immersiveengineering:cloche',
-        input: {
-            item: input
+        "type": 'immersiveengineering:cloche',
+        "input": {
+            "item": input
         },
-        results: [
+        "count": 7,
+        "results": [
             {
-                count: 4,
-                id: output
+                "count": 4,
+                "id": output
             },
             {
-                chance: 0.25,
-                output: {
-                    id: input
+                "chance": 0.25,
+                "output": {
+                    "id": input,
+                    "count": 1
                 }
             },
             {
-                chance: 0.1,
-                output: {
-                    id: extra
+                "chance": 0.1,
+                "output": {
+                    "id": extra,
+                    "count": 1
                 }
             }
         ],
-        render: {
-          type: 'immersiveengineering:generic',
-          block: input
+        "render": {
+          "type": 'immersiveengineering:generic',
+          "block": input
         },
-        soil: {
-          item: soil
+        "soil": {
+          "item": soil
         },
-        time: 2400
-    })
+        "time": 2400
+    });
 }
 
 ServerEvents.recipes(event => {
