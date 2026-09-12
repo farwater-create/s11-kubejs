@@ -131,20 +131,57 @@ ServerEvents.recipes(event => {
             }
         );
 
-    event.shaped(
-        Item.of('create:mechanical_crafter'),
-        [
-            ' I ',
-            'WCE',
-            ' T '
-        ],
-        {
-            I: 'abyssal_decor:seabrass_ingot',
-            C: 'create:brass_casing',
-            E: 'create:electron_tube',
-            W: 'create:cogwheel',
-            T: 'minecraft:crafting_table'
-        }
-    );
+        event.shaped(
+            Item.of('create:mechanical_crafter'),
+            [
+                ' I ',
+                'WCE',
+                ' T '
+            ],
+            {
+                I: 'abyssal_decor:seabrass_ingot',
+                C: 'create:brass_casing',
+                E: 'create:electron_tube',
+                W: 'create:cogwheel',
+                T: 'minecraft:crafting_table'
+            }
+        );
+
+        let c = event.recipes.create;
+        let prq = 'create:polished_rose_quartz';
+
+        c.sequenced_assembly(
+            // Result:
+            [
+                CreateItem.of('create:electron_tube')
+            ],
+            // Input:
+            'create:polished_rose_quartz',
+            // Sequence:
+            [
+                c.deploying(prq, [prq,
+                    'immersiveengineering:wire_copper',]),
+                c.deploying(prq, [prq,
+                    'createaddition:gold_wire',]),
+                c.deploying(prq, [prq,
+                    'create:iron_sheet',]),
+                event.recipes.create.pressing(prq, prq)
+            ]
+        ).transitionalItem(prq);
+
+        event.shaped(
+            Item.of('create:mechanical_crafter'),
+            [
+                ' Q ',
+                'C G',
+                'DDD'
+            ],
+            {
+                Q: prq,
+                C: 'immersiveengineering:wire_copper',
+                G: 'createaddition:gold_wire',
+                D: 'cataclysm:black_steel_nugget'
+            }
+        );
     }
 )
