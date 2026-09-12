@@ -112,13 +112,21 @@ ServerEvents.recipes(event => {
         ['immersiveengineering:storage_electrum']
     )
 
-    event.replaceInput(//This is broken af but whatev.
-        {output: 'immersiveengineering:ingot_electrum'},
-        'minecraft:gold_ingot',
-        Ingredient.of('immersiveengineering:dust_electrum')
-    );
-
-    event.remove({input: 'minecraft:gold_ingot', output: 'immersiveengineering:ingot_electrum'});
+    event.custom({
+        type: 'immersiveengineering:alloy',
+        ingredients: [
+            { item: 'immersiveengineering:dust_gold' },
+            { item: 'immersiveengineering:dust_silver' }
+        ],
+        result: { item: 'immersiveengineering:ingot_electrum', count: 2 }
+    })
+    event.custom({
+        type: 'immersiveengineering:alloy',
+        ingredients: [
+            { item: 'immersiveengineering:dust_electrum' }
+        ],
+        result: { item: 'immersiveengineering:ingot_electrum', count: 1 }
+    })
 
     create.mixing(
         ['abyssal_decor:seabrass_ingot', 'abyssal_decor:seabrass_catalyst',
