@@ -11,7 +11,7 @@ ServerEvents.recipes(event => {
 
         event.remove({output: 'create:contraption_control'});
         event.shaped(
-            Item.of('create:contraption_control'),
+            Item.of('create:contraption_controls'),
             [
                 'B',
                 'A',
