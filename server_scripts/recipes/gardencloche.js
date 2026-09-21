@@ -70,7 +70,7 @@ ServerEvents.recipes(event => {
     saplingGardenCloche(event, 'minecraft:spruce_sapling', 'minecraft:spruce_log', 'minecraft:dirt')
     saplingGardenCloche(event, 'minecraft:birch_sapling', 'minecraft:birch_log', 'minecraft:dirt')
     saplingGardenCloche(event, 'minecraft:jungle_sapling', 'minecraft:jungle_log', 'minecraft:dirt')
-    //saplingGardenClocheEx(event, 'minecraft:acacia_sapling', 'minecraft:acacia_log', 'minecraft:dirt', 'alexmobs:acacia_blossom')
+    saplingGardenClocheEx(event, 'minecraft:acacia_sapling', 'minecraft:acacia_log', 'minecraft:dirt', 'alexsmobs:acacia_blossom')
     saplingGardenClocheEx(event, 'minecraft:dark_oak_sapling', 'minecraft:dark_oak_log', 'minecraft:dirt', 'minecraft:apple')
     saplingGardenCloche(event, 'minecraft:cherry_sapling', 'minecraft:cherry_log', 'minecraft:dirt')
     saplingGardenClocheEx(event, 'minecraft:mangrove_propagule', 'minecraft:mangrove_log', 'minecraft:dirt', 'minecraft:mangrove_roots')
@@ -97,6 +97,6 @@ ServerEvents.recipes(event => {
     saplingGardenCloche(event, 'natures_spirit:mahogany_sapling', 'natures_spirit:mahogany_log', 'minecraft:dirt')
     saplingGardenCloche(event, 'natures_spirit:saxaul_sapling', 'natures_spirit:saxaul_log', 'minecraft:dirt')
     saplingGardenClocheEx(event, 'vinery:dark_cherry_sapling', 'vinery:dark_cherry_log', 'minecraft:dirt', 'vinery:cherry')
-    //saplingGardenClocheEx(event, 'vinery:apple_tree_sapling', 'vinery:apple_tree_log', 'minecraft:dirt', 'minecraft:apple')
+    saplingGardenClocheEx(event, 'vinery:apple_tree_sapling', 'vinery:apple_log', 'minecraft:dirt', 'minecraft:apple')
 
 })
