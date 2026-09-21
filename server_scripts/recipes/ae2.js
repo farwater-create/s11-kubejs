@@ -1,383 +1,143 @@
 ServerEvents.recipes(event => {
-    event.replaceInput({output:'ae2:inscriber'},'minecraft:copper_ingot','kubejs:redstone_circuit');
-    // Disabled, Create Nuclear Deletion
-    //event.custom({
-    //    "type": "create:filling",
-    //    "ingredients": [
-    //        {
-    //            "item": "ae2:certus_quartz_dust"
-    //        },
-    //        {
-    //            "type": "neoforge:single",
-    //            "amount": 10,
-    //            "fluid": "createnuclear:uranium"
-    //        }
-    //    ],
-    //    "results": [
-    //        {
-    //            "chance":0.3,
-    //            "id": "ae2:fluix_crystal"
-    //        }
-    //    ]
-    //})
-    event.custom(
-        {
-            "type": "create:sequenced_assembly",
-            "ingredient": {
-                "item": "ae2:silicon"
-            },
-            "results": [
-                {
-                    "chance": 1,
-                    "id": "ae2:calculation_processor"
-                },
-                {
-                    "chance": 1,
-                    "id": "ae2:certus_quartz_dust"
-                }
-            ],
-            "sequence": [
-                {
-                    "type": "create:deploying",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_calculation_processor"
-                        },
-                        {
-                            "item": "ae2:certus_quartz_crystal"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_calculation_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:filling",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_calculation_processor"
-                        },
-                        {
-                            "type": "neoforge:single",
-                            "amount": 100,
-                            "fluid": "kubejs:molten_gold"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_calculation_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:deploying",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_calculation_processor"
-                        },
-                        {
-                            "item": "minecraft:redstone"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_calculation_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:pressing",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_calculation_processor"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_calculation_processor"
-                        }
-                    ]
-                }
-            ],
-            "loops": 3,
-            "transitional_item": {
-                "id": "createappliedkinetics:incomplete_calculation_processor"
-            }
-        }
+    event.replaceInput({ output:'ae2:inscriber' }, 'minecraft:copper_ingot', 'kubejs:redstone_circuit')
+    event.replaceInput({ mod: 'ae2', input: 'minecraft:iron_ingot' }, 'minecraft:iron_ingot', '#c:ingots/aluminum')
+    event.replaceInput({ mod: 'ae2', input: '#c:ingots/iron', }, '#c:ingots/iron', '#c:ingots/aluminum')
+
+    //region assemblies
+    let transitional
+
+    // Calculation
+    event.remove({ output: 'ae2:calculation_processor'})
+    transitional = 'ae2:printed_calculation_processor'
+    event.recipes.create.sequenced_assembly(
+        [
+            CreateItem.of('ae2:calculation_processor', 0.7),
+            CreateItem.of('ae2:printed_calculation_processor', 0.2),
+            CreateItem.of('ae2:printed_silicon', 0.1)
+        ],
+        'ae2:printed_calculation_processor',
+        [
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, 'ae2:printed_silicon']
+            ),
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, Ingredient.of('#c:wires/copper')]
+            ),
+            event.recipes.create.filling(
+                transitional,
+                [transitional, Fluid.of('immersiveengineering:redstone_acid', 250)]
+            ),
+            event.recipes.create.pressing(
+                transitional,
+                transitional
+            )
+        ]
     )
-    event.custom(
-        {
-            "type": "create:sequenced_assembly",
-            "ingredient": {
-                "item": "ae2:silicon"
-            },
-            "results": [
-                {
-                    "chance": 1,
-                    "id": "ae2:engineering_processor"
-                },
-                {
-                    "chance": 1,
-                    "id": "minecraft:diamond"
-                }
-            ],
-            "sequence": [
-                {
-                    "type": "create:deploying",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_engineering_processor"
-                        },
-                        {
-                            "item": "minecraft:diamond"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_engineering_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:filling",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_engineering_processor"
-                        },
-                        {
-                            "type": "neoforge:single",
-                            "amount": 200,
-                            "fluid": "kubejs:molten_copper"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_engineering_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:deploying",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_engineering_processor"
-                        },
-                        {
-                            "item": "minecraft:redstone"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_engineering_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:pressing",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_engineering_processor"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_engineering_processor"
-                        }
-                    ]
-                }
-            ],
-            "loops": 3,
-            "transitional_item": {
-                "id": "createappliedkinetics:incomplete_engineering_processor"
-            }
-        }
+    .transitionalItem(transitional)
+    .loops(1)
+    .id('farwater:ae2/calculation_processor')
+
+    // Logic
+    event.remove({ output: 'ae2:logic_processor'})
+    transitional = 'ae2:printed_logic_processor'
+    event.recipes.create.sequenced_assembly(
+        [
+            CreateItem.of('ae2:logic_processor', 0.7),
+            CreateItem.of('ae2:printed_logic_processor', 0.2),
+            CreateItem.of('ae2:printed_silicon', 0.1)
+        ],
+        'ae2:printed_logic_processor',
+        [
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, 'ae2:printed_silicon']
+            ),
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, Ingredient.of('#c:wires/iron')]
+            ),
+            event.recipes.create.filling(
+                transitional,
+                [transitional, Fluid.of('immersiveengineering:redstone_acid', 250)]
+            ),
+            event.recipes.create.pressing(
+                transitional,
+                transitional
+            )
+        ]
     )
-    event.custom(
-        {
-            "type": "create:sequenced_assembly",
-            "ingredient": {
-                "item": "ae2:silicon"
-            },
-            "results": [
-                {
-                    "chance": 1,
-                    "id": "ae2:logic_processor"
-                },
-                {
-                    "chance": 1,
-                    "id": "immersiveengineering:wirecoil_electrum"
-                }
-            ],
-            "sequence": [
-                {
-                    "type": "create:deploying",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_logic_processor"
-                        },
-                        {
-                            "item": "createaddition:gold_spool"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_logic_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:filling",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_logic_processor"
-                        },
-                        {
-                            "type": "neoforge:single",
-                            "amount": 200,
-                            "fluid": "kubejs:andesite_compound"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_logic_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:deploying",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_logic_processor"
-                        },
-                        {
-                            "item": "minecraft:redstone"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_logic_processor"
-                        }
-                    ]
-                },
-                {
-                    "type": "create:pressing",
-                    "ingredients": [
-                        {
-                            "item": "createappliedkinetics:incomplete_logic_processor"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "id": "createappliedkinetics:incomplete_logic_processor"
-                        }
-                    ]
-                }
-            ],
-            "loops": 3,
-            "transitional_item": {
-                "id": "createappliedkinetics:incomplete_logic_processor"
-            }
-        }
+    .transitionalItem(transitional)
+    .loops(1)
+    .id('farwater:ae2/logic_processor')
+
+    // Engineering
+    event.remove({ output: 'ae2:engineering_processor' })
+    transitional = 'ae2:printed_engineering_processor'
+    event.recipes.create.sequenced_assembly(
+        [
+            CreateItem.of('ae2:engineering_processor', 0.7),
+            CreateItem.of('ae2:printed_engineering_processor', 0.2),
+            CreateItem.of('ae2:printed_silicon', 0.1)
+        ],
+        'ae2:printed_engineering_processor',
+        [
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, 'ae2:printed_silicon']
+            ),
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, Ingredient.of('#c:wires/gold')]
+            ),
+            event.recipes.create.filling(
+                transitional,
+                [transitional, Fluid.of('immersiveengineering:redstone_acid', 250)]
+            ),
+            event.recipes.create.pressing(
+                transitional,
+                transitional
+            )
+        ]
     )
-    event.custom({
-        "type": "create:mixing",
-        "ingredients": [
-            {
-                "item": "ae2:certus_quartz_crystal"
-            },
-            {
-                "item": "ae2:quartz_block"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 1000,
-                "fluid": "minecraft:water"
-            }
-        ],
-        "results": [
-            {
-                "id": "ae2:damaged_budding_quartz"
-            }
+    .transitionalItem(transitional)
+    .loops(1)
+    .id('farwater:ae2/engineering_processor')
+
+    //endregion assemblies
+
+    event.remove({ output: 'ae2:sky_dust' })
+    event.recipes.create.crushing(['ae2:sky_stone_block', CreateItem.of('ae2:sky_dust', 0.25)], 'ae2:sky_stone_block')
+
+    event.recipes.create.mixing(
+        'ae2:damaged_budding_quartz',
+        [
+            'ae2:quartz_block',
+            'ae2:charged_certus_quartz_crystal',
+            Fluid.of('minecraft:water', 250)
         ]
-    })
-    event.custom({
-        "type": "create:mixing",
-        "ingredients": [
-            {
-                "item": "ae2:certus_quartz_crystal"
-            },
-            {
-                "item": "ae2:damaged_budding_quartz"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 1000,
-                "fluid": "minecraft:water"
-            }
-        ],
-        "results": [
-            {
-                "id": "ae2:chipped_budding_quartz"
-            }
+    )
+    event.recipes.create.mixing(
+        'ae2:chipped_budding_quartz',
+        [
+            'ae2:damaged_budding_quartz',
+            'ae2:charged_certus_quartz_crystal',
+            Fluid.of('minecraft:water', 250)
         ]
-    })
-    event.custom({
-        "type": "create:mixing",
-        "ingredients": [
-            {
-                "item": "ae2:certus_quartz_crystal"
-            },
-            {
-                "item": "ae2:chipped_budding_quartz"
-            },
-            {
-                "type": "neoforge:single",
-                "amount": 1000,
-                "fluid": "minecraft:water"
-            }
-        ],
-        "results": [
-            {
-                "id": "ae2:flawed_budding_quartz"
-            }
+    )
+    event.recipes.create.mixing(
+        'ae2:flawed_budding_quartz',
+        [
+            'ae2:chipped_budding_quartz',
+            'ae2:charged_certus_quartz_crystal',
+            Fluid.of('minecraft:water', 250)
         ]
-    })
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "item": "ae2:flawed_budding_quartz"
-            }
-        ],
-        "processing_time": 500,
-        "results": [
-            {
-                "id": "ae2:certus_quartz_crystal"
-            },
-            {
-                "chance":0.9,
-                "id": "ae2:flawed_budding_quartz"
-            }
-        ]
-    })
-    event.custom({
-        "type": "create:milling",
-        "ingredients": [
-            {
-                "item": "ae2:flawless_budding_quartz"
-            }
-        ],
-        "processing_time": 500,
-        "results": [
-            {
-                "id": "ae2:certus_quartz_crystal"
-            },
-            {
-                "id": "ae2:flawed_budding_quartz"
-            }
-        ]
-    })
+    )
+    event.recipes.create.crushing(['ae2:flawless_budding_quartz', CreateItem.of('ae2:certus_quartz_crystal', 0.5), CreateItem.of('ae2:certus_quartz_crystal', 0.25)], 'ae2:flawless_budding_quartz').processingTime(600)
+
+    event.recipes.create.crushing(['ae2:chipped_budding_quartz', Item.of('ae2:certus_quartz_crystal', 2), CreateItem.of('ae2:certus_quartz_crystal', 0.5), CreateItem.of('ae2:certus_quartz_crystal', 0.25)], 'ae2:flawed_budding_quartz').processingTime(1200)
+    event.recipes.create.crushing(['ae2:damaged_budding_quartz', Item.of('ae2:certus_quartz_crystal', 2), CreateItem.of('ae2:certus_quartz_crystal', 0.5), CreateItem.of('ae2:certus_quartz_crystal', 0.25)], 'ae2:chipped_budding_quartz').processingTime(1200)
+    event.recipes.create.crushing([Item.of('ae2:certus_quartz_crystal', 6), CreateItem.of('ae2:certus_quartz_crystal', 0.5), CreateItem.of('ae2:certus_quartz_crystal', 0.25)], 'ae2:chipped_budding_quartz').processingTime(1200)
     
 })
