@@ -112,6 +112,34 @@ ServerEvents.recipes(event => {
         90
     )
 
+    // Lead
+    bigCannonsMelting(
+        Fluid.of('kubejs:molten_lead', 10),
+        [Ingredient.of('#c:nuggets/lead')],
+        40
+    )
+    bigCannonsMelting(
+        Fluid.of('kubejs:molten_lead', 90),
+        [Ingredient.of('#c:ingots/lead')],
+        180
+    )
+    bigCannonsMelting(
+        Fluid.of('kubejs:molten_lead', 810),
+        [Ingredient.of('#c:storage_blocks/lead')],
+        810
+    )
+    
+    bigCannonsMelting(
+        Fluid.of('kubejs:molten_lead', 90),
+        [Ingredient.of('#c:plates/lead')],
+        180
+    )
+    bigCannonsMelting(
+        Fluid.of('kubejs:molten_lead', 45),
+        [Ingredient.of('#c:wires/lead')],
+        90
+    )
+
     // Zinc
     bigCannonsMelting(
         Fluid.of('kubejs:molten_zinc', 10),

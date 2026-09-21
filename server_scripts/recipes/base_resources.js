@@ -6,45 +6,37 @@ ServerEvents.recipes(event => {
     //region Andesite alloy
 
     event.shapeless(
-        Item.of('create:andesite_alloy', 4),
+        Item.of('create:andesite_alloy', 6),
         [
             '3x minecraft:clay_ball',
             '3x #c:nuggets/lead',
             '3x minecraft:andesite'
         ]
-    )
+    ).id('kubejs:base_resources/andesite_alloy_from_lead_manual_only')
 
     create.mixing(
-        Fluid.of('kubejs:andesite_compound', 100),
+        Fluid.of('kubejs:andesite_compound', 180),
         [
             'minecraft:clay_ball',
-            '#c:nuggets/lead',
-            'minecraft:andesite'
+            'minecraft:andesite',
+            Ingredient.of('#c:nuggets/lead')
         ]
-    );
+    ).heated();
 
     create.mixing(
-        Fluid.of('kubejs:andesite_compound', 200),
+        Fluid.of('kubejs:andesite_compound', 180),
         [
             'minecraft:clay_ball',
-            Fluid.of('kubejs:molten_lead', 50),
-            'minecraft:andesite'
+            'minecraft:andesite',
+            Fluid.of('kubejs:molten_lead', 10)
         ]
     );
 
     create.compacting(
-        'create:andesite_alloy_block',
-        Fluid.of('kubejs:andesite_compound', 900)
+        'create:andesite_alloy',
+        Fluid.of('kubejs:andesite_compound', 90)
     );
 
-    create.mixing(
-        Fluid.of('kubejs:andesite_compound', 200),
-        [
-            'minecraft:clay_ball',
-            Fluid.of('kubejs:molten_lead', 50),
-            'minecraft:andesite'
-        ]
-    );
     //endregion Andesite alloy
 
     //region brass
