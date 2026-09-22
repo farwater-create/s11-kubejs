@@ -13,7 +13,9 @@ ServerEvents.recipes(event => {
         'steampowered:furnace_engine',
 
         'createpropulsion:thruster',
-        'createpropulsion:solid_fuel_thruster'
+        'createpropulsion:solid_fuel_thruster',
+
+        'alexsmobs:dimensional_carver' // Causes Problem with Dimthread (going back to a sable spawnpoint)
     ];
 
     items.forEach(item => {
