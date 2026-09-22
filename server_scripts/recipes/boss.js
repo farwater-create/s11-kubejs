@@ -49,10 +49,11 @@ ServerEvents.recipes(event => {
         ],
         "results": [
             {
-                "chance":0.3,
+                "chance":0.05,
                 "id": "minecraft:ancient_debris"
             },
             {
+                "chance":0.90,
                 "id":"cataclysm:monstrous_horn"
             }
         ]
@@ -82,19 +83,6 @@ ServerEvents.recipes(event => {
                 "id":"cataclysm:essence_of_the_storm"
             }
         ]
-    })
-    event.custom({//ignitium for cheaper steel
-        "type": "immersiveengineering:metal_press",
-        "energy": 2400,
-        "input": {
-            "tag": "c:storage_blocks/coal_coke",
-
-        },
-        "mold": "cataclysm:ignitium_block",
-        "result": {
-            "item": "minecraft:diamond",
-            "count":3
-        }
     })
     event.custom({//cursium for super experience
         "type": "create:mixing",
