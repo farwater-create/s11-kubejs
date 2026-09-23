@@ -49,11 +49,11 @@ ServerEvents.recipes(event => {
         ],
         "results": [
             {
-                "chance":0.05,
+                "chance":0.1,
                 "id": "minecraft:ancient_debris"
             },
             {
-                "chance":0.90,
+                "chance":0.95,
                 "id":"cataclysm:monstrous_horn"
             }
         ]
@@ -83,6 +83,32 @@ ServerEvents.recipes(event => {
                 "id":"cataclysm:essence_of_the_storm"
             }
         ]
+    })
+    event.custom({//Ignitium for diamond
+        type: "immersiveengineering:arc_furnace",
+        additives: [
+            {
+                item: 'cataclysm:ignitium_block'
+            }
+        ],
+        energy: 102400,
+        input: {
+            tag: 'c:storage_blocks/coal_coke'
+        },
+        results: [
+            {
+                item: 'createoreexcavation:raw_diamond'
+            }
+        ],
+        secondaries: [
+            {
+                chance: 0.95,
+                output: {
+                    item: 'cataclysm:ignitium_block'
+                }
+            }
+        ],
+        time: 1200
     })
     event.custom({//cursium for super experience
         "type": "create:mixing",
