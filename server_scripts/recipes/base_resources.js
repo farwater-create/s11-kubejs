@@ -39,32 +39,6 @@ ServerEvents.recipes(event => {
 
     //endregion Andesite alloy
 
-    //region brass
-
-    let brass = 'create:brass_ingot';
-    let brassBlock = 'create:brass_block';
-    let brassNugget = 'create:brass_nugget';
-
-    global.removeMetalRecipe(event, brass);
-    global.removeMetalRecipe(event, brassBlock);
-    global.removeMetalRecipe(event, brassNugget);
-
-    global.moltenMetal(create,
-        ['minecraft:copper_ingot', 'create:zinc_ingot'],
-        ['create:crushed_raw_copper', 'create:crushed_raw_zinc'],
-        'kubejs:molten_brass', brass, brassBlock
-    );
-
-    create.mixing(
-        Fluid.of('kubejs:molten_brass', 90),
-        'create:brass_ingot'
-    ).heated();
-
-    event.remove({type: 'create:automated_packing', input: brass});
-
-    //endregion brass
-
-
     let craftOnly = [
 
 
