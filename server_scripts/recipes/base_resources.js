@@ -39,21 +39,6 @@ ServerEvents.recipes(event => {
 
     //endregion Andesite alloy
 
-    let craftOnly = [
-
-
-        'immersiveengineering:ingot_constantan',
-        'immersiveengineering:dust_constantan',
-        //'immersiveengineering:storage_steel',
-        //'immersiveengineering:ingot_steel',
-        //'immersiveengineering:dust_steel',
-
-    ];
-
-    craftOnly.forEach(item => {
-        event.remove({output: item});
-    })
-
     event.remove({input: 'minecraft:iron_ingot', output: 'abyssal_decor:moonsilver_ingot'});
     event.remove({input: 'minecraft:gold_ingot', output: 'abyssal_decor:seabrass_ingot'});
     event.remove({input: 'abyssal_decor:seabrass_ingot', output: 'abyssal_decor:deepbronze_ingot'});
