@@ -161,8 +161,7 @@ ServerEvents.recipes(event => {
         {
             A: '#c:plates/aluminum',
             P: 'immersiveengineering:wirecoil_copper',
-            C: 'kubejs:redstone_circuit' // Disabled should be below one
-            //C: 'immersiveengineering:component_electronic'
+            C: 'immersiveengineering:component_electronic'
         }
     )
 
@@ -177,8 +176,23 @@ ServerEvents.recipes(event => {
         {
             A: '#c:plates/aluminum',
             P: 'create:mechanical_press',
-            C: 'kubejs:redstone_circuit' // Disabled should be below one
-            //C: 'immersiveengineering:component_electronic'
+            C: 'immersiveengineering:component_electronic'
+        }
+    )
+
+    event.remove({ id: 'ae2:network/blocks/io_condenser' })
+    event.shaped(
+        Item.of('ae2:condenser'),
+        [
+            'MFM',
+            'MIM',
+            'MCM'
+        ],
+        {
+            M: 'abyssal_decor:moonsilver_ingot',
+            F: 'ae2:fluix_block',
+            I: 'ae2:inscriber',
+            C: 'immersiveengineering:component_electronic_adv'
         }
     )
 
@@ -196,9 +210,9 @@ ServerEvents.recipes(event => {
     event.replaceInput({ output: 'ae2:cell_component_64k' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
     event.replaceInput({ output: 'ae2:cell_component_256k' }, 'ae2:sky_dust', 'abyssal_decor:moonsilver_ingot')
 
-    event.replaceInput({ output: 'ae2:spatial_cell_component_2' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
-    event.replaceInput({ output: 'ae2:spatial_cell_component_16' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
-    event.replaceInput({ output: 'ae2:spatial_cell_component_128' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
+    //event.replaceInput({ output: 'ae2:spatial_cell_component_2' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
+    //event.replaceInput({ output: 'ae2:spatial_cell_component_16' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
+    //event.replaceInput({ output: 'ae2:spatial_cell_component_128' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
     
     //endregion Components
 
