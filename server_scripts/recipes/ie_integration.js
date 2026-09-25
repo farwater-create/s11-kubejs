@@ -5,6 +5,9 @@ ServerEvents.recipes(event => {
     event.replaceInput({ output: '#create:casings' }, '#c:stripped_logs', 'immersiveengineering:treated_wood_horizontal')
     event.replaceInput({ output: '#create:casings' }, '#c:stripped_wood', 'immersiveengineering:treated_wood_horizontal')
     event.remove({ output: 'immersiveengineering:resonanz_engineering' })
+
+    event.remove({ input: 'immersiveengineering:hammer', output: '#c:dusts' })
+    event.remove({ input: 'immersiveengineering:hammer', output: '#c:plates' })
     
     // Fluid Pipe
     event.remove({ output: 'immersiveengineering:fluid_pipe' })
