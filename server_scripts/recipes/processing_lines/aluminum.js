@@ -13,8 +13,6 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'create:splashing/immersiveengineering/crushed_raw_aluminum'})
     event.remove({ id: 'create:crushing/aluminum_ore'})
 
-    /* !! DISABLED !! REMOVE COMMENT TO ACTIVATE !!
-
     // Bauxite Automation
 
     event.recipes.create.mixing(
@@ -24,6 +22,7 @@ ServerEvents.recipes(event => {
             Ingredient.of('#c:raw_materials/aluminum', 4)
         ]
     ).heated()
+    .id('farwater:processing_lines/aluminum/bauxite_block')
     event.recipes.create.mixing(
         'advancedweather:bauxite_rock',
         [
@@ -31,6 +30,7 @@ ServerEvents.recipes(event => {
             Ingredient.of('advancedweather:alumina')
         ]
     ).heated()
+    .id('farwater:processing_lines/aluminum/bauxite_rock')
 
     // Aluminum
 
@@ -41,7 +41,7 @@ ServerEvents.recipes(event => {
             CreateItem.of('create:experience_nugget', 0.75)
         ],
         Ingredient.of('create:crushed_raw_aluminum')
-    )
+    ).id('farwater:processing_lines/aluminum/alumina')
     event.custom({
         type: 'immersiveengineering:crusher',
         energy: 6000,
@@ -60,7 +60,21 @@ ServerEvents.recipes(event => {
             }
           }
         ]
-    })
+    }).id('farwater:processing_lines/aluminum/alumina_ie_crusher')
+
+    event.custom({
+        type: 'immersiveengineering:blast_furnace',
+        input: {
+            item: 'advancedweather:alumina_carbon_mix'
+        },
+        result: {
+            tag: 'c:ingots/aluminum'
+        },
+        slag: {
+            tag: 'c:slag'
+        },
+        time: 2400
+    }).id('farwater:processing_lines/aluminum/aluminum')
 
     event.custom({
         type: "immersiveengineering:arc_furnace",
@@ -75,14 +89,13 @@ ServerEvents.recipes(event => {
             }
         ],
         time: 600
-    })
+    }).id('farwater:processing_lines/aluminum/aluminum_arc_furnace')
 
     event.recipes.create.crushing(
         [
             Item.of('immersiveengineering:dust_aluminum')
         ],
         Ingredient.of('#c:ingots/aluminum')
-    )
+    ).id('farwater:processing_lines/aluminum/aluminum_dust')
 
-    */
 })
