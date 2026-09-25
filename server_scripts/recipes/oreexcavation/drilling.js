@@ -61,11 +61,11 @@ ServerEvents.recipes(event => {
 	MakeDrilling('kubejs:ore_vein_type/ddu_zinc', ['create:raw_zinc', CreateItem.of('create:raw_zinc', 0.5)], 128)
 	
 	MakeDrilling('createoreexcavation:ore_vein_type/emerald', CreateItem.of('createoreexcavation:raw_emerald', 0.25), 128)
-	MakeDrilling('createoreexcavation:ore_vein_type/diamond', [CreateItem.of('createoreexcavation:raw_diamond', 0.1)], 256)
-	MakeDrillingF('createoreexcavation:ore_vein_type/hardened_diamond', CreateItem.of('createoreexcavation:raw_diamond', 0.2), '10x minecraft:lava', 512)
+	MakeDrilling('createoreexcavation:ore_vein_type/diamond', [CreateItem.of('createoreexcavation:raw_diamond', 0.02)], 256)
+	MakeDrillingF('createoreexcavation:ore_vein_type/hardened_diamond', CreateItem.of('createoreexcavation:raw_diamond', 0.04), '10x minecraft:lava', 512)
 
 	MakeDrilling('createoreexcavation:ore_vein_type/quartz', ['2x minecraft:quartz', CreateItem.of('minecraft:quartz', 0.5)], 128)
-	MakeDrillingF('createoreexcavation:ore_vein_type/netherite', [CreateItem.of('minecraft:ancient_debris', 0.05), CreateItem.of('minecraft:gold_nugget', 0.5)], '10x minecraft:lava', 512)
+	MakeDrillingF('createoreexcavation:ore_vein_type/netherite', [CreateItem.of('minecraft:ancient_debris', 0.01), CreateItem.of('minecraft:gold_nugget', 0.5)], '10x minecraft:lava', 512)
 
 	// Propulsion
 	MakeDrilling('kubejs:ore_vein_type/platinum', CreateItem.of('createpropulsion:raw_platinum', 0.5), 128)
