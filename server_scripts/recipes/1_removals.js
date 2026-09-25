@@ -15,7 +15,19 @@ ServerEvents.recipes(event => {
         'createpropulsion:thruster',
         'createpropulsion:solid_fuel_thruster',
 
-        'alexsmobs:dimensional_carver' // Causes Problem with Dimthread (going back to a sable spawnpoint)
+        'alexsmobs:dimensional_carver', // Causes Problem with Dimthread (going back to a sable spawnpoint)
+
+        'ae2:quantum_ring',
+        'ae2:quantum_link',
+        'ae2:spatial_cell_component_2',
+        'ae2:spatial_cell_component_16',
+        'ae2:spatial_cell_component_128',
+        'ae2:spatial_storage_cell_2',
+        'ae2:spatial_storage_cell_16',
+        'ae2:spatial_storage_cell_128',
+        'ae2:spatial_pylon',
+        'ae2:spatial_io_port',
+        'ae2:spatial_anchor'
     ];
 
     items.forEach(item => {
@@ -33,22 +45,6 @@ ServerEvents.recipes(event => {
 
     let items_craftonly = [ //recipe to be unlocked or added elsewhere
 
-
-        'immersiveengineering:connector_hv',
-        'immersiveengineering:connector_hv_relay',
-        'immersiveengineering:connector_lv',
-        'immersiveengineering:connector_lv_relay',
-        'immersiveengineering:connector_mv',
-        'immersiveengineering:connector_mv_relay',
-        'immersiveengineering:wirecoil_copper',
-        'immersiveengineering:wirecoil_copper_ins',
-        'immersiveengineering:wirecoil_electrum',
-        'immersiveengineering:wirecoil_electrum_ins',
-        'immersiveengineering:wirecoil_redstone',
-        'immersiveengineering:wirecoil_steel',
-        'immersiveengineering:wirecoil_structure_rope',
-        'immersiveengineering:wirecoil_structure_steel',
-
         'create:precision_mechanism',
         'create:electron_tube',
 
@@ -57,6 +53,9 @@ ServerEvents.recipes(event => {
         'aeronautics:gyroscopic_propeller_bearing',
         'aeronautics:levitite',
         'aeronautics:pearlescent_levitite',
+
+        'simulated_addition:directional_propeller_bearing',
+        'simulated_addition:directional_gyroscopic_propeller_bearing',
 
         'create_new_age:carbon_brushes',
         'create_new_age:generator_coil',
