@@ -239,7 +239,7 @@ ServerEvents.recipes(event => {
 
         //uses for redstone circuits
         event.replaceInput({output: 'createaddition:tesla_coil'}, 'create:electron_tube', 'kubejs:redstone_circuit');
-        event.replaceInput({output: 'create:factory_gauge'}, 'create:stock_link', 'kubejs:redstone_circuit');
+
         //charging super experience
         event.custom({
             "type": "createaddition:charging",
