@@ -44,9 +44,9 @@ ServerEvents.recipes(event => {
 
         'immersiveengineering:ingot_constantan',
         'immersiveengineering:dust_constantan',
-        'immersiveengineering:storage_steel',
-        'immersiveengineering:ingot_steel',
-        'immersiveengineering:dust_steel',
+        //'immersiveengineering:storage_steel',
+        //'immersiveengineering:ingot_steel',
+        //'immersiveengineering:dust_steel',
 
     ];
 

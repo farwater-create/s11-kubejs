@@ -183,5 +183,38 @@ ServerEvents.recipes(event => {
                 D: 'cataclysm:black_steel_nugget'
             }
         );
+
+        event.remove({ output: 'create:precision_mechanism' })
+        let transitional = 'create:incomplete_precision_mechanism'
+        event.recipes.create.sequenced_assembly(
+            [
+                CreateItem.of('create:precision_mechanism', 0.9),
+                CreateItem.of('create:brass_sheet', 0.02),
+                CreateItem.of('create:andesite_alloy', 0.02),
+                CreateItem.of('create:cogwheel', 0.02),
+                CreateItem.of('create:shaft', 0.02),
+                CreateItem.of('create:crushed_raw_gold', 0.02),
+                CreateItem.of('minecraft:gold_nugget', 0.02)
+            ],
+            '#c:plates/brass',
+            [
+                event.recipes.create.deploying(
+                    transitional,
+                    [transitional, Ingredient.of('gnkinetics:tiny_brass_gear')]
+                ),
+                event.recipes.create.deploying(
+                    transitional,
+                    [transitional, Ingredient.of('gnkinetics:brass_gear')]
+                ),
+                event.recipes.create.deploying(
+                    transitional,
+                    [transitional, Ingredient.of('#c:nuggets/steel')]
+                )
+            ]
+        )
+        .transitionalItem(transitional)
+        .loops(5)
+        .id('farwater:create_parts/precision_mechanism')
+
     }
 )

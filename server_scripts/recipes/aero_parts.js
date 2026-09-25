@@ -2,7 +2,6 @@ ServerEvents.recipes(event => {
 
         event.replaceInput({output: 'addon_gancho:grapple_swing'}, 'simulated:gyroscopic_mechanism', 'immersiveengineering:component_iron');
 
-
         event.shaped(
             Item.of('simulated:red_portable_engine', 1),
             [
@@ -141,6 +140,84 @@ ServerEvents.recipes(event => {
             S: 'create:shaft',
             C: 'create:copper_sheet',
             A: 'create:andesite_alloy'
+        }
+    );
+    
+    event.remove({ output: 'simulated:gyroscopic_mechanism' })
+    let transitional = 'simulated:incomplete_gyroscopic_mechanism'
+    event.recipes.create.sequenced_assembly(
+        [
+            CreateItem.of('simulated:gyroscopic_mechanism', 1.0)
+        ],
+        'create:precision_mechanism',
+        [
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, Ingredient.of('create:electron_tube')]
+            ),
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, Ingredient.of('ae2:certus_quartz_crystal')]
+            ),
+            event.recipes.create.deploying(
+                transitional,
+                [transitional, Ingredient.of('#c:plates/platinum')]
+            )
+        ]
+    )
+    .transitionalItem(transitional)
+    .loops(3)
+    .id('farwater:aero_parts/gyroscopic_mechanism')
+
+    event.shaped(
+        Item.of('aeronautics:gyroscopic_propeller_bearing'),
+        [
+            'ABA',
+            ' C '
+        ],
+        {
+            A: 'simulated:gyroscopic_mechanism',
+            B: 'aeronautics:propeller_bearing',
+            C: 'abyssal_decor:seabrass_ingot'
+        }
+    );
+
+    event.shaped(
+        Item.of('simulated_addition:directional_propeller_bearing'),
+        [
+            'ABA',
+            ' C '
+        ],
+        {
+            A: 'create:electron_tube',
+            B: 'aeronautics:propeller_bearing',
+            C: '#c:plates/platinum'
+        }
+    );
+
+    event.shaped(
+        Item.of('simulated_addition:directional_gyroscopic_propeller_bearing'),
+        [
+            'ABA',
+            ' C '
+        ],
+        {
+            A: 'create:electron_tube',
+            B: 'aeronautics:gyroscopic_propeller_bearing',
+            C: '#c:plates/platinum'
+        }
+    );
+
+    event.shaped(
+        Item.of('simulated_addition:directional_gyroscopic_propeller_bearing'),
+        [
+            'ABA',
+            ' C '
+        ],
+        {
+            A: 'simulated:gyroscopic_mechanism',
+            B: 'simulated_addition:directional_propeller_bearing',
+            C: 'abyssal_decor:seabrass_ingot'
         }
     );
 
