@@ -28,5 +28,10 @@ ServerEvents.recipes(event => {
             E: 'create:electron_tube'
         }
     )
+    
+    event.replaceInput({ id: 'create_new_age:shaped/reinforced_energiser' }, 'minecraft:diamond', 'cataclysm:cursium_ingot')
+    event.replaceInput({ id: 'create_new_age:shaped/reinforced_motor' }, 'minecraft:diamond', 'cataclysm:cursium_ingot')
+    
+    event.replaceInput({ id: 'create_new_age:shaped/netherite_magnet' }, 'minecraft:netherite_scrap', 'minecraft:netherite_ingot')
 
 })
