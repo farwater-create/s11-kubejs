@@ -206,9 +206,9 @@ ServerEvents.recipes(event => {
 
     event.replaceInput({ output: 'ae2:cell_component_1k' }, 'minecraft:redstone', 'abyssal_decor:moonsilver_ingot')
     event.replaceInput({ output: 'ae2:cell_component_4k' }, 'minecraft:redstone', 'abyssal_decor:moonsilver_ingot')
-    event.replaceInput({ output: 'ae2:cell_component_16k' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
-    event.replaceInput({ output: 'ae2:cell_component_64k' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
-    event.replaceInput({ output: 'ae2:cell_component_256k' }, 'ae2:sky_dust', 'abyssal_decor:moonsilver_ingot')
+    event.replaceInput({ output: 'ae2:cell_component_16k' }, 'minecraft:glowstone_dust', 'minecraft:shulker_shell')
+    event.replaceInput({ output: 'ae2:cell_component_64k' }, 'minecraft:glowstone_dust', 'minecraft:shulker_shell')
+    event.replaceInput({ output: 'ae2:cell_component_256k' }, 'ae2:sky_dust', 'minecraft:netherite_ingot')
 
     //event.replaceInput({ output: 'ae2:spatial_cell_component_2' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
     //event.replaceInput({ output: 'ae2:spatial_cell_component_16' }, 'minecraft:glowstone_dust', 'abyssal_decor:moonsilver_ingot')
