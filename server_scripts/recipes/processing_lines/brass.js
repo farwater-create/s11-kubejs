@@ -44,9 +44,4 @@ ServerEvents.recipes(event => {
         Fluid.of(fluid, 90)
     )
 
-    create.mixing(
-        Fluid.of('kubejs:molten_brass', 90),
-        'create:brass_ingot'
-    ).heated()
-
 })
