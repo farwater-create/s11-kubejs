@@ -27,7 +27,11 @@ ServerEvents.recipes(event => {
         'ae2:spatial_storage_cell_128',
         'ae2:spatial_pylon',
         'ae2:spatial_io_port',
-        'ae2:spatial_anchor'
+        'ae2:spatial_anchor',
+
+        'immersiveengineering:dynamo',
+        'immersiveengineering:watermill',
+        'immersiveengineering:windmill'
     ];
 
     items.forEach(item => {
