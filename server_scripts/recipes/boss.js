@@ -88,7 +88,7 @@ ServerEvents.recipes(event => {
         type: "immersiveengineering:arc_furnace",
         additives: [
             {
-                item: 'cataclysm:ignitium_block'
+                item: 'cataclysm:ignitium_ingot'
             }
         ],
         energy: 102400,
@@ -104,7 +104,7 @@ ServerEvents.recipes(event => {
             {
                 chance: 0.95,
                 output: {
-                    item: 'cataclysm:ignitium_block'
+                    item: 'cataclysm:ignitium_ingot'
                 }
             }
         ],
