@@ -49,11 +49,11 @@ ServerEvents.recipes(event => {
         ],
         "results": [
             {
-                "chance":0.1,
+                "chance":0.25,
                 "id": "minecraft:ancient_debris"
             },
             {
-                "chance":0.95,
+                "chance":0.99,
                 "id":"cataclysm:monstrous_horn"
             }
         ]
