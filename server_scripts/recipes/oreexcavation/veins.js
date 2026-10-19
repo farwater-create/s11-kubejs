@@ -2,6 +2,9 @@
 
 ServerEvents.recipes(event => {
 
+	event.remove({ id: 'createoreexcavation:ore_vein_type/diamond' })
+	event.remove({ id: 'createoreexcavation:ore_vein_type/hardened_diamond' })
+
 	// -------------- Veins --------------
 
 	// Iron
