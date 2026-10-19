@@ -6,8 +6,6 @@ ServerEvents.recipes(event => {
         'aeronautics_utility_objects:damping_stress_bearing',
         'steampowered:alternator',
 
-        'create_sa:steam_engine',
-
         'steampowered:cast_iron_steam_engine',
         'steampowered:cast_iron_flywheel',
         'steampowered:furnace_engine',
@@ -43,7 +41,14 @@ ServerEvents.recipes(event => {
 
         'steampowered:brass_flywheel',
         'steampowered:bronze_flywheel',
-        'create:mechanical_crafter'
+        'create:mechanical_crafter',
+
+        'create_sa:steam_engine',
+        'create_sa:portable_drill',
+        'create_sa:brass_jetpack_chestplate',
+        'create_sa:netherite_jetpack_chestplate',
+        'create_sa:brass_exoskeleton_chestplate',
+        'create_sa:netherite_exoskeleton_chestplate'
 
     ];
 
@@ -67,7 +72,12 @@ ServerEvents.recipes(event => {
         'create_new_age:reactor_glass',
         'create_new_age:reactor_rod',
         'create_new_age:nuclear_fuel',
-        'create_new_age:reactor_fuel_acceptor'
+        'create_new_age:reactor_fuel_acceptor',
+
+        'create_aeronautics_toolgun:survival_structure_tool',
+        'create_aeronautics_toolgun:magnetic_gun',
+        'create_aeronautics_toolgun:disposable_vehicle_container',
+        'create_aeronautics_toolgun:portable_structure_container'
 
     ];
 

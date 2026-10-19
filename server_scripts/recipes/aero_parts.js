@@ -221,5 +221,20 @@ ServerEvents.recipes(event => {
         }
     );
 
-    }
-)
+    // Aeronautics: Toolgun
+
+    event.shaped(
+        Item.of('create_aeronautics_toolgun:disposable_vehicle_container'),
+        [
+            ' P ',
+            'TFT',
+            ' P '
+        ],
+        {
+            P: '#c:plates/platinum',
+            T: 'create:transmitter',
+            F: 'ae2:fluix_pearl'
+        }
+    );
+
+})
